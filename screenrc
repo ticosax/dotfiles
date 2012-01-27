@@ -1,0 +1,15 @@
+# command with Ctrl+x
+escape ^Xx
+
+autodetach on
+startup_message off 
+defscrollback 30000
+vbell off
+shelltitle "$ |bash"
+defutf8 on
+nonblock on
+hardstatus alwayslastline
+hardstatus string '%{= kw}[ %{= kb}%H%{= kw} ][%= %{= kw}%?%-Lw%?%{=
+kW}%n*%f %t%?%?%{= kw}%?%+Lw%?%?%= ][ %{r}%l%{w} ]%{w}[%{r} %d/%m/%y %C
+%A %{w}]%{w}'
+
