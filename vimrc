@@ -18,10 +18,17 @@ Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'colorful256'
+Bundle 'ctrlp'
+Bundle 'indentpython'
+Bundle 'Solarized'
+Bundle 'vim-flake8'
+Bundle 'vim-powerline'
+
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
-Bundle 'Lokaltog/vim-powerline'
 
 let g:Powerline_cache_enabled = 1
 set laststatus=2
