@@ -25,6 +25,7 @@ Bundle 'indentpython'
 Bundle 'Solarized'
 Bundle 'vim-flake8'
 Bundle 'vim-powerline'
+Bundle 'scrooloose/nerdtree'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
