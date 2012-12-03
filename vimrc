@@ -1,3 +1,10 @@
+" to bootstrap
+" git clone git://github.com/ticosax/dotfiles.git src/dotfiles
+" mv .vimrc .vimrc.backup
+" ln -s src/dotfiles/vimrc .vimrc
+" Run Vi, than type :BundleUpdate
+" that's all folks
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
