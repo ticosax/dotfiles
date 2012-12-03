@@ -1,3 +1,10 @@
+" to bootstrap
+" git clone git://github.com/ticosax/dotfiles.git src/dotfiles
+" mv .vimrc .vimrc.backup
+" ln -s src/dotfiles/vimrc .vimrc
+" Run Vi, than type :BundleUpdate
+" that's all folks
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -19,18 +26,19 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'colorful256'
-Bundle 'ctrlp'
+Bundle 'kien/ctrlp.vim'
 Bundle 'indentpython'
 Bundle 'Solarized'
 Bundle 'vim-flake8'
 Bundle 'vim-powerline'
 Bundle 'scrooloose/nerdtree'
+Bundle 'xolox/vim-session'
+Bundle 'python.vim'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
-" ...
 
+" Powerline
 let g:Powerline_cache_enabled = 1
 set laststatus=2
 set t_Co=256
@@ -54,3 +62,16 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 set colorcolumn=80
+
+" sessions
+let g:session_autosave = 'yes'
+let g:session_default_to_last = 'yes'
+
+" NERDTree
+let NERDTreeIgnore = ['\.vim$', '\~$', '\.git', '\.svn', '\.hg']
+let NERDTreeShowHidden = -1
+
+" indentation
+set expandtab
+set shiftwidth=4
+set softtabstop=4
