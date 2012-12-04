@@ -62,7 +62,7 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
-set colorcolumn=80
+"set colorcolumn=80
 
 " sessions
 let g:session_autosave = 'yes'
@@ -79,3 +79,14 @@ set shiftwidth=4
 set tabstop=4
 
 filetype plugin on
+
+" Declare new style to detect bad space
+au FileType python highlight BadWhitespace ctermbg=red guibg=red
+" Display tabs at the beginning of a line in Python mode as bad.
+au FileType python match BadWhitespace /^\t\+/
+" Make trailing whitespace be flagged as bad.
+au FileType python match BadWhitespace /\s\+$/
+
+" display when text goes more than 79 chars
+au FileType python highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+au FileType python match OverLength /\%81v.*/
