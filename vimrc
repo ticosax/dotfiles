@@ -34,6 +34,7 @@ Bundle 'vim-powerline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'xolox/vim-session'
 Bundle 'python.vim'
+Bundle 'tomtom/tcomment_vim'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -75,3 +76,4 @@ let NERDTreeShowHidden = -1
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+filetype plugin on
