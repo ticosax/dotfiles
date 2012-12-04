@@ -73,7 +73,9 @@ let NERDTreeIgnore = ['\.vim$', '\~$', '\.git', '\.svn', '\.hg']
 let NERDTreeShowHidden = -1
 
 " indentation
+set smartindent
 set expandtab
 set shiftwidth=4
-set softtabstop=4
+set tabstop=4
+
 filetype plugin on
