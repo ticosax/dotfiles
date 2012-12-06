@@ -69,7 +69,7 @@ let g:session_autosave = 'yes'
 let g:session_default_to_last = 'yes'
 
 " NERDTree
-let NERDTreeIgnore = ['\.vim$', '\~$', '\.git', '\.svn', '\.hg']
+let NERDTreeIgnore = ['\.vim$', '\~$', '\.git', '\.svn', '\.hg', '\.swp']
 let NERDTreeShowHidden = -1
 
 " indentation
@@ -90,3 +90,6 @@ au FileType python match BadWhitespace /\s\+$/
 " display when text goes more than 79 chars
 au FileType python highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 au FileType python match OverLength /\%81v.*/
+
+" XML extensions
+au BufNewFile,BufRead *.zcml set filetype=xml
