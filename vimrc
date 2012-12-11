@@ -81,15 +81,15 @@ set tabstop=4
 filetype plugin on
 
 " Declare new style to detect bad space
-au FileType python highlight BadWhitespace ctermbg=red guibg=red
+highlight BadWhitespace ctermbg=white guibg=red
 " Display tabs at the beginning of a line in Python mode as bad.
-au FileType python match BadWhitespace /^\t\+/
+match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
-au FileType python match BadWhitespace /\s\+$/
+match BadWhitespace /\s\+$/
 
 " display when text goes more than 79 chars
-au FileType python highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-au FileType python match OverLength /\%81v.*/
+highlight OverLength ctermbg=red guibg=#592929
+2match OverLength /\%81v.\+/
 
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
