@@ -12,7 +12,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
@@ -35,6 +35,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'xolox/vim-session'
 Bundle 'python.vim'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'davidhalter/jedi-vim'
+
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
