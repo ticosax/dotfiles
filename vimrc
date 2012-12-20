@@ -41,6 +41,10 @@ Bundle 'altercation/vim-colors-solarized'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 
+"Globals
+set scrolloff=5
+set wildignore+=*.pyc
+
 " Powerline
 let g:Powerline_cache_enabled = 1
 set laststatus=2
@@ -52,9 +56,9 @@ let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 syntax enable
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors= 256
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
 
-set scrolloff=5
 
 "ControlP
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -62,6 +66,8 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_lazy_update = 1
 let g:ctrlp_switch_buffer = 1
 let g:ctrlp_working_path_mode = 2
+let g:ctrlp_working_path_mode = 'c'
+
 
 filetype plugin indent on     " required!
 "
@@ -80,8 +86,9 @@ let g:session_autosave = 'yes'
 let g:session_default_to_last = 'yes'
 
 " NERDTree
-let NERDTreeIgnore = ['\.vim$', '\~$', '\.git', '\.svn', '\.hg', '\.swp']
+let NERDTreeIgnore = ['\.vim$', '\~$', '\.git', '\.svn', '\.hg', '\.swp', '\.pyc']
 let NERDTreeShowHidden = -1
+let NERDTreeChDirMode = 2
 
 " indentation
 set smartindent
