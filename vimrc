@@ -28,7 +28,6 @@ Bundle 'FuzzyFinder'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'indentpython'
-Bundle 'Solarized'
 Bundle 'vim-flake8'
 Bundle 'vim-powerline'
 Bundle 'scrooloose/nerdtree'
@@ -36,6 +35,7 @@ Bundle 'xolox/vim-session'
 Bundle 'python.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'altercation/vim-colors-solarized'
 
 
 " non github repos
@@ -47,7 +47,12 @@ set laststatus=2
 set t_Co=256
 
 let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
-colorscheme default
+
+" solarized
+syntax enable
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors= 256
 
 set scrolloff=5
 
