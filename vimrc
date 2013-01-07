@@ -35,6 +35,7 @@ Bundle 'python.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-scripts/IndexedSearch'
 
 
 " non github repos
