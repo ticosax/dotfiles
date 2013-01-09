@@ -100,7 +100,7 @@ filetype plugin on
 
 " display when text goes more than 79 chars
 highlight OverLength ctermbg=red guibg=#592929
-2match OverLength /\%81v.\+/
+2match OverLength /\%81v.*/
 
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
