@@ -56,8 +56,8 @@ let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 syntax enable
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors = 256
-let g:solarized_visibility = "high"
+"let g:solarized_termcolors = 256
+"let g:solarized_visibility = "high"
 
 
 "ControlP
