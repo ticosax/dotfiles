@@ -24,11 +24,10 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'indentpython'
 Bundle 'vim-flake8'
-Bundle 'vim-powerline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'xolox/vim-session'
 Bundle 'python.vim'
@@ -46,6 +45,7 @@ set scrolloff=5
 set wildignore+=*.pyc
 
 " Powerline
+source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
 let g:Powerline_cache_enabled = 1
 set laststatus=2
 set t_Co=256
