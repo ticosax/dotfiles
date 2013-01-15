@@ -35,6 +35,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-scripts/IndexedSearch'
+Bundle 'vim-scripts/taglist.vim'
 
 
 " non github repos
@@ -104,3 +105,10 @@ highlight OverLength ctermbg=red guibg=#592929
 
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
+
+" Taglist
+let Tlist_Use_Right_Window = 1
+
+" remapping in NORMAL mode
+nmap tlo <Esc>:TlistOpen<CR>
+nmap tlt  <Esc>:TlistToggle<CR>
