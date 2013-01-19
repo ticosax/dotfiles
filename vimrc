@@ -21,22 +21,24 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'indentpython'
 Bundle 'vim-flake8'
-Bundle 'vim-powerline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'xolox/vim-session'
 Bundle 'python.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-scripts/IndexedSearch'
+Bundle 'vim-scripts/taglist.vim'
 
+Bundle 'vim-scripts/git-log'
+Bundle 'vim-scripts/ShowTrailingWhitespace'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -46,6 +48,7 @@ set scrolloff=5
 set wildignore+=*.pyc
 
 " Powerline
+source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
 let g:Powerline_cache_enabled = 1
 set laststatus=2
 set t_Co=256
@@ -56,8 +59,8 @@ let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 syntax enable
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors = 256
-let g:solarized_visibility = "high"
+"let g:solarized_termcolors = 256
+"let g:solarized_visibility = "high"
 
 
 "ControlP
@@ -86,7 +89,7 @@ let g:session_autosave = 'yes'
 let g:session_default_to_last = 'yes'
 
 " NERDTree
-let NERDTreeIgnore = ['\.vim$', '\~$', '\.git', '\.svn', '\.hg', '\.swp', '\.pyc']
+let NERDTreeIgnore = ['\.vim$', '\~$', '\.git$', '\.svn', '\.hg', '\.swp', '\.pyc']
 let NERDTreeShowHidden = -1
 let NERDTreeChDirMode = 2
 
@@ -98,16 +101,17 @@ set tabstop=4
 
 filetype plugin on
 
-" Declare new style to detect bad space
-highlight BadWhitespace ctermbg=white guibg=red
-" Display tabs at the beginning of a line in Python mode as bad.
-match BadWhitespace /^\t\+/
-" Make trailing whitespace be flagged as bad.
-match BadWhitespace /\s\+$/
-
 " display when text goes more than 79 chars
 highlight OverLength ctermbg=red guibg=#592929
-2match OverLength /\%81v.\+/
+2match OverLength /\%81v.*/
+highlight ShowTrailingWhitespace ctermbg=White guibg=Red
 
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
+
+" Taglist
+let Tlist_Use_Right_Window = 1
+
+" remapping in NORMAL mode
+nmap tlo <Esc>:TlistOpen<CR>
+nmap tlt  <Esc>:TlistToggle<CR>
