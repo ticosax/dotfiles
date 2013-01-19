@@ -48,7 +48,7 @@ set wildignore+=*.pyc
 " Powerline
 let g:Powerline_cache_enabled = 1
 set laststatus=2
-set t_Co=256
+set t_Co=16
 
 let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 
@@ -56,8 +56,6 @@ let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 syntax enable
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors = 256
-let g:solarized_visibility = "high"
 
 
 "ControlP
