@@ -37,6 +37,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/taglist.vim'
 
+Bundle 'vim-scripts/git-log'
+Bundle 'vim-scripts/ShowTrailingWhitespace'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -87,7 +89,7 @@ let g:session_autosave = 'yes'
 let g:session_default_to_last = 'yes'
 
 " NERDTree
-let NERDTreeIgnore = ['\.vim$', '\~$', '\.git', '\.svn', '\.hg', '\.swp', '\.pyc']
+let NERDTreeIgnore = ['\.vim$', '\~$', '\.git$', '\.svn', '\.hg', '\.swp', '\.pyc']
 let NERDTreeShowHidden = -1
 let NERDTreeChDirMode = 2
 
@@ -102,6 +104,7 @@ filetype plugin on
 " display when text goes more than 79 chars
 highlight OverLength ctermbg=red guibg=#592929
 2match OverLength /\%81v.*/
+highlight ShowTrailingWhitespace ctermbg=White guibg=Red
 
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
