@@ -38,7 +38,6 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/taglist.vim'
-
 Bundle 'vim-scripts/git-log'
 Bundle 'vim-scripts/ShowTrailingWhitespace'
 
