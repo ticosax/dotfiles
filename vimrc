@@ -119,6 +119,12 @@ au BufNewFile,BufRead *.zcml set filetype=xml
 " Taglist
 let Tlist_Use_Right_Window = 1
 
+" Riv
+let g:riv_fold_auto_update = 0
+
+" spell
+au BufRead *.rst setlocal spell
+
 " remapping in NORMAL mode
 nmap tlo <Esc>:TlistOpen<CR>
 nmap tlt  <Esc>:TlistToggle<CR>
