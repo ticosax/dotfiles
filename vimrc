@@ -106,7 +106,7 @@ match BadWhitespace /^\t\+/
 match BadWhitespace /\s\+$/
 
 " display when text goes more than 79 chars
-highlight OverLength ctermbg=red guibg=#592929
+highlight OverLength ctermbg=Red guibg=#592929
 2match OverLength /\%81v.\+/
 highlight ShowTrailingWhitespace ctermbg=White guibg=Red
 
