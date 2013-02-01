@@ -38,6 +38,7 @@ Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/git-log'
 Bundle 'vim-scripts/ShowTrailingWhitespace'
+Bundle 'vim-scripts/pythonhelper'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
