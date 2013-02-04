@@ -9,3 +9,6 @@ fc-cache -vf ~/.fonts
 # TODO automatize this
 echo 'Configure your terminal with this font'
 vim +BundleInstall +qall
+
+cd ~/.vim.bundle/jedi-vim && git submodule update --init
+cd -

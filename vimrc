@@ -20,9 +20,6 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'Lokaltog/powerline'
@@ -36,10 +33,12 @@ Bundle 'python.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Rykka/riv.vim'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/git-log'
 Bundle 'vim-scripts/ShowTrailingWhitespace'
+Bundle 'vim-scripts/pythonhelper'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -49,7 +48,7 @@ set scrolloff=5
 set wildignore+=*.pyc
 
 " Powerline
-source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
+source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
 let g:Powerline_cache_enabled = 1
 set laststatus=2
 set t_Co=16
@@ -108,7 +107,7 @@ match BadWhitespace /^\t\+/
 match BadWhitespace /\s\+$/
 
 " display when text goes more than 79 chars
-highlight OverLength ctermbg=red guibg=#592929
+highlight OverLength ctermbg=Red guibg=#592929
 2match OverLength /\%81v.\+/
 highlight ShowTrailingWhitespace ctermbg=White guibg=Red
 
@@ -117,6 +116,12 @@ au BufNewFile,BufRead *.zcml set filetype=xml
 
 " Taglist
 let Tlist_Use_Right_Window = 1
+
+" Riv
+let g:riv_fold_auto_update = 0
+
+" spell
+au BufRead *.rst setlocal spell
 
 " remapping in NORMAL mode
 nmap tlo <Esc>:TlistOpen<CR>
