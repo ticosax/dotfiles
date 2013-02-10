@@ -1,3 +1,4 @@
+autocmd! bufwritepost .vimrc source %
 " to bootstrap
 " git clone git://github.com/ticosax/dotfiles.git src/dotfiles
 " mv .vimrc .vimrc.backup
