@@ -6,7 +6,7 @@ install:
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
-	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "Source Code Pro for Powerline 12"
+	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "Source Code Pro for Powerline Light 12"
 	vim +BundleInstall +qall
 
 	cd ~/.vim/bundle/jedi-vim && git submodule update --init
