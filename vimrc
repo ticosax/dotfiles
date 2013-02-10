@@ -52,6 +52,7 @@ source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
 let g:Powerline_cache_enabled = 1
 set laststatus=2
 set t_Co=16
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 
