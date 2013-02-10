@@ -4,7 +4,7 @@ install:
 	ln -s `pwd`/vimrc ~/.vimrc
 	test -d ../powerline-fonts || git clone https://github.com/Lokaltog/powerline-fonts.git ../powerline-fonts
 	mkdir -p ~/.fonts/
-	cp ../powerline-fonts/Menlo/Menlo\ Regular\ for\ Powerline.otf ~/.fonts/
+	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
 	# TODO automatize this
 	echo 'Configure your terminal with this font'
