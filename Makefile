@@ -6,8 +6,7 @@ install:
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
-	# TODO automatize this
-	echo 'Configure your terminal with this font'
+	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "Source Code Pro for Powerline 12"
 	vim +BundleInstall +qall
 
 	cd ~/.vim/bundle/jedi-vim && git submodule update --init
@@ -16,4 +15,11 @@ install:
 clean:
 	rm -rf ../powerline-fonts ~/.fonts
 	fc-cache -v
+	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "DejaVu Sans Mono"
+
+update:
+	cd ../powerline-fonts && git pull origin master
+	cd -
+	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
+	fc-cache -vf ~/.fonts
 
