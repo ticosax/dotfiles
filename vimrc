@@ -117,6 +117,9 @@ let g:riv_fold_auto_update = 0
 " spell
 au BufRead *.rst setlocal spell
 
+" Yank to system clipboard everytime
+set clipboard=unnamedplus
+
 " remapping in NORMAL mode
 nmap tlo <Esc>:TlistOpen<CR>
 nmap tlt  <Esc>:TlistToggle<CR>
