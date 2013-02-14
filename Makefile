@@ -1,5 +1,5 @@
 install:
-	sudo apt-get install vim exuberant-ctags python-fontforge
+	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge
 	rm -f ~/.vimrc
 	ln -s `pwd`/vimrc ~/.vimrc
 	test -d ../powerline-fonts || git clone https://github.com/Lokaltog/powerline-fonts.git ../powerline-fonts

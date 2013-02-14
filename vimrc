@@ -100,13 +100,6 @@ set tabstop=4
 
 filetype plugin on
 
-" Declare new style to detect bad space
-highlight BadWhitespace ctermbg=white guibg=red
-" Display tabs at the beginning of a line in Python mode as bad.
-match BadWhitespace /^\t\+/
-" Make trailing whitespace be flagged as bad.
-match BadWhitespace /\s\+$/
-
 " display when text goes more than 79 chars
 highlight OverLength ctermbg=Red guibg=#592929
 2match OverLength /\%81v.\+/
@@ -124,6 +117,12 @@ let g:riv_fold_auto_update = 0
 " spell
 au BufRead *.rst setlocal spell
 
+" Yank to system clipboard everytime
+set clipboard=unnamedplus
+
 " remapping in NORMAL mode
 nmap tlo <Esc>:TlistOpen<CR>
 nmap tlt  <Esc>:TlistToggle<CR>
+" mapping in all modes
+map <Leader>b Oimport ipdb; ipdb.set_trace()<C-c>
+map <Leader>u O# -*- coding: utf-8 -*-<C-c>
