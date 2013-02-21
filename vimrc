@@ -85,8 +85,8 @@ filetype plugin indent on     " required!
 "set colorcolumn=80
 
 " sessions
-let g:session_autosave = 'yes'
-let g:session_default_to_last = 'yes'
+" let g:session_autosave = 'yes'
+" let g:session_default_to_last = 'yes'
 
 " NERDTree
 let NERDTreeIgnore = ['\.vim$', '\~$', '\.git$', '\.svn', '\.hg', '\.swp', '\.pyc']
