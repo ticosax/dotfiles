@@ -17,7 +17,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-"
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
@@ -122,8 +121,7 @@ au BufRead *.rst setlocal spell
 set clipboard=unnamedplus
 
 " remapping in NORMAL mode
-nmap tlo <Esc>:TlistOpen<CR>
-nmap tlt  <Esc>:TlistToggle<CR>
+nmap <F3> <Esc>:TlistOpen<CR>
 " mapping in all modes
 map <Leader>b Oimport ipdb; ipdb.set_trace()<C-c>
 map <Leader>u O# -*- coding: utf-8 -*-<C-c>
