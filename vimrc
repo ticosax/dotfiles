@@ -48,7 +48,8 @@ set scrolloff=5
 set wildignore+=*.pyc
 
 " Powerline
-source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
 let g:Powerline_cache_enabled = 1
 set laststatus=2
 set t_Co=16
