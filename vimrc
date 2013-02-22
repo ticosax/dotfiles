@@ -90,10 +90,10 @@ set tabstop=4
 
 filetype plugin on
 
-" display when text goes more than 79 chars
-highlight OverLength ctermbg=Red guibg=#592929
-2match OverLength /\%81v.\+/
+au FileType python source ~/src/dotfiles/python_vimrc.vim
+
 highlight ShowTrailingWhitespace ctermbg=White guibg=Red
+
 
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
@@ -112,6 +112,3 @@ set clipboard=unnamedplus
 
 " remapping in NORMAL mode
 nmap <F3> <Esc>:TlistOpen<CR>
-" mapping in all modes
-map <Leader>b Oimport ipdb; ipdb.set_trace()<C-c>
-map <Leader>u O# -*- coding: utf-8 -*-<C-c>
