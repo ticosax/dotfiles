@@ -17,7 +17,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-"
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
@@ -48,7 +47,8 @@ set scrolloff=5
 set wildignore+=*.pyc
 
 " Powerline
-source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
 let g:Powerline_cache_enabled = 1
 set laststatus=2
 set t_Co=16
@@ -84,8 +84,8 @@ filetype plugin indent on     " required!
 "set colorcolumn=80
 
 " sessions
-let g:session_autosave = 'yes'
-let g:session_default_to_last = 'yes'
+" let g:session_autosave = 'yes'
+" let g:session_default_to_last = 'yes'
 
 " NERDTree
 let NERDTreeIgnore = ['\.vim$', '\~$', '\.git$', '\.svn', '\.hg', '\.swp', '\.pyc']
@@ -121,8 +121,7 @@ au BufRead *.rst setlocal spell
 set clipboard=unnamedplus
 
 " remapping in NORMAL mode
-nmap tlo <Esc>:TlistOpen<CR>
-nmap tlt  <Esc>:TlistToggle<CR>
+nmap <F3> <Esc>:TlistOpen<CR>
 " mapping in all modes
 map <Leader>b Oimport ipdb; ipdb.set_trace()<C-c>
 map <Leader>u O# -*- coding: utf-8 -*-<C-c>
