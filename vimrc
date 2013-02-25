@@ -70,7 +70,6 @@ let g:ctrlp_switch_buffer = 1
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_working_path_mode = 'c'
 
-
 filetype plugin indent on     " required!
 
 " sessions
