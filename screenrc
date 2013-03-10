@@ -2,7 +2,7 @@
 escape ^Xx
 
 autodetach on
-startup_message off 
+startup_message off
 defscrollback 30000
 vbell off
 shelltitle "$ |bash"
