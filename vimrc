@@ -70,18 +70,7 @@ let g:ctrlp_switch_buffer = 1
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_working_path_mode = 'c'
 
-
 filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-"set colorcolumn=80
 
 " sessions
 " let g:session_autosave = 'yes'
@@ -100,10 +89,10 @@ set tabstop=4
 
 filetype plugin on
 
-" display when text goes more than 79 chars
-highlight OverLength ctermbg=Red guibg=#592929
-2match OverLength /\%81v.\+/
+au FileType python source ~/src/dotfiles/python_vimrc.vim
+
 highlight ShowTrailingWhitespace ctermbg=White guibg=Red
+
 
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
@@ -122,6 +111,3 @@ set clipboard=unnamedplus
 
 " remapping in NORMAL mode
 nmap <F3> <Esc>:TlistOpen<CR>
-" mapping in all modes
-map <Leader>b Oimport ipdb; ipdb.set_trace()<C-c>
-map <Leader>u O# -*- coding: utf-8 -*-<C-c>
