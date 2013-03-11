@@ -114,5 +114,8 @@ au BufRead *.rst setlocal spell
 " Yank to system clipboard everytime
 set clipboard=unnamedplus
 
+" When use compiled version of vim
+set backspace=indent,eol,start
+
 " remapping in NORMAL mode
 nmap <F3> <Esc>:TlistOpen<CR>
