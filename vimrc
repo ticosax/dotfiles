@@ -30,7 +30,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'xolox/vim-session'
 Bundle 'python.vim'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'davidhalter/jedi-vim'
+"Bundle 'davidhalter/jedi-vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Rykka/riv.vim'
 Bundle 'Valloric/YouCompleteMe'
@@ -113,6 +113,10 @@ au BufRead *.rst setlocal spell
 
 " Yank to system clipboard everytime
 set clipboard=unnamedplus
+
+" jedi-vim
+" let g:jedi#auto_initialization = 0
+" let g:jedi#auto_vim_configuration = 0
 
 " When use compiled version of vim
 set backspace=indent,eol,start
