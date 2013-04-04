@@ -41,7 +41,6 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/git-log'
 Bundle 'vim-scripts/ShowTrailingWhitespace'
 Bundle 'vim-scripts/pythonhelper'
-Bundle 'vim-scripts/YankRing.vim'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
