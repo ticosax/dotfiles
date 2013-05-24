@@ -12,7 +12,7 @@ $(REPO_PATH)gnome-terminal-colors-solarized:
 
 install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized
 	# Vim stuff
-	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge
+	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge cmake
 	rm -f ~/.vimrc
 	ln -s `pwd`/vimrc ~/.vimrc
 	mkdir -p ~/.fonts/
