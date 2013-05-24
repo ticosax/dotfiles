@@ -22,7 +22,7 @@ install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-term
 	vim +BundleInstall +qall
 	cd ~/.vim/bundle/jedi-vim && git submodule update --init && cd -
 	cd $(REPO_PATH)gnome-terminal-colors-solarized && ./set_dark.sh && cd -
-	cd ~.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
+	cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
 
 clean:
 	rm -rf $(REPO_PATH)powerline-fonts ~/.fonts
