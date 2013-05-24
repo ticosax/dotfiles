@@ -46,6 +46,7 @@ Bundle 'vim-scripts/YankRing.vim'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 
+let g:session_autosave = 'no'
 "Globals
 set scrolloff=5
 set wildignore+=*.pyc
