@@ -64,6 +64,7 @@ let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 syntax enable
 set background=dark
 colorscheme solarized
+call togglebg#map("<F5>")
 
 
 "ControlP
