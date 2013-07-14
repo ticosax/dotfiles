@@ -102,7 +102,6 @@ au FileType python source ~/src/dotfiles/python_vimrc.vim
 
 highlight ShowTrailingWhitespace ctermbg=White guibg=Red
 
-set colorcolumn=80
 
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
