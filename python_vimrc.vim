@@ -1,6 +1,6 @@
 " display when text goes more than 79 chars
-highlight OverLength ctermbg=Red guibg=#592929
-2match OverLength /\%81v.\+/
+" highlight OverLength ctermbg=Red guibg=#592929
+" 2match OverLength /\%81v.\+/
 
 set nosmartindent
 
