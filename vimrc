@@ -24,7 +24,7 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'Lokaltog/powerline'
 Bundle 'kien/ctrlp.vim'
-Bundle 'indentpython'
+" Bundle 'indentpython'
 Bundle 'vim-flake8'
 Bundle 'scrooloose/nerdtree'
 " Bundle 'xolox/vim-session'
@@ -59,7 +59,7 @@ set laststatus=2
 set t_Co=16
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
-let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
+" let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 
 " solarized
 syntax enable
