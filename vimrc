@@ -92,6 +92,9 @@ set smartindent
 set expandtab
 set shiftwidth=4
 set tabstop=4
+set nowrap
+set backspace=indent,eol,start
+set cursorline
 
 filetype plugin on
 
@@ -119,9 +122,6 @@ set clipboard=unnamedplus
 " jedi-vim
 " let g:jedi#auto_initialization = 0
 " let g:jedi#auto_vim_configuration = 0
-
-" When use compiled version of vim
-set backspace=indent,eol,start
 
 " remapping in NORMAL mode
 nmap <F3> <Esc>:TlistOpen<CR>
