@@ -12,7 +12,7 @@ $(REPO_PATH)gnome-terminal-colors-solarized:
 
 install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized
 	# Vim stuff
-	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge cmake
+	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge cmake python-dev
 	rm -f ~/.vimrc
 	ln -s `pwd`/vimrc ~/.vimrc
 	mkdir -p ~/.fonts/
@@ -24,6 +24,8 @@ install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-term
 	cd ~/.vim/bundle/jedi-vim && git submodule update --init && cd -
 	cd $(REPO_PATH)gnome-terminal-colors-solarized && ./set_dark.sh && cd -
 	cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
+	wget https://gist.github.com/woods/31967/raw/7628a34db65677cf9f48d11b4f4450f02fb38ec6/git_svn_bash_prompt.sh -O  ~/.git_svn_bash_prompt
+	echo ". ~/.git_svn_bash_prompt" | tee -a ~/.bashrc
 
 clean:
 	rm -rf $(REPO_PATH)powerline-fonts ~/.fonts
