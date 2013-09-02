@@ -15,6 +15,7 @@ install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-term
 	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge cmake python-dev
 	rm -f ~/.vimrc
 	ln -s `pwd`/vimrc ~/.vimrc
+	ln -s `pwd`/.bash_aliases ~/.bash_aliases
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
