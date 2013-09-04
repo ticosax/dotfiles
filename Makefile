@@ -25,7 +25,7 @@ install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-term
 	cd ~/.vim/bundle/jedi-vim && git submodule update --init && cd -
 	cd $(REPO_PATH)gnome-terminal-colors-solarized && ./set_dark.sh && cd -
 	cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
-	wget https://gist.github.com/woods/31967/raw/7628a34db65677cf9f48d11b4f4450f02fb38ec6/git_svn_bash_prompt.sh -O  ~/.git_svn_bash_prompt
+	wget https://gist.github.com/ticosax/6437234/raw/0ee0e1b01534921a3a6f181100f8326127325a19/git_svn_bash_prompt.sh -O ~/.git_svn_bash_prompt
 	echo ". ~/.git_svn_bash_prompt" | tee -a ~/.bashrc
 
 clean:
