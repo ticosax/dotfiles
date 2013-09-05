@@ -6,5 +6,12 @@ set colorcolumn=80
 set nosmartindent
 
 " mapping in all modes
-map <Leader>b Oimport ipdb; ipdb.set_trace()<C-c>
+map <Leader>pdb Oimport ipdb; ipdb.set_trace()<C-c>
 map <Leader>u O# -*- coding: utf-8 -*-<C-c>
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+" let g:pymode = 1
+" let g:pymode_run = 0
+" let g:pymode_rope_vim_completion = 0
+" let g:pymode_folding = 0
+" let g:pymode_syntax = 0

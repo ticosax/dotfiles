@@ -8,6 +8,15 @@ autocmd! bufwritepost .vimrc source %
 
 set nocompatible               " be iMproved
 filetype off                   " required!
+set copyindent
+set number
+set shiftround
+set showmatch
+set smartcase
+set hlsearch
+set nobackup
+set noswapfile
+set hidden
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -28,7 +37,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'vim-flake8'
 Bundle 'scrooloose/nerdtree'
 " Bundle 'xolox/vim-session'
-Bundle 'python.vim'
+" Bundle 'python.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'altercation/vim-colors-solarized'
@@ -40,8 +49,10 @@ Bundle 'amitdev/vimpy'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/git-log'
-Bundle 'vim-scripts/ShowTrailingWhitespace'
+" Bundle 'vim-scripts/ShowTrailingWhitespace'
 Bundle 'vim-scripts/pythonhelper'
+Bundle 'vim-scripts/YankRing.vim'
+Bundle 'sjbach/lusty'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -100,7 +111,7 @@ filetype plugin on
 
 au FileType python source ~/src/dotfiles/python_vimrc.vim
 
-highlight ShowTrailingWhitespace ctermbg=White guibg=Red
+" highlight ShowTrailingWhitespace ctermbg=White guibg=Red
 
 
 " XML extensions
@@ -124,3 +135,5 @@ set clipboard=unnamedplus
 
 " remapping in NORMAL mode
 nmap <F3> <Esc>:TlistOpen<CR>
+
+set tags=~/mytags

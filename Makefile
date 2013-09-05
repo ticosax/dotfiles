@@ -10,12 +10,19 @@ $(REPO_PATH)gnome-terminal-colors-solarized:
 	# Solarized for terminal
 	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git $(REPO_PATH)gnome-terminal-colors-solarized
 
-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized
-	# Vim stuff
-	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge cmake python-dev
+~/.ctags:
+	ln -s `pwd`/ctags ~/.ctags
+
+~/.bash_aliases:
+	ln -s `pwd`/bash_aliases ~/.bash_aliases
+
+~/.vimrc:
 	rm -f ~/.vimrc
 	ln -s `pwd`/vimrc ~/.vimrc
-	ln -s `pwd`/.bash_aliases ~/.bash_aliases
+
+install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc
+	# Vim stuff
+	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge cmake python-dev ruby ruby-dev
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
