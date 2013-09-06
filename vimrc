@@ -131,4 +131,6 @@ set clipboard=unnamedplus
 " remapping in NORMAL mode
 nmap <F3> <Esc>:TlistOpen<CR>
 
+noremap <F6> :CommandTFlush<CR>
+
 set tags=~/mytags
