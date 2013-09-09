@@ -5,7 +5,7 @@ install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/command-t/
 		status=$$?; \
 		if [ $$status = 1 ]; then \
 	    echo "no match" && crontab -l > /tmp/tmpcrontab; \
-		echo "1 * * * * ctags -R -o ~/mytags ~/src" >> /tmp/tmpcrontab; \
+		echo "1 * * * * ctags -R -o ~/.mytags ~/src" >> /tmp/tmpcrontab; \
 	    crontab /tmp/tmpcrontab; \
 		fi
 	cd ~/.vim/bundle/jedi-vim && git submodule update --init && cd -
