@@ -134,5 +134,6 @@ set clipboard=unnamedplus
 nmap <F3> <Esc>:TlistOpen<CR>
 
 noremap <F6> :CommandTFlush<CR>
+nnoremap <F4> :set hlsearch!<CR>
 
 set tags=~/mytags
