@@ -104,11 +104,13 @@ set shiftwidth=4
 set tabstop=4
 set nowrap
 set backspace=indent,eol,start
+
 set cursorline
 
 filetype plugin on
 
 au FileType python source ~/src/dotfiles/python_vimrc.vim
+au FileType yaml source ~/src/dotfiles/yaml_vimrc.vim
 
 " highlight ShowTrailingWhitespace ctermbg=White guibg=Red
 
