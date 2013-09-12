@@ -130,10 +130,10 @@ au BufRead *.rst setlocal spell
 " Yank to system clipboard everytime
 set clipboard=unnamedplus
 
+set tags=~/.mytags
+
 " remapping in NORMAL mode
 nmap <F3> <Esc>:TlistOpen<CR>
 
 noremap <F6> :CommandTFlush<CR>
 nnoremap <F4> :set hlsearch!<CR>
-
-set tags=~/mytags
