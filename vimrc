@@ -112,6 +112,8 @@ filetype plugin on
 
 au FileType python source ~/src/dotfiles/python_vimrc.vim
 au FileType yaml source ~/src/dotfiles/yaml_vimrc.vim
+au FileType rst source ~/src/dotfiles/rst_vimrc.vim
+au FileType markdown source ~/src/dotfiles/markdown_vimrc.vim
 
 " highlight ShowTrailingWhitespace ctermbg=White guibg=Red
 
@@ -124,9 +126,6 @@ let Tlist_Use_Right_Window = 1
 
 " Riv
 let g:riv_fold_auto_update = 0
-
-" spell
-au BufRead *.rst setlocal spell
 
 " Yank to system clipboard everytime
 set clipboard=unnamedplus
