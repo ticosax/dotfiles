@@ -52,6 +52,7 @@ Bundle 'vim-scripts/git-log'
 Bundle 'vim-scripts/pythonhelper'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'sjbach/lusty'
+Bundle 'hallison/vim-markdown'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
