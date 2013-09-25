@@ -41,7 +41,10 @@ delete-vimrc:
 ~/.ackrc:
 	ln -s `pwd`/ackrc ~/.ackrc
 
-pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc
+~/.gitignore_global:
+	ln -s `pwd`/gitignore_global ~/.gitignore_global
+
+pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global
 	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge cmake python-dev ruby ruby-dev
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
@@ -49,6 +52,7 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-
 	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "Source Code Pro for Powerline Light 12"
 	gconftool --set /apps/gnome-terminal/profiles/Default/use_system_font --type=bool "false"
 	vim +BundleInstall +qall
+	git config --global core.excludesfile ~/.gitignore_global
 
 ~/.vim/bundle/YouCompleteMe/python:
 	cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
