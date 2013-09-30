@@ -54,6 +54,7 @@ Bundle 'vim-scripts/YankRing.vim'
 Bundle 'sjbach/lusty'
 Bundle 'hallison/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'saltstack/salt-vim'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
