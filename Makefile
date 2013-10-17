@@ -40,10 +40,13 @@ delete-vimrc:
 ~/.ackrc:
 	ln -s `pwd`/ackrc ~/.ackrc
 
+~/.screenrc:
+	ln -s `pwd`/screenrc ~/.screenrc
+
 ~/.gitignore_global:
 	ln -s `pwd`/gitignore_global ~/.gitignore_global
 
-pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global
+pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc
 	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge cmake python-dev ruby ruby-dev
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
