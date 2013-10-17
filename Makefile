@@ -8,7 +8,6 @@ install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/command-t/
 		echo "1 * * * * ctags -R -o ~/.mytags ~/src" >> /tmp/tmpcrontab; \
 	    crontab /tmp/tmpcrontab; \
 		fi
-	cd ~/.vim/bundle/jedi-vim && git submodule update --init && cd -
 	cd $(REPO_PATH)gnome-terminal-colors-solarized && ./set_dark.sh && cd -
 	echo "Done"
 
@@ -32,10 +31,10 @@ $(REPO_PATH)gnome-terminal-colors-solarized:
 	ln -s `pwd`/bash_aliases ~/.bash_aliases
 
 delete-vimrc:
-	rm ~/.vimrc
+	rm -f ~/.vimrc
 
 ~/.vimrc: delete-vimrc
-	rm -f ~/.vimrc
+
 	ln -s `pwd`/vimrc ~/.vimrc
 
 ~/.ackrc:
