@@ -10,7 +10,8 @@ map <Leader>pdb Oimport ipdb; ipdb.set_trace()<C-c>
 map <Leader>u O# -*- coding: utf-8 -*-<C-c>
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
-autocmd BufWritePost *.py call Flake8()
+
+" autocmd BufWritePost *.py call Flake8()
 " let g:pymode = 1
 " let g:pymode_run = 0
 " let g:pymode_rope_vim_completion = 0

@@ -1,4 +1,4 @@
-autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost ~/.vimrc source %
 " to bootstrap
 " git clone git://github.com/ticosax/dotfiles.git src/dotfiles
 " mv .vimrc .vimrc.backup
@@ -34,10 +34,9 @@ Bundle 'FuzzyFinder'
 Bundle 'Lokaltog/powerline'
 Bundle 'kien/ctrlp.vim'
 " Bundle 'indentpython'
-Bundle 'nvie/vim-flake8'
+" Bundle 'nvie/vim-flake8'
 Bundle 'scrooloose/nerdtree'
 " Bundle 'xolox/vim-session'
-" Bundle 'python.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Rykka/riv.vim'
@@ -49,7 +48,8 @@ Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/git-log'
 " Bundle 'vim-scripts/ShowTrailingWhitespace'
-Bundle 'vim-scripts/pythonhelper'
+" Bundle 'vim-scripts/pythonhelper'
+Bundle 'klen/python-mode'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'sjbach/lusty'
@@ -74,6 +74,18 @@ set t_Co=16
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 " let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
+
+" python-mode
+" Move this section to ~/src/dotfiles/python_vimrc.vim
+let g:pymode_breakpoint = 'disabled'
+let g:pymode_run = 0
+let g:pymode_lint_ignore = "C0110"
+let g:pymode_rope_vim_completion = 0
+let g:pymode_folding = 0
+" let g:pymode_syntax_builtin_objs = 0
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 0
+let g:pymode_syntax_highlight_self = 1
 
 " solarized
 syntax enable
@@ -102,11 +114,13 @@ let NERDTreeShowHidden = -1
 let NERDTreeChDirMode = 2
 
 " indentation
-set smartindent
+" set smartindent
+set smarttab
 set expandtab
 set shiftwidth=4
 set tabstop=4
 set nowrap
+set softtabstop=4
 set backspace=indent,eol,start
 
 set cursorline
