@@ -56,9 +56,8 @@ Bundle 'sjbach/lusty'
 Bundle 'hallison/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'saltstack/salt-vim'
+Bundle 'wincent/Command-T'
 
-" non github repos
-Bundle 'git://git.wincent.com/command-t.git'
 
 let g:session_autosave = 'no'
 "Globals
