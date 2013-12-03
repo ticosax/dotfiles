@@ -1,6 +1,6 @@
 REPO_PATH=~/src/
 
-install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/command-t/ruby/command-t/ext.so ~/.git_svn_bash_prompt
+install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/Command-T/ruby/command-t/ext.so ~/.git_svn_bash_prompt
 	- crontab -l | grep ctags;\
 		status=$$?; \
 		if [ $$status = 1 ]; then \
@@ -59,8 +59,8 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-
 ~/.vim/bundle/YouCompleteMe/python:
 	cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
 
-~/.vim/bundle/command-t/ruby/command-t/ext.so:
-	cd ~/.vim/bundle/command-t/ruby/command-t && ruby extconf.rb && make && cd -
+~/.vim/bundle/Command-T/ruby/command-t/ext.so:
+	cd ~/.vim/bundle/Command-T/ruby/command-t && ruby extconf.rb && make && cd -
 
 clean:
 	rm -rf $(REPO_PATH)powerline-fonts ~/.fonts
