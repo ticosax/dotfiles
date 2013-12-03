@@ -83,9 +83,10 @@ let g:pymode_lint_ignore = "C0110"
 let g:pymode_rope_vim_completion = 0
 let g:pymode_folding = 0
 " let g:pymode_syntax_builtin_objs = 0
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 0
-let g:pymode_syntax_highlight_self = 1
+" let g:pymode_syntax = 1
+" let g:pymode_syntax_all = 0
+" let g:pymode_syntax_highlight_self = 1
+" let g:pymode_syntax_string_format = 1
 
 " solarized
 syntax enable
