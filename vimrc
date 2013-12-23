@@ -57,6 +57,7 @@ Bundle 'hallison/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'saltstack/salt-vim'
 Bundle 'wincent/Command-T'
+Bundle 'greyblake/vim-preview'
 
 
 let g:session_autosave = 'no'
@@ -150,6 +151,8 @@ set clipboard=unnamedplus
 
 set tags=~/.mytags
 
+" vim-preview
+nmap <Leader>pre :Preview<CR>
 " remapping in NORMAL mode
 nmap <F3> <Esc>:TlistOpen<CR>
 
