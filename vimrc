@@ -80,6 +80,7 @@ let g:pymode_breakpoint = 'disabled'
 let g:pymode_run = 0
 let g:pymode_lint_ignore = "C0110"
 let g:pymode_rope_vim_completion = 0
+let g:pymode_rope_completion = 0
 let g:pymode_folding = 0
 " let g:pymode_syntax_builtin_objs = 0
 " let g:pymode_syntax = 1
