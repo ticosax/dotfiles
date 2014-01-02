@@ -1,13 +1,13 @@
 REPO_PATH=~/src/
 
-install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/command-t/ruby/command-t/ext.so ~/.git_svn_bash_prompt
-	- crontab -l | grep ctags;\
-		status=$$?; \
-		if [ $$status = 1 ]; then \
-	    echo "no match" && crontab -l > /tmp/tmpcrontab; \
-		echo "1 * * * * ctags -R -o ~/.mytags ~/src" >> /tmp/tmpcrontab; \
-	    crontab /tmp/tmpcrontab; \
-		fi
+install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/Command-T/ruby/command-t/ext.so ~/.git_svn_bash_prompt
+	# - crontab -l | grep ctags;\
+	# 	status=$$?; \
+	# 	if [ $$status = 1 ]; then \
+	#     echo "no match" && crontab -l > /tmp/tmpcrontab; \
+	# 	echo "1 * * * * ctags -R -o ~/.mytags ~/src" >> /tmp/tmpcrontab; \
+	#     crontab /tmp/tmpcrontab; \
+	# 	fi
 	cd $(REPO_PATH)gnome-terminal-colors-solarized && ./set_dark.sh && cd -
 	echo "Done"
 
@@ -47,7 +47,7 @@ delete-vimrc:
 	ln -s `pwd`/gitignore_global ~/.gitignore_global
 
 pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc
-	sudo apt-get install vim vim-gnome exuberant-ctags python-fontforge cmake python-dev ruby ruby-dev
+	sudo apt-get install -y vim vim-gnome exuberant-ctags python-fontforge cmake python-dev ruby ruby-dev
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
@@ -59,8 +59,8 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-
 ~/.vim/bundle/YouCompleteMe/python:
 	cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
 
-~/.vim/bundle/command-t/ruby/command-t/ext.so:
-	cd ~/.vim/bundle/command-t/ruby/command-t && ruby extconf.rb && make && cd -
+~/.vim/bundle/Command-T/ruby/command-t/ext.so:
+	cd ~/.vim/bundle/Command-T/ruby/command-t && ruby extconf.rb && make && cd -
 
 clean:
 	rm -rf $(REPO_PATH)powerline-fonts ~/.fonts
