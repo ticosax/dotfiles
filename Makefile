@@ -51,7 +51,7 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
-	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "Source Code Pro for Powerline Light 12"
+	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "Source Code Pro for Powerline Light 10"
 	gconftool --set /apps/gnome-terminal/profiles/Default/use_system_font --type=bool "false"
 	vim +BundleInstall +qall
 	git config --global core.excludesfile ~/.gitignore_global
