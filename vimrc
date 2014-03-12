@@ -52,6 +52,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'saltstack/salt-vim'
 Bundle 'wincent/Command-T'
 Bundle 'greyblake/vim-preview'
+Bundle "ekalinin/Dockerfile.vim"
 
 
 let g:session_autosave = 'no'
