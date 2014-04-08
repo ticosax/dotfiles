@@ -51,7 +51,7 @@ Bundle 'saltstack/salt-vim'
 Bundle 'wincent/Command-T'
 Bundle 'greyblake/vim-preview'
 Bundle "ekalinin/Dockerfile.vim"
-
+Bundle "jnwhiteh/vim-golang"
 
 let g:session_autosave = 'no'
 "Globals
