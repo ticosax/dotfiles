@@ -31,8 +31,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'L9'
 Bundle 'Lokaltog/powerline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Rykka/riv.vim'
@@ -91,24 +89,11 @@ colorscheme solarized
 call togglebg#map("<F5>")
 
 
-"ControlP
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-" let ctrlp_by_filename = 0
-let g:ctrlp_lazy_update = 1
-let g:ctrlp_switch_buffer = 1
-let g:ctrlp_working_path_mode = 2
-let g:ctrlp_working_path_mode = 'c'
-
 filetype plugin indent on     " required!
 
 " sessions
 " let g:session_autosave = 'yes'
 " let g:session_default_to_last = 'yes'
-
-" NERDTree
-let NERDTreeIgnore = ['\.vim$', '\~$', '\.git$', '\.svn', '\.hg', '\.swp', '\.pyc']
-let NERDTreeShowHidden = -1
-let NERDTreeChDirMode = 2
 
 " indentation
 " set smartindent
@@ -130,7 +115,6 @@ au FileType rst source ~/src/dotfiles/rst_vimrc.vim
 au FileType markdown source ~/src/dotfiles/markdown_vimrc.vim
 
 " highlight ShowTrailingWhitespace ctermbg=White guibg=Red
-
 
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
