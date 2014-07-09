@@ -52,9 +52,9 @@ delete-vimrc:
 pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
 	sudo apt-get install -y vim vim-gnome exuberant-ctags python-fontforge cmake python-dev ruby ruby-dev
 	mkdir -p ~/.fonts/
-	find ../powerline-fonts -name '*.otf' -exec cp {} -t $$HOME/.fonts/ \;
+	find ../powerline-fonts -name '*.?tf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
-	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "Source Code Pro for Powerline Light 10"
+	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "Ubuntu Mono derivative Powerline 10"
 	gconftool --set /apps/gnome-terminal/profiles/Default/use_system_font --type=bool "false"
 	vim +BundleInstall +qall
 	git config --global core.excludesfile ~/.gitignore_global
