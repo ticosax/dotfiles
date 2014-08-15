@@ -52,6 +52,7 @@ Bundle 'wincent/Command-T'
 Bundle 'greyblake/vim-preview'
 Bundle "ekalinin/Dockerfile.vim"
 Bundle "jnwhiteh/vim-golang"
+Bundle "elzr/vim-json"
 
 let g:session_autosave = 'no'
 "Globals
