@@ -1,6 +1,6 @@
 REPO_PATH=~/src/
 
-install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/Command-T/ruby/command-t/ext.so ~/.git_svn_bash_prompt
+install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/Command-T/ruby/command-t/ext.so ~/.git_svn_bash_prompt ~/.oh-my-zsh
 	# - crontab -l | grep ctags;\
 	# 	status=$$?; \
 	# 	if [ $$status = 1 ]; then \
@@ -56,6 +56,7 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-
 	fc-cache -vf ~/.fonts
 	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "Ubuntu Mono derivative Powerline 10"
 	gconftool --set /apps/gnome-terminal/profiles/Default/use_system_font --type=bool "false"
+	gconftool --set /apps/gnome-terminal/profiles/Default/custom_command --type=string "/usr/bin/zsh"
 	vim +BundleInstall +qall
 	git config --global core.excludesfile ~/.gitignore_global
 
@@ -64,6 +65,9 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-
 
 ~/.vim/bundle/Command-T/ruby/command-t/ext.so:
 	cd ~/.vim/bundle/Command-T/ruby/command-t && ruby extconf.rb && make && cd -
+
+~/.oh-my-zsh:
+	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 clean:
 	rm -rf $(REPO_PATH)powerline-fonts ~/.fonts
