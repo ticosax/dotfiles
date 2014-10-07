@@ -53,6 +53,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 bindkey -v
+bindkey "^R" history-incremental-pattern-search-backward
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
