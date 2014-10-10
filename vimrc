@@ -6,6 +6,7 @@ autocmd! bufwritepost ~/.vimrc source %
 " Run Vi, than type :BundleUpdate
 " that's all folks
 
+set exrc
 set nocompatible               " be iMproved
 filetype off                   " required!
 set copyindent
