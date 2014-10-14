@@ -1,6 +1,6 @@
 REPO_PATH=~/src/
 
-install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/Command-T/ruby/command-t/ext.so ~/.git_svn_bash_prompt ~/.oh-my-zsh
+install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/Command-T/ruby/command-t/ext.so ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc
 	# - crontab -l | grep ctags;\
 	# 	status=$$?; \
 	# 	if [ $$status = 1 ]; then \
@@ -69,6 +69,9 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-
 
 ~/.oh-my-zsh:
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+~/.zshrc:
+	ln -s $(REPO_PATH)zshrc ~/.zshrc
 
 clean:
 	rm -rf $(REPO_PATH)powerline-fonts ~/.fonts
