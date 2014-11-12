@@ -12,6 +12,7 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " autocmd BufWritePost *.py call Flake8()
+let g:pymode_rope = 0
 " let g:pymode = 1
 " let g:pymode_run = 0
 " let g:pymode_rope_vim_completion = 0
