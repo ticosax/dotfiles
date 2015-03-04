@@ -71,7 +71,7 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 ~/.zshrc:
-	ln -s $(REPO_PATH)zshrc ~/.zshrc
+	ln -s $(REPO_PATH)dotfiles/zshrc ~/.zshrc
 
 clean:
 	rm -rf $(REPO_PATH)powerline-fonts ~/.fonts
