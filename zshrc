@@ -79,7 +79,7 @@ unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-. /usr/local/bin/virtualenvwrapper.sh
+. /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
