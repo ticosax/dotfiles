@@ -1,1 +1,1 @@
---ignore-dirs=migrations
+--ignore-dir=migrations
