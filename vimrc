@@ -33,7 +33,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'L9'
 Bundle 'Lokaltog/powerline'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'blueyed/vim-colors-solarized'
 " Bundle 'Rykka/riv.vim'
 " Bundle "Rykka/clickable.vim"
 Bundle 'Valloric/YouCompleteMe'
@@ -57,6 +57,8 @@ Bundle "jnwhiteh/vim-golang"
 Bundle "elzr/vim-json"
 Bundle "wting/rust.vim"
 Bundle "toml-lang/toml"
+Bundle "blueyed/vim-diminactive"
+Bundle "kopischke/vim-fetch"
 
 let g:session_autosave = 'no'
 "Globals
@@ -134,6 +136,9 @@ let g:riv_fold_auto_update = 0
 set clipboard=unnamedplus
 
 set tags=~/.mytags
+
+" markdown
+let g:vim_markdown_folding_disabled=1
 
 " vim-preview
 nmap <Leader>pre :Preview<CR>
