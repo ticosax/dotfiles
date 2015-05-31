@@ -6,7 +6,7 @@ let g:pymode_options_colorcolumn = 1
 set nosmartindent
 
 " mapping in all modes
-map <Leader>pdb Oimport ipdb; ipdb.set_trace()<C-c>
+map <Leader>pdb Oimport pdb; pdb.set_trace()<C-c>
 map <Leader>u O# -*- coding: utf-8 -*-<C-c>
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
