@@ -18,3 +18,4 @@ let g:pymode_rope = 0
 " let g:pymode_rope_vim_completion = 0
 " let g:pymode_folding = 0
 " let g:pymode_syntax = 0
+let g:pymode_lint_sort = ['E', 'C', 'I']
