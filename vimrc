@@ -59,6 +59,7 @@ Bundle "wting/rust.vim"
 Bundle "toml-lang/toml"
 Bundle "blueyed/vim-diminactive"
 Bundle "kopischke/vim-fetch"
+Bundle "tommcdo/vim-exchange"
 
 let g:session_autosave = 'no'
 "Globals
