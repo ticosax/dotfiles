@@ -1,4 +1,5 @@
 [alias]
+    ci = commit
     co = checkout
     st = status
     rbi = "!git rebase -i $(git merge-base $(git rev-parse --abbrev-ref HEAD) master)"
