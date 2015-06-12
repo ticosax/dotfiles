@@ -60,6 +60,7 @@ Bundle "toml-lang/toml"
 Bundle "blueyed/vim-diminactive"
 Bundle "kopischke/vim-fetch"
 Bundle "tommcdo/vim-exchange"
+Bundle "tpope/vim-sleuth"
 
 let g:session_autosave = 'no'
 "Globals
@@ -91,13 +92,13 @@ filetype plugin indent on     " required!
 
 " indentation
 " set smartindent
-set smarttab
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set nowrap
-set softtabstop=4
-set backspace=indent,eol,start
+" set smarttab
+" set expandtab
+" set shiftwidth=4
+" set tabstop=4
+" set nowrap
+" set softtabstop=4
+" set backspace=indent,eol,start
 
 set cursorline
 
