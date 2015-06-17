@@ -17,8 +17,8 @@ install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/Command-T/
 $(REPO_PATH)powerline-fonts:
 	git clone https://github.com/Lokaltog/powerline-fonts.git $(REPO_PATH)powerline-fonts
 
-~/.vim/bundle/vundle:
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+~/.vim/bundle/Vundle.vim:
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
 
 $(REPO_PATH)gnome-terminal-colors-solarized:
 	# Solarized for terminal
@@ -49,7 +49,7 @@ delete-vimrc:
 ~/.gitignore_global:
 	ln -s `pwd`/gitignore_global ~/.gitignore_global
 
-pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/vundle $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
+pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
 	sudo apt-get install -y vim vim-gnome exuberant-ctags python-fontforge cmake python-dev ruby ruby-dev zsh build-essential ack-grep
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.?tf' -exec cp {} -t $$HOME/.fonts/ \;
