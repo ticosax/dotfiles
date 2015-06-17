@@ -19,48 +19,49 @@ set nobackup
 set noswapfile
 set hidden
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-" My Bundles here:
+" My Plugins here:
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'L9'
-Bundle 'Lokaltog/powerline'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'blueyed/vim-colors-solarized'
-" Bundle 'Rykka/riv.vim'
-" Bundle "Rykka/clickable.vim"
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'amitdev/vimpy'
-Bundle 'vim-scripts/IndexedSearch'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'vim-scripts/git-log'
-Bundle 'klen/python-mode'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'vim-scripts/DrawIt'
-Bundle 'sjbach/lusty'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'saltstack/salt-vim'
-Bundle 'wincent/Command-T'
-Bundle 'greyblake/vim-preview'
-Bundle "ekalinin/Dockerfile.vim"
-Bundle "jnwhiteh/vim-golang"
-Bundle "elzr/vim-json"
-Bundle "wting/rust.vim"
-Bundle "toml-lang/toml"
-Bundle "blueyed/vim-diminactive"
-Bundle "kopischke/vim-fetch"
-Bundle "tommcdo/vim-exchange"
-Bundle "tpope/vim-sleuth"
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'L9'
+Plugin 'Lokaltog/powerline'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'blueyed/vim-colors-solarized'
+Plugin 'powerline/fonts'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'amitdev/vimpy'
+Plugin 'vim-scripts/IndexedSearch'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/git-log'
+Plugin 'klen/python-mode'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'vim-scripts/DrawIt'
+Plugin 'sjbach/lusty'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'saltstack/salt-vim'
+Plugin 'wincent/Command-T'
+Plugin 'greyblake/vim-preview'
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'elzr/vim-json'
+Plugin 'wting/rust.vim'
+Plugin 'toml-lang/toml'
+Plugin 'blueyed/vim-diminactive'
+Plugin 'kopischke/vim-fetch'
+Plugin 'tommcdo/vim-exchange'
+Plugin 'tpope/vim-sleuth'
+
+call vundle#end()            " required
 
 let g:session_autosave = 'no'
 "Globals
