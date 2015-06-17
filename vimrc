@@ -63,7 +63,6 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'osyo-manga/vim-over'
 Plugin 'mhinz/vim-startify'
-Plugin 'bling/vim-bufferline'
 
 call vundle#end()            " required
 
