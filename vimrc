@@ -60,6 +60,10 @@ Plugin 'blueyed/vim-diminactive'
 Plugin 'kopischke/vim-fetch'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'tpope/vim-sleuth'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'osyo-manga/vim-over'
+Plugin 'mhinz/vim-startify'
+Plugin 'bling/vim-bufferline'
 
 call vundle#end()            " required
 
@@ -128,6 +132,41 @@ set tags=~/.mytags
 
 " markdown
 let g:vim_markdown_folding_disabled=1
+
+" rainbow_parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+let g:startify_custom_header = [
+			\ '           yyyyyyyyysoo+++++////+////+//+++++++++ooosssyyyyyy',
+			\ '           yyyysss++++////////////://////+///++//++++ossssyyy',
+			\ '           yyysoo++//////:://:///:::////+///////////++oossyyh',
+			\ '           ssoo+++///:////::/:-://////::--://////////++++osss',
+			\ '           so+/////:/::::/:-:/ooossysss+o/:--:////////++o+osy',
+			\ '           +//////:::://:.:+ssoso+ssossoss+o/-:///::////++oos',
+			\ '           /////::::///:-/+soooss+osoooooosso+-://///////++oo',
+			\ '           /////::::::::-+ss+o+oo/osooo+o+oos/:://///////+++o',
+			\ '           ///:::::::/::./sso+o+o+ossooooo+os+:-//////////+++',
+			\ '           :////:/:::/:--++ooooo+:/++++++ooo+o::/:///:////+++',
+			\ '           :/::::::::::-./++so++o/:/:/:/o+o+++--://:/:////++/',
+			\ '           ///::::::::::/://ooo+o/:::/:/o+oo+/+/://///////+//',
+			\ '           ://::::::::::+++/+oo+o+/////+o+o+++o:://///////+//',
+			\ '           /://::::::::::++///+++o+o++++++++//+:///::////++/+',
+			\ '           /::/:::/:::::::::+/+//+/+/o+o/++++-:://://///+///+',
+			\ '           /::://::::::/:::-++++++++/+o++oo++-:////////////+o',
+			\ '           o+::://///::::::-+//+/+++++++o++++-:://:///+///++s',
+			\ '           so+:://////:/:::-:oo++++////+++++-:::///////:/+oos',
+			\ '           so++//::://:::::..++o///+/+++/++/-:://///////++oos',
+			\ '           soo+//::::///:--:+/+s+++///+++oo/+::://:::///++oss',
+			\ '           o+//:::----://++++/+soo///+/+oso+++o+++//:---:/++o',
+			\ '           /::/:::+o++o++oooo/oo+ooooooooo++oooo+++++////:::/',
+			\ '           :/o+oooo+o+++soo+++o/s++++++os++ooo++/+ossooooooo/',
+			\ '           osoooooooso//+o+o+ooos+oo+oo+s+o+++++oo+ooooooooos',
+			\ '           so/+++/ooo++++/////+++/oo+oo/+++++/oyoooo+ooo+///o',
+			\ '',
+			\ ]
 
 " vim-preview
 nmap <Leader>pre :Preview<CR>
