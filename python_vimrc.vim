@@ -1,11 +1,12 @@
 " python-mode
-" Move this section to ~/src/dotfiles/python_vimrc.vim
+let g:pymode_python = 'python3'
 let g:pymode_breakpoint = 'disabled'
 let g:pymode_run = 0
 let g:pymode_lint_ignore = "C0110"
 let g:pymode_rope_vim_completion = 0
 let g:pymode_rope_completion = 0
 let g:pymode_folding = 0
+let g:pymode_lint_unmodified = 1
 " let g:pymode_syntax_builtin_objs = 0
 " let g:pymode_syntax = 1
 " let g:pymode_syntax_all = 0
@@ -15,6 +16,8 @@ let g:pymode_folding = 0
 " highlight OverLength ctermbg=Red guibg=#592929
 " 2match OverLength /\%81v.\+/
 let g:pymode_options_colorcolumn = 1
+
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3.4'
 
 set nosmartindent
 
