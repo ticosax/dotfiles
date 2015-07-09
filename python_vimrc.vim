@@ -7,6 +7,7 @@ let g:pymode_rope_vim_completion = 0
 let g:pymode_rope_completion = 0
 let g:pymode_folding = 0
 let g:pymode_lint_unmodified = 1
+let g:pymode_breakpoint = 0
 " let g:pymode_syntax_builtin_objs = 0
 " let g:pymode_syntax = 1
 " let g:pymode_syntax_all = 0
