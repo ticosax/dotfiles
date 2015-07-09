@@ -113,6 +113,7 @@ set tags=~/.mytags
 
 " rainbow_parentheses
 au VimEnter * RainbowParenthesesToggle
+au VimEnter * DimInactiveToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
