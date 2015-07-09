@@ -86,16 +86,17 @@ set background=dark
 colorscheme solarized
 call togglebg#map("<F5>")
 
-
-filetype plugin indent on     " required!
-filetype plugin on
-
 au FileType python source ~/src/dotfiles/python_vimrc.vim
 au FileType yaml source ~/src/dotfiles/yaml_vimrc.vim
 au FileType rst source ~/src/dotfiles/rst_vimrc.vim
 au FileType markdown source ~/src/dotfiles/markdown_vimrc.vim
 
+filetype plugin indent on     " required!
 
+set cursorline
+
+filetype plugin on
+"
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
 
