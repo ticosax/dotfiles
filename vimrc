@@ -50,7 +50,6 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'saltstack/salt-vim'
 Plugin 'wincent/Command-T'
-Plugin 'greyblake/vim-preview'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'elzr/vim-json'
@@ -89,23 +88,6 @@ call togglebg#map("<F5>")
 
 
 filetype plugin indent on     " required!
-
-" sessions
-" let g:session_autosave = 'yes'
-" let g:session_default_to_last = 'yes'
-
-" indentation
-" set smartindent
-" set smarttab
-" set expandtab
-" set shiftwidth=4
-" set tabstop=4
-" set nowrap
-" set softtabstop=4
-" set backspace=indent,eol,start
-
-set cursorline
-
 filetype plugin on
 
 au FileType python source ~/src/dotfiles/python_vimrc.vim
@@ -113,7 +95,6 @@ au FileType yaml source ~/src/dotfiles/yaml_vimrc.vim
 au FileType rst source ~/src/dotfiles/rst_vimrc.vim
 au FileType markdown source ~/src/dotfiles/markdown_vimrc.vim
 
-" highlight ShowTrailingWhitespace ctermbg=White guibg=Red
 
 " XML extensions
 au BufNewFile,BufRead *.zcml set filetype=xml
@@ -128,9 +109,6 @@ let g:riv_fold_auto_update = 0
 set clipboard=unnamedplus
 
 set tags=~/.mytags
-
-" markdown
-let g:vim_markdown_folding_disabled=1
 
 " rainbow_parentheses
 au VimEnter * RainbowParenthesesToggle
