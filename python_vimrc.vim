@@ -19,6 +19,7 @@ let g:pymode_breakpoint = 0
 let g:pymode_options_colorcolumn = 1
 
 let g:ycm_path_to_python_interpreter = '/usr/bin/python3.4'
+let g:jedi#force_py_version = 3
 
 set nosmartindent
 

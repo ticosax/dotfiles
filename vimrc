@@ -35,7 +35,7 @@ Plugin 'Lokaltog/powerline'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'blueyed/vim-colors-solarized'
 Plugin 'powerline/fonts'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'amitdev/vimpy'
@@ -62,6 +62,7 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'osyo-manga/vim-over'
 Plugin 'mhinz/vim-startify'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()            " required
 
