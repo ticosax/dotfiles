@@ -62,7 +62,9 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'osyo-manga/vim-over'
 Plugin 'mhinz/vim-startify'
+Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
 
 call vundle#end()            " required
 
