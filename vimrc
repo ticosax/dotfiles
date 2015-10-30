@@ -37,6 +37,7 @@ Plugin 'powerline/fonts'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'seletskiy/vim-autosurround'
 Plugin 'vim-scripts/IndexedSearch'
 Plugin 'vim-scripts/git-log'
 Plugin 'klen/python-mode'
@@ -57,10 +58,20 @@ Plugin 'mhinz/vim-startify'
 Plugin 'jmcantrell/vim-virtualenv'
 " Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic', {'autoload': {'filetypes': ['lua', 'python', 'sh', 'zsh']}}
+Plugin 'sjl/gundo.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-eunuch'
+Plugin 'mkomitee/vim-gf-python'
+Plugin 'alfredodeza/pytest.vim'
+Plugin 'chrisbra/SudoEdit.vim'
 
 call vundle#end()            " required
 
 let g:session_autosave = 'no'
+set backspace=indent,eol,start
 "Globals
 set scrolloff=5
 set wildignore+=*.pyc
@@ -106,6 +117,11 @@ set clipboard=unnamedplus
 
 set tags=~/.mytags
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " rainbow_parentheses
 au VimEnter * RainbowParenthesesToggle
 au VimEnter * DimInactiveToggle
@@ -142,10 +158,14 @@ let g:startify_custom_header = [
 			\ '',
 			\ ]
 
+" tagbar
+nmap <F3> :TagbarToggle<CR>
+
+" NERDTree
+nmap <F2> :NERDTreeToggle<CR>
+
 " vim-preview
 nmap <Leader>pre :Preview<CR>
-" remapping in NORMAL mode
-nmap <F3> <Esc>:TlistOpen<CR>
 
 noremap <F6> :CommandTFlush<CR>
 nnoremap <F4> :set hlsearch!<CR>
