@@ -158,6 +158,9 @@ let g:startify_custom_header = [
 			\ '',
 			\ ]
 
+" YCM
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " tagbar
 nmap <F3> :TagbarToggle<CR>
 
