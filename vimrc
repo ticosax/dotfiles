@@ -67,6 +67,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'mkomitee/vim-gf-python'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'chrisbra/SudoEdit.vim'
+Plugin 'fisadev/vim-isort'
 
 call vundle#end()            " required
 
