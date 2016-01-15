@@ -38,3 +38,6 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " autocmd BufWritePost *.py call Flake8()
 let g:loaded_python_provider = 1
+" Sort Python imports.
+command! -range=% -nargs=* Isort :<line1>,<line2>! isort --lines 79 <args> -
+command! -range=% -nargs=* Isortdiff :<line1>,<line2>w !isort --lines 79 --diff <args> -"
