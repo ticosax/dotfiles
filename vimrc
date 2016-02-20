@@ -34,7 +34,7 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tomtom/tcomment_vim'
 Plugin 'blueyed/vim-colors-solarized'
 Plugin 'powerline/fonts'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe', {'build': './install.py'}
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'seletskiy/vim-autosurround'
