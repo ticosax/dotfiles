@@ -28,7 +28,6 @@ let g:virtualenv_auto_activate = 0
 
 " syntastic
 let g:syntastic_python_python_exec = '/usr/bin/python3.5'
-let g:pymode_virtualenv_path = $VIRTUAL_ENV
 
 set nosmartindent
 
