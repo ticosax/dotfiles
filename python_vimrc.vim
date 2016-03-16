@@ -17,6 +17,7 @@ let g:pymode_syntax = 1
 let g:pymode_rope = 0
 let g:pymode = 1
 let g:pymode_lint_sort = ['E', 'C', 'I']
+let g:pymode_indent = 0
 " display when text goes more than 79 chars
 " highlight OverLength ctermbg=Red guibg=#592929
 " 2match OverLength /\%81v.\+/
@@ -39,6 +40,8 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " autocmd BufWritePost *.py call Flake8()
 let g:loaded_python_provider = 1
+let python_highlight_all=1
+
 let g:vim_isort_map = '<C-i>'
 
 " Sort Python imports.
