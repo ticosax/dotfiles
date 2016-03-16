@@ -23,9 +23,11 @@ let g:pymode_lint_sort = ['E', 'C', 'I']
 let g:pymode_options_colorcolumn = 1
 
 let g:gundo_prefer_python3 = 1
-let g:syntastic_python_python_exec = 'python3'
 let g:jedi#force_py_version = 3
 let g:virtualenv_auto_activate = 0
+
+" syntastic
+let g:syntastic_python_python_exec = '/usr/bin/python3.5'
 let g:pymode_virtualenv_path = $VIRTUAL_ENV
 
 set nosmartindent
