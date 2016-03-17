@@ -1,13 +1,6 @@
 autocmd! bufwritepost ~/.vimrc source %
-" to bootstrap
-" git clone git://github.com/ticosax/dotfiles.git src/dotfiles
-" mv .vimrc .vimrc.backup
-" ln -s src/dotfiles/vimrc .vimrc
-" Run Vi, than type :BundleUpdate
-" that's all folks
 
 set exrc
-set nocompatible               " be iMproved
 filetype off                   " required!
 set copyindent
 set number
@@ -26,25 +19,20 @@ call vundle#begin()
 " required!
 Plugin 'VundleVim/Vundle.vim'
 
-" My Plugins here:
-" original repos on github
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline/vim-airline'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'blueyed/vim-colors-solarized'
 Plugin 'powerline/fonts'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'seletskiy/vim-autosurround'
 Plugin 'vim-scripts/IndexedSearch'
 Plugin 'vim-scripts/git-log'
-Plugin 'klen/python-mode'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'saltstack/salt-vim'
-Plugin 'wincent/Command-T'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'elzr/vim-json'
@@ -56,19 +44,25 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'jmcantrell/vim-virtualenv'
-" Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic', {'autoload': {'filetypes': ['lua', 'python', 'sh', 'zsh']}}
 Plugin 'sjl/gundo.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-eunuch'
-Plugin 'mkomitee/vim-gf-python'
-Plugin 'alfredodeza/pytest.vim'
 Plugin 'chrisbra/SudoEdit.vim'
-Plugin 'vim-scripts/indentpython.vim'
 Plugin 'fisadev/vim-isort'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'benekastah/neomake'
+
+" python
+Plugin 'davidhalter/jedi-vim'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'alfredodeza/pytest.vim'
+Plugin 'mkomitee/vim-gf-python'
+Plugin 'hynek/vim-python-pep8-indent'
+
 
 call vundle#end()            " required
 
@@ -78,13 +72,13 @@ set backspace=indent,eol,start
 set scrolloff=5
 set wildignore+=*.pyc
 
-" Powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
-let g:Powerline_cache_enabled = 1
+let g:python_host_prog = '/usr/bin/python2.7'
+let g:python3_host_prog = '/usr/bin/python3.5'
+
+" airline
+let g:airline_powerline_fonts = 1
 set laststatus=2
-set t_Co=16
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 " let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 
@@ -124,6 +118,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+set mouse=c
+
 " rainbow_parentheses
 au VimEnter * RainbowParenthesesToggle
 au VimEnter * DimInactiveToggle
@@ -160,9 +156,9 @@ let g:startify_custom_header = [
 			\ '',
 			\ ]
 
-" YCM
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
 " tagbar
 nmap <F3> :TagbarToggle<CR>
 
@@ -174,3 +170,8 @@ nmap <Leader>pre :Preview<CR>
 
 noremap <F6> :CommandTFlush<CR>
 nnoremap <F4> :set hlsearch!<CR>
+
+" CtrlP
+noremap <Leader>fu :CtrlPFunky<CR>
+noremap <Leader>t :CtrlP<CR>
+noremap <Leader>b :CtrlPBuffer<CR>
