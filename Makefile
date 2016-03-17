@@ -1,6 +1,6 @@
 REPO_PATH=~/src/
 
-install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.vim/bundle/Command-T/ruby/command-t/ext.so ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc
+install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc
 	# - crontab -l | grep ctags;\
 	# 	status=$$?; \
 	# 	if [ $$status = 1 ]; then \
@@ -31,11 +31,12 @@ $(REPO_PATH)gnome-terminal-colors-solarized:
 	ln -s `pwd`/bash_aliases ~/.bash_aliases
 
 delete-vimrc:
-	rm -f ~/.vimrc
+	mkdir -p ~/.config/nvim
+	rm -f ~/.config/nvim/init.vim
 
 ~/.vimrc: delete-vimrc
 
-	ln -s `pwd`/vimrc ~/.vimrc
+	ln -s `pwd`/vimrc ~/.config/nvim/init.vim
 
 ~/.ackrc:
 	ln -s `pwd`/ackrc ~/.ackrc
@@ -50,7 +51,9 @@ delete-vimrc:
 	ln -s `pwd`/gitignore_global ~/.gitignore_global
 
 pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
-	sudo apt-get install -y vim vim-gnome exuberant-ctags python-fontforge cmake python-dev ruby ruby-dev zsh build-essential ack-grep
+	sudo add-apt-repository ppa:neovim-ppa/unstable
+	sudo apt-get update
+	sudo apt-get install -y neovim exuberant-ctags python-fontforge cmake python-dev python3-dev python3-pip zsh build-essential ack-grep
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.?tf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
@@ -58,14 +61,21 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)gn
 	gconftool --set /apps/gnome-terminal/profiles/Default/use_system_font --type=bool "false"
 	gconftool --set /apps/gnome-terminal/profiles/Default/custom_command --type=string "/usr/bin/zsh"
 	gconftool --set /apps/gnome-terminal/profiles/Default/use_custom_command --type=bool "true"
+	curl https://bootstrap.pypa.io/get-pip.py | sudo python3.5 -
+	pip2 install --user neovim -U
+	pip3 install --user neovim -U
 	vim +BundleInstall +qall
 	git config --global core.excludesfile ~/.gitignore_global
+	sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+	sudo update-alternatives --config vi
+	sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+	sudo update-alternatives --config vim
+	sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+	sudo update-alternatives --config editor
+
 
 ~/.vim/bundle/YouCompleteMe/python:
 	cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
-
-~/.vim/bundle/Command-T/ruby/command-t/ext.so:
-	cd ~/.vim/bundle/Command-T/ruby/command-t && ruby extconf.rb && make && cd -
 
 ~/.oh-my-zsh:
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
