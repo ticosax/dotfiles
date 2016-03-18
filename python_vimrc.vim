@@ -4,6 +4,7 @@ let g:virtualenv_auto_activate = 1
 
 set nosmartindent
 
+set colorcolumn=80
 " mapping in all modes
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
