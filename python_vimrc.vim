@@ -28,5 +28,6 @@ let g:jedi#auto_close_doc = 1
 
 " neomake
 autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 2
 
 noremap <Leader>pdb Oimport pdb; pdb.set_trace()<esc>
