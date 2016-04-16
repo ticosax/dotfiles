@@ -58,7 +58,6 @@ Plugin 'benekastah/neomake'
 
 " python
 Plugin 'davidhalter/jedi-vim'
-Plugin 'vim-scripts/indentpython.vim'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'mkomitee/vim-gf-python'
 Plugin 'hynek/vim-python-pep8-indent'
