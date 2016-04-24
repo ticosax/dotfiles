@@ -37,7 +37,7 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'elzr/vim-json'
 Plugin 'wting/rust.vim'
-Plugin 'toml-lang/toml'
+Plugin 'cespare/vim-toml'
 Plugin 'blueyed/vim-diminactive'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'tpope/vim-sleuth'
