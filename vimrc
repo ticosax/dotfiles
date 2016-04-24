@@ -55,6 +55,7 @@ Plugin 'fisadev/vim-isort'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'benekastah/neomake'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " python
 Plugin 'davidhalter/jedi-vim'
@@ -168,6 +169,9 @@ nmap <Leader>pre :Preview<CR>
 
 noremap <F6> :CommandTFlush<CR>
 nnoremap <F4> :set hlsearch!<CR>
+
+" WhiteSpace
+autocmd BufWritePre * ToggleStripWhitespaceOnSave
 
 " CtrlP
 noremap <Leader>fu :CtrlPFunky<CR>
