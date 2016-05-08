@@ -1,6 +1,6 @@
 REPO_PATH=~/src/
 
-install: pre-install ~/.vim/bundle/YouCompleteMe/python ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc
+install: pre-install ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc
 	# - crontab -l | grep ctags;\
 	# 	status=$$?; \
 	# 	if [ $$status = 1 ]; then \
@@ -73,10 +73,6 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)gn
 	sudo update-alternatives --config vim
 	sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 	sudo update-alternatives --config editor
-
-
-~/.vim/bundle/YouCompleteMe/python:
-	cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh && cd -
 
 ~/.oh-my-zsh:
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
