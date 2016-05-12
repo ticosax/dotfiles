@@ -44,7 +44,6 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'ervandew/supertab'
 Plugin 'sjl/gundo.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
@@ -157,7 +156,6 @@ let g:startify_custom_header = [
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-
 " tagbar
 nmap <F3> :TagbarToggle<CR>
 
