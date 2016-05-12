@@ -20,9 +20,6 @@ command! -range=% -nargs=* Isort :<line1>,<line2>! isort --lines 79 <args> -
 command! -range=% -nargs=* Isortdiff :<line1>,<line2>w !isort --lines 79 --diff <args> -"
 
 " jedi.vim
-let g:jedi#usages_command=""
-let g:jedi#popup_select_first=0
-let g:jedi#use_tabs_not_buffers=1
 let g:jedi#show_call_signatures="2"
 let g:jedi#auto_close_doc = 1
 
