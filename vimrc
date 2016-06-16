@@ -22,6 +22,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'blueyed/vim-colors-solarized'
 Plugin 'powerline/fonts'
@@ -77,8 +78,10 @@ let g:python3_host_prog = '/usr/bin/python3.5'
 
 " airline
 let g:airline_powerline_fonts = 1
-set laststatus=2
+let g:airline_extensions_add = ['neomake']
+let g:airline_theme = 'solarized'
 
+set laststatus=2
 " let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 
 " solarized
