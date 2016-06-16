@@ -181,5 +181,5 @@ noremap <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$'
 
-" move cursor at end of selection once pasted
+" move cursor at end of selection once yanked
 vmap y ygv<ESC>
