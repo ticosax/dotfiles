@@ -11,6 +11,7 @@ set hlsearch
 set nobackup
 set noswapfile
 set hidden
+set relativenumber
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
