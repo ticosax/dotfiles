@@ -57,6 +57,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'benekastah/neomake'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'hashivim/vim-vagrant'
 
 " python
 Plugin 'davidhalter/jedi-vim'
