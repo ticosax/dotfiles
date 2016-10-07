@@ -64,6 +64,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'mkomitee/vim-gf-python'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'zchee/deoplete-jedi'
 
 
 call vundle#end()            " required
