@@ -1,4 +1,4 @@
-REPO_PATH=~/src/
+REPO_PATH=~/src
 
 install: pre-install ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc
 	# - crontab -l | grep ctags;\
@@ -8,27 +8,27 @@ install: pre-install ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc
 	# 	echo "1 * * * * ctags -R -o ~/.mytags ~/src" >> /tmp/tmpcrontab; \
 	#     crontab /tmp/tmpcrontab; \
 	# 	fi
-	cd $(REPO_PATH)gnome-terminal-colors-solarized && ./set_dark.sh && cd -
+	cd $(REPO_PATH)/gnome-terminal-colors-solarized && ./set_dark.sh && cd -
 	echo "Done"
 
 ~/.git_svn_bash_prompt:
 	wget https://gist.github.com/ticosax/6437234/raw/0ee0e1b01534921a3a6f181100f8326127325a19/git_svn_bash_prompt.sh -O ~/.git_svn_bash_prompt
 
-$(REPO_PATH)powerline-fonts:
-	git clone https://github.com/Lokaltog/powerline-fonts.git $(REPO_PATH)powerline-fonts
+$(REPO_PATH)/powerline-fonts:
+	git clone https://github.com/Lokaltog/powerline-fonts.git $@
 
 ~/.vim/bundle/Vundle.vim:
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
+	git clone https://github.com/gmarik/vundle.git $@
 
-$(REPO_PATH)gnome-terminal-colors-solarized:
+$(REPO_PATH)/gnome-terminal-colors-solarized:
 	# Solarized for terminal
-	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git $(REPO_PATH)gnome-terminal-colors-solarized
+	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git $@
 
 ~/.ctags:
-	ln -s `pwd`/ctags ~/.ctags
+	ln -s `pwd`/ctags $@
 
 ~/.bash_aliases:
-	ln -s `pwd`/bash_aliases ~/.bash_aliases
+	ln -s `pwd`/bash_aliases $@
 
 delete-vimrc:
 	mkdir -p ~/.config/nvim
@@ -39,18 +39,18 @@ delete-vimrc:
 	ln -s `pwd`/vimrc ~/.config/nvim/init.vim
 
 ~/.ackrc:
-	ln -s `pwd`/ackrc ~/.ackrc
+	ln -s `pwd`/ackrc $@
 
 ~/.screenrc:
-	ln -s `pwd`/screenrc ~/.screenrc
+	ln -s `pwd`/screenrc $@
 
 ~/.tmux.conf:
-	ln -s `pwd`/tmux.conf ~/.tmux.conf
+	ln -s `pwd`/tmux.conf $@
 
 ~/.gitignore_global:
-	ln -s `pwd`/gitignore_global ~/.gitignore_global
+	ln -s `pwd`/gitignore_global $@
 
-pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
+pre-install: $(REPO_PATH)/powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)/gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
 	sudo add-apt-repository ppa:neovim-ppa/unstable -y
 	sudo add-apt-repository ppa:fkrull/deadsnakes -y
 	sudo apt-get update
@@ -78,13 +78,13 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)gn
 	git clone https://github.com/zsh-users/zsh-completions $@
 
 ~/.oh-my-zsh:
-	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+	git clone git://github.com/robbyrussell/oh-my-zsh.git $@
 
-~/.zshrc:
-	ln -s $(REPO_PATH)dotfiles/zshrc ~/.zshrc
+~/.zshrc: ~/.oh-my-zsh ~/.oh-my-zsh/custom/plugins/zsh-completions
+	ln -s $(REPO_PATH)/dotfiles/zshrc $@
 
 clean:
-	rm -rf $(REPO_PATH)powerline-fonts ~/.fonts
+	rm -rf $(REPO_PATH)/powerline-fonts ~/.fonts
 	fc-cache -v
 	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "DejaVu Sans Mono"
 	gconftool --set /apps/gnome-terminal/profiles/Default/use_system_font --type=bool "true"
