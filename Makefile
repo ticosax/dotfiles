@@ -74,6 +74,9 @@ pre-install: $(REPO_PATH)powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)gn
 	sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 	sudo update-alternatives --config editor
 
+~/.oh-my-zsh/custom/plugins/zsh-completions:
+	git clone https://github.com/zsh-users/zsh-completions $@
+
 ~/.oh-my-zsh:
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
