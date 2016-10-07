@@ -66,6 +66,9 @@ Plugin 'mkomitee/vim-gf-python'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'zchee/deoplete-jedi'
 
+" scala
+Plugin 'derekwyatt/vim-scala'
+
 
 call vundle#end()            " required
 
