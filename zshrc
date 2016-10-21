@@ -49,7 +49,6 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git mercurial django docker python virtualenvwrapper vundle zsh-completions)
 
-fpath=(~/src/dotfiles/zsh_functions $fpath)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
