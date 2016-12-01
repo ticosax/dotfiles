@@ -69,6 +69,9 @@ Plugin 'zchee/deoplete-jedi'
 " scala
 Plugin 'derekwyatt/vim-scala'
 
+" rst
+Plugin 'Rykka/riv.vim'
+Plugin 'Rykka/InstantRst'
 
 call vundle#end()            " required
 
