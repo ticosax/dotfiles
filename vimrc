@@ -99,6 +99,7 @@ call togglebg#map("<F5>")
 au FileType python source ~/src/dotfiles/python_vimrc.vim
 au FileType rst source ~/src/dotfiles/rst_vimrc.vim
 au FileType markdown source ~/src/dotfiles/markdown_vimrc.vim
+au FileType yaml source ~/src/dotfiles/yaml_vimrc.vim
 
 filetype plugin indent on     " required!
 
