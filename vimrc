@@ -55,7 +55,7 @@ Plugin 'chrisbra/SudoEdit.vim'
 Plugin 'fisadev/vim-isort'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'benekastah/neomake'
+Plugin 'neomake/neomake'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'hashivim/vim-vagrant'
 
