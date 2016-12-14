@@ -27,7 +27,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'blueyed/vim-colors-solarized'
 Plugin 'powerline/fonts'
-Plugin 'Shougo/deoplete.nvim'
+Plugin 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/IndexedSearch'
