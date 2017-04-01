@@ -86,3 +86,6 @@ unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias s="cd .."
 alias ack="ack-grep"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
