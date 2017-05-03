@@ -80,6 +80,10 @@ unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+
+export PATH="/home/nicolas/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
