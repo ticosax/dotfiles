@@ -2,3 +2,7 @@
 .cache
 .ropeproject
 .vimrc
+pylama.ini
+.reqwire.lock
+.coverage.*
+.python-version
