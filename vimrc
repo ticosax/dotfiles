@@ -16,6 +16,16 @@ set relativenumber
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release
+    else
+      !cargo build --release --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+
 " let Vundle manage Vundle
 " required!
 Plugin 'VundleVim/Vundle.vim'
@@ -32,7 +42,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/IndexedSearch'
 Plugin 'vim-scripts/git-log'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'euclio/vim-markdown-composer', {'do': function('BuildComposer')}
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'saltstack/salt-vim'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
