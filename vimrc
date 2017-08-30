@@ -68,6 +68,7 @@ Plugin 'neomake/neomake'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'hashivim/vim-vagrant'
 Plugin 'andrewstuart/vim-kubernetes'
+Plugin 'jamessan/vim-gnupg'
 
 " python
 Plugin 'davidhalter/jedi-vim'
