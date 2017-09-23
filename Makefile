@@ -83,6 +83,12 @@ pre-install: $(REPO_PATH)/powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)/
 ~/.zshrc: ~/.oh-my-zsh ~/.oh-my-zsh/custom/plugins/zsh-completions
 	ln -s $(REPO_PATH)/dotfiles/zshrc $@
 
+/etc/udev/rules.d/70-u2f.rules:
+	git clone https://github.com/Yubico/libu2f-host ~/src/libu2f-host
+	cd ~/src/libu2f-host
+	ln -s $(pwd)/70-u2f.rules $@
+	udevadm control --reload-rules
+	udevadm trigger
 clean:
 	rm -rf $(REPO_PATH)/powerline-fonts ~/.fonts
 	fc-cache -v
