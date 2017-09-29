@@ -36,6 +36,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'blueyed/vim-colors-solarized'
+Plugin 'blueyed/vim-qf_resize'
+Plugin 'romainl/vim-qf'
 Plugin 'powerline/fonts'
 Plugin 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plugin 'mileszs/ack.vim'
