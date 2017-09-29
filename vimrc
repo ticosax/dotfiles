@@ -185,6 +185,7 @@ let g:deoplete#enable_at_startup = 1
 " tagbar
 nmap <F3> :TagbarToggle<CR>
 
+set inccommand=split
 " NERDTree
 nmap <F2> :NERDTreeToggle<CR>
 
