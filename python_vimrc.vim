@@ -12,6 +12,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 " autocmd BufWritePost *.py call Flake8()
 let g:loaded_python_provider = 1
 let python_highlight_all=1
+let g:neomake_python_enabled_makers = ['python', 'flake8']
 
 let g:vim_isort_map = '<C-i>'
 
