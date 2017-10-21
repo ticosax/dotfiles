@@ -1,6 +1,7 @@
 let g:gundo_prefer_python3 = 1
 let g:jedi#force_py_version = 3
 let g:virtualenv_auto_activate = 1
+let g:vim_isort_python_version = 'python3'
 
 set nosmartindent
 
