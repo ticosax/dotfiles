@@ -51,7 +51,7 @@ delete-vimrc:
 	ln -s `pwd`/gitignore_global $@
 
 pre-install: $(REPO_PATH)/powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)/gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
-	sudo add-apt-repository ppa:neovim-ppa/unstable -y
+	sudo add-apt-repository ppa:neovim-ppa/stable -y
 	sudo add-apt-repository ppa:fkrull/deadsnakes -y
 	sudo apt-get update
 	sudo apt-get install -y neovim exuberant-ctags python-fontforge cmake python-dev python3-dev python3-pip zsh build-essential ack-grep python3.5-dev
