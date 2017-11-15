@@ -63,7 +63,6 @@ pre-install: $(REPO_PATH)/powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)/
 	gconftool --set /apps/gnome-terminal/profiles/Default/custom_command --type=string "/usr/bin/zsh"
 	gconftool --set /apps/gnome-terminal/profiles/Default/use_custom_command --type=bool "true"
 	curl https://bootstrap.pypa.io/get-pip.py | sudo python3.5 -
-	pip2 install --user neovim -U
 	pip3 install --user neovim -U
 	vim +BundleInstall +qall
 	git config --global core.excludesfile ~/.gitignore_global
