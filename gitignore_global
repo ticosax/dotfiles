@@ -6,3 +6,4 @@ pylama.ini
 .reqwire.lock
 .coverage.*
 .python-version
+.pytest_cache/
