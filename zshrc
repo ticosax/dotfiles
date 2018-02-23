@@ -56,7 +56,7 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # export MANPATH="/usr/local/man:$MANPATH"
 
