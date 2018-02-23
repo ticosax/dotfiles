@@ -1,6 +1,7 @@
 REPO_PATH=~/src
 
-install: pre-install ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc
+.PHONY: install
+install: pre-install ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc life-saver
 	# - crontab -l | grep ctags;\
 	# 	status=$$?; \
 	# 	if [ $$status = 1 ]; then \
@@ -30,6 +31,7 @@ $(REPO_PATH)/gnome-terminal-colors-solarized:
 ~/.bash_aliases:
 	ln -s `pwd`/bash_aliases $@
 
+.PHONY: delete-vimrc
 delete-vimrc:
 	mkdir -p ~/.config/nvim
 	rm -f ~/.config/nvim/init.vim
@@ -50,6 +52,7 @@ delete-vimrc:
 ~/.gitignore_global:
 	ln -s `pwd`/gitignore_global $@
 
+.PHONY: pre-install
 pre-install: $(REPO_PATH)/powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)/gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
 	sudo add-apt-repository ppa:neovim-ppa/stable -y
 	sudo apt-get update
@@ -87,8 +90,15 @@ pre-install: $(REPO_PATH)/powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)/
 	sudo cp $(pwd)/70-u2f.rules $@
 	udevadm control --reload-rules
 	udevadm trigger
+
+.PHONY: life-saver
+life-saver:
+	gsettings set org.gnome.desktop.media-handling automount-open false
+
+.PHONY: clean
 clean:
 	rm -rf $(REPO_PATH)/powerline-fonts ~/.fonts
 	fc-cache -v
 	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "DejaVu Sans Mono"
 	gconftool --set /apps/gnome-terminal/profiles/Default/use_system_font --type=bool "true"
+	gsettings set org.gnome.desktop.media-handling automount-open true
