@@ -51,7 +51,6 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'elzr/vim-json'
 Plugin 'wting/rust.vim'
-Plugin 'cespare/vim-toml'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'tpope/vim-sleuth'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -71,6 +70,10 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'hashivim/vim-vagrant'
 Plugin 'andrewstuart/vim-kubernetes'
 Plugin 'jamessan/vim-gnupg'
+
+" toml
+Plugin 'cespare/vim-toml'
+Plugin 'maralla/vim-toml-enhance'
 
 " python
 Plugin 'davidhalter/jedi-vim'
