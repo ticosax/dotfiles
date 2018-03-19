@@ -70,6 +70,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'hashivim/vim-vagrant'
 Plugin 'andrewstuart/vim-kubernetes'
 Plugin 'jamessan/vim-gnupg'
+Plugin 'sbdchd/neoformat'
 
 " toml
 Plugin 'cespare/vim-toml'
