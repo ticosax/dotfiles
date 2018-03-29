@@ -88,5 +88,6 @@ unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 alias s="cd .."
 alias ack="ack-grep"
 export PATH="$HOME/.pyenv/bin:$PATH"
+export GOPATH="$HOME/go"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
