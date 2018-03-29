@@ -48,7 +48,7 @@ Plugin 'euclio/vim-markdown-composer', {'do': function('BuildComposer')}
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'saltstack/salt-vim'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
-Plugin 'jnwhiteh/vim-golang'
+Plugin 'fatih/vim-go'
 Plugin 'elzr/vim-json'
 Plugin 'wting/rust.vim'
 Plugin 'tommcdo/vim-exchange'
@@ -89,6 +89,7 @@ Plugin 'derekwyatt/vim-scala'
 " rst
 Plugin 'Rykka/riv.vim'
 Plugin 'Rykka/InstantRst'
+Plugin 'sebastianmarkow/deoplete-rust'
 
 call vundle#end()            " required
 
