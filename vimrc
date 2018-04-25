@@ -50,7 +50,6 @@ Plugin 'saltstack/salt-vim'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Plugin 'fatih/vim-go'
 Plugin 'elzr/vim-json'
-Plugin 'wting/rust.vim'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'tpope/vim-sleuth'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -89,7 +88,11 @@ Plugin 'derekwyatt/vim-scala'
 " rst
 Plugin 'Rykka/riv.vim'
 Plugin 'Rykka/InstantRst'
+
+" Rust
+Plugin 'rust-lang/rust.vim'
 Plugin 'sebastianmarkow/deoplete-rust'
+Plugin 'mattn/webapi-vim'
 
 call vundle#end()            " required
 
@@ -121,6 +124,7 @@ au FileType python source ~/src/dotfiles/python_vimrc.vim
 au FileType rst source ~/src/dotfiles/rst_vimrc.vim
 au FileType markdown source ~/src/dotfiles/markdown_vimrc.vim
 au FileType yaml source ~/src/dotfiles/yaml_vimrc.vim
+au FileType rust source ~/src/dotfiles/rust_vimrc.vim
 
 filetype plugin indent on     " required!
 
