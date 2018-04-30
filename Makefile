@@ -88,8 +88,8 @@ pre-install: $(REPO_PATH)/powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)/
 	git clone https://github.com/Yubico/libu2f-host ~/src/libu2f-host
 	cd ~/src/libu2f-host
 	sudo cp $(pwd)/70-u2f.rules $@
-	udevadm control --reload-rules
-	udevadm trigger
+	sudo udevadm control --reload-rules
+	sudo udevadm trigger
 
 .PHONY: life-saver
 life-saver:
