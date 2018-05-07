@@ -7,3 +7,4 @@ pylama.ini
 .coverage.*
 .python-version
 .pytest_cache/
+.env
