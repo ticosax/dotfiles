@@ -91,3 +91,5 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 export GOPATH="$HOME/go"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+# Assumes awscli has been installed with `pipsi install awscli`
+source /home/ticosax/.local/bin/aws_zsh_completer.sh
