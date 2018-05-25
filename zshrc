@@ -47,7 +47,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mercurial django docker python virtualenvwrapper vundle zsh-completions)
+plugins=(git mercurial django docker python virtualenvwrapper vundle zsh-completions aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,5 +91,3 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 export GOPATH="$HOME/go"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-# Assumes awscli has been installed with `pipsi install awscli`
-source /home/ticosax/.local/bin/aws_zsh_completer.sh
