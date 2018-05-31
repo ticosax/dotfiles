@@ -57,10 +57,6 @@ pre-install: $(REPO_PATH)/powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)/
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.?tf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
-	gconftool --set /apps/gnome-terminal/profiles/Default/font --type=string "Ubuntu Mono derivative Powerline 10"
-	gconftool --set /apps/gnome-terminal/profiles/Default/use_system_font --type=bool "false"
-	gconftool --set /apps/gnome-terminal/profiles/Default/custom_command --type=string "/usr/bin/zsh"
-	gconftool --set /apps/gnome-terminal/profiles/Default/use_custom_command --type=bool "true"
 	curl https://bootstrap.pypa.io/get-pip.py | sudo python3.5 -
 	pip3 install --user neovim -U
 	vim +BundleInstall +qall
