@@ -1,7 +1,7 @@
 REPO_PATH=~/src
 
 .PHONY: install
-install: pre-install ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc life-saver
+install: pre-install ~/.oh-my-zsh ~/.zshrc life-saver
 	# - crontab -l | grep ctags;\
 	# 	status=$$?; \
 	# 	if [ $$status = 1 ]; then \
@@ -11,9 +11,6 @@ install: pre-install ~/.git_svn_bash_prompt ~/.oh-my-zsh ~/.zshrc life-saver
 	# 	fi
 	cd $(REPO_PATH)/gnome-terminal-colors-solarized && ./set_dark.sh && cd -
 	echo "Done"
-
-~/.git_svn_bash_prompt:
-	wget https://gist.github.com/ticosax/6437234/raw/0ee0e1b01534921a3a6f181100f8326127325a19/git_svn_bash_prompt.sh -O ~/.git_svn_bash_prompt
 
 $(REPO_PATH)/powerline-fonts:
 	git clone https://github.com/Lokaltog/powerline-fonts.git $@
