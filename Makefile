@@ -57,7 +57,7 @@ pre-install: $(REPO_PATH)/powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)/
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.?tf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
-	curl https://bootstrap.pypa.io/get-pip.py | sudo python3.5 -
+	curl https://bootstrap.pypa.io/get-pip.py | python3 - --user
 	pip3 install --user neovim -U
 	vim +BundleInstall +qall
 	git config --global core.excludesfile ~/.gitignore_global
