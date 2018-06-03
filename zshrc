@@ -50,7 +50,6 @@ ZSH_THEME="agnoster"
 plugins=(git mercurial django docker python vundle zsh-completions aws)
 
 source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 bindkey -v
@@ -86,7 +85,6 @@ unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias s="cd .."
-alias ack="ack-grep"
 export PATH="$HOME/.pyenv/bin:$PATH"
 export GOPATH="$HOME/go"
 eval "$(pyenv init -)"
