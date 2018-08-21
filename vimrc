@@ -81,6 +81,7 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'zchee/deoplete-jedi'
 Plugin 'plytophogy/vim-virtualenv'
 Plugin 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
+Plugin 'ambv/black'
 
 " scala
 Plugin 'derekwyatt/vim-scala'
