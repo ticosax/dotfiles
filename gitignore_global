@@ -8,3 +8,4 @@ pylama.ini
 .python-version
 .pytest_cache/
 .env
+.vscode/
