@@ -94,6 +94,8 @@ Plugin 'Rykka/InstantRst'
 Plugin 'rust-lang/rust.vim'
 Plugin 'sebastianmarkow/deoplete-rust'
 Plugin 'mattn/webapi-vim'
+Plugin 'racer-rust/vim-racer'
+
 
 call vundle#end()            " required
 
