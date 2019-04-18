@@ -17,6 +17,9 @@ let g:loaded_python_provider = 1
 let python_highlight_all=1
 let g:neomake_python_enabled_makers = ['python', 'flake8']
 let g:neomake_open_list = 2
+" https://github.com/neomake/neomake/issues/1097#issuecomment-298780826
+let g:qf_auto_open_quickfix = 0
+let g:qf_auto_open_loclist = 0
 
 let g:vim_isort_map = '<C-i>'
 
