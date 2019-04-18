@@ -104,8 +104,9 @@ set scrolloff=5
 set wildignore+=*.pyc
 
 
-" let g:python_host_prog = '/usr/bin/python2.7'
-" let g:python3_host_prog = '/usr/bin/python3.5'
+" https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
+" let g:python_host_prog = '/home/nicolas/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/home/nicolas/.pyenv/versions/neovim3/bin/python'
 
 " airline
 let g:airline_powerline_fonts = 1
