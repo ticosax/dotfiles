@@ -34,3 +34,4 @@ autocmd! BufWritePost * Neomake
 let g:neomake_open_list = 2
 
 noremap <Leader>pdb Oimport pdb; pdb.set_trace()<esc>
+noremap <Leader>br Obreakpoint()<esc>
