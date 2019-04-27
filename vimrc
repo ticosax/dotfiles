@@ -1,4 +1,5 @@
-autocmd! bufwritepost ~/.vimrc source %
+autocmd! bufwritepost ~/.config/nvim/init.vim source %
+autocmd! bufwritepost ~/src/dotfiles/vimrc source %
 
 set exrc
 filetype off                   " required!
@@ -13,9 +14,10 @@ set noswapfile
 set hidden
 set relativenumber
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
 
+" for euclio/vim-markdown-composer
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
     if has('nvim')
@@ -26,78 +28,87 @@ function! BuildComposer(info)
   endif
 endfunction
 
-" let Vundle manage Vundle
-" required!
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'blueyed/vim-colors-solarized'
-Plugin 'blueyed/vim-qf_resize'
-Plugin 'romainl/vim-qf'
-Plugin 'powerline/fonts'
-Plugin 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/IndexedSearch'
-Plugin 'vim-scripts/git-log'
-Plugin 'euclio/vim-markdown-composer', {'do': function('BuildComposer')}
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'saltstack/salt-vim'
-Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
-Plugin 'fatih/vim-go'
-Plugin 'elzr/vim-json'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'tpope/vim-sleuth'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'mhinz/vim-startify'
-Plugin 'sjl/gundo.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-eunuch'
-Plugin 'chrisbra/SudoEdit.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'neomake/neomake'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'hashivim/vim-vagrant'
-Plugin 'andrewstuart/vim-kubernetes'
-Plugin 'jamessan/vim-gnupg'
-Plugin 'sbdchd/neoformat'
+Plug 'tpope/vim-fugitive'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tomtom/tcomment_vim'
+Plug 'iCyMind/NeoSolarized'
+Plug 'blueyed/vim-qf_resize'
+Plug 'romainl/vim-qf'
+Plug 'powerline/fonts'
+" Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'ncm2/ncm2'
+" NOTE: you need to install completion sources to get completions. Check
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-racer'
+Plug 'ncm2/ncm2-match-highlight'
+Plug 'ncm2/ncm2-highprio-pop'
+Plug 'ncm2/ncm2-github'
+
+Plug 'roxma/nvim-yarp'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/IndexedSearch'
+Plug 'vim-scripts/git-log'
+Plug 'euclio/vim-markdown-composer', {'do': function('BuildComposer')}
+Plug 'terryma/vim-multiple-cursors'
+Plug 'saltstack/salt-vim'
+Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'fatih/vim-go'
+Plug 'elzr/vim-json'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-sleuth'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'mhinz/vim-startify'
+Plug 'sjl/gundo.vim'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-eunuch'
+Plug 'chrisbra/SudoEdit.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'neomake/neomake'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'hashivim/vim-vagrant'
+Plug 'andrewstuart/vim-kubernetes'
+Plug 'jamessan/vim-gnupg'
+Plug 'sbdchd/neoformat'
+Plug 'airblade/vim-gitgutter'
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 
 " toml
-Plugin 'cespare/vim-toml'
-Plugin 'maralla/vim-toml-enhance'
+Plug 'cespare/vim-toml'
+Plug 'maralla/vim-toml-enhance'
 
 " python
-Plugin 'davidhalter/jedi-vim'
-Plugin 'alfredodeza/pytest.vim'
-Plugin 'mkomitee/vim-gf-python'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'zchee/deoplete-jedi'
-Plugin 'plytophogy/vim-virtualenv'
-Plugin 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
-Plugin 'ambv/black'
+" Plug 'davidhalter/jedi-vim'
+Plug 'alfredodeza/pytest.vim'
+Plug 'mkomitee/vim-gf-python'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'plytophogy/vim-virtualenv'
+Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
 
 " scala
-Plugin 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-scala'
 
 " rst
-Plugin 'Rykka/riv.vim'
-Plugin 'Rykka/InstantRst'
+Plug 'Rykka/riv.vim'
+Plug 'Rykka/InstantRst'
 
 " Rust
-Plugin 'rust-lang/rust.vim'
-Plugin 'sebastianmarkow/deoplete-rust'
-Plugin 'mattn/webapi-vim'
-Plugin 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim'
+Plug 'sebastianmarkow/deoplete-rust'
+Plug 'mattn/webapi-vim'
+Plug 'racer-rust/vim-racer'
 
-
-call vundle#end()            " required
+call plug#end()
 
 let g:session_autosave = 'no'
 set backspace=indent,eol,start
@@ -121,8 +132,10 @@ set laststatus=2
 " solarized
 syntax enable
 set background=dark
-colorscheme solarized
-call togglebg#map("<F5>")
+let g:neosolarized_vertSplitBgTrans = 1
+colorscheme NeoSolarized
+
+let g:gitgutter_override_sign_column_highlight = 0
 
 au FileType python source ~/src/dotfiles/python_vimrc.vim
 au FileType rst source ~/src/dotfiles/rst_vimrc.vim
@@ -222,3 +235,39 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox|ropeproject)$'
 
 " move cursor at end of selection once yanked
 vmap y ygv<ESC>
+
+" lsp
+"
+" \ 'python': ['/home/nicolas/.pyenv/shims/pyls'],
+" "\ 'python': ['/home/nicolas/.cache/pypoetry/virtualenvs/kompost-py3.7/bin/pyls'],
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['pyls'],
+    \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+nnoremap <silent> FF :call LanguageClient#textDocument_formatting()<CR>
+
+" ncm2/ncm2
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
+" found' messages
+" set shortmess+=c
+"
+" " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+" inoremap <c-c> <ESC>
+"
+" " When the <Enter> key is pressed while the popup menu is visible, it only
+" " hides the menu. Use this mapping to close the menu and also start a new
+" " line.
+" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+"
+" " Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

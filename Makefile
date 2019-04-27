@@ -15,8 +15,8 @@ install: pre-install ~/.oh-my-zsh ~/.zshrc life-saver
 $(REPO_PATH)/powerline-fonts:
 	git clone https://github.com/Lokaltog/powerline-fonts.git $@
 
-~/.vim/bundle/Vundle.vim:
-	git clone https://github.com/gmarik/vundle.git $@
+~/.local/share/nvim/site/autoload/plug.vim:
+	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim<Paste>
 
 $(REPO_PATH)/gnome-terminal-colors-solarized:
 	# Solarized for terminal
@@ -50,7 +50,7 @@ delete-vimrc:
 	ln -s `pwd`/gitignore_global $@
 
 .PHONY: pre-install
-pre-install: $(REPO_PATH)/powerline-fonts ~/.vim/bundle/Vundle.vim $(REPO_PATH)/gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
+pre-install: $(REPO_PATH)/powerline-fonts ~/.local/share/nvim/site/autoload/plug.vim $(REPO_PATH)/gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
 	sudo add-apt-repository ppa:neovim-ppa/stable -y
 	sudo apt update
 	sudo apt install -y neovim exuberant-ctags python-fontforge cmake python-dev python3-dev python3-pip zsh build-essential ack-grep libffi-dev

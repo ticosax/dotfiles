@@ -48,7 +48,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export WORKON_HOME=$HOME/.virtualenvs
-plugins=(git mercurial django docker python vundle zsh-completions aws virtualenvwrapper virtualenv gcloud)
+plugins=(git django docker python zsh-completions aws virtualenvwrapper virtualenv zsh-nvm pyenv)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
