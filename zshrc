@@ -50,6 +50,9 @@ ZSH_THEME="agnoster"
 export WORKON_HOME=$HOME/.virtualenvs
 plugins=(git django docker python zsh-completions aws virtualenvwrapper virtualenv zsh-nvm pyenv)
 
+# poetry
+fpath+=~/.zfunc
+
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
