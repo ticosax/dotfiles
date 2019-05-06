@@ -91,7 +91,6 @@ Plug 'maralla/vim-toml-enhance'
 " python
 " Plug 'davidhalter/jedi-vim'
 Plug 'alfredodeza/pytest.vim'
-Plug 'mkomitee/vim-gf-python'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'plytophogy/vim-virtualenv'
 Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
