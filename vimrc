@@ -39,6 +39,7 @@ Plug 'iCyMind/NeoSolarized'
 Plug 'blueyed/vim-qf_resize'
 Plug 'romainl/vim-qf'
 Plug 'powerline/fonts'
+Plug 'junegunn/fzf'
 " Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'ncm2/ncm2'
 " NOTE: you need to install completion sources to get completions. Check
