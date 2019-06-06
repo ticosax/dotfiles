@@ -40,7 +40,6 @@ Plug 'blueyed/vim-qf_resize'
 Plug 'romainl/vim-qf'
 Plug 'powerline/fonts'
 Plug 'junegunn/fzf'
-" Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'ncm2/ncm2'
 " NOTE: you need to install completion sources to get completions. Check
 " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
@@ -51,6 +50,7 @@ Plug 'ncm2/ncm2-racer'
 Plug 'ncm2/ncm2-match-highlight'
 Plug 'ncm2/ncm2-highprio-pop'
 Plug 'ncm2/ncm2-github'
+Plug 'ncm2/ncm2-markdown-subscope'
 
 Plug 'roxma/nvim-yarp'
 Plug 'mileszs/ack.vim'
@@ -104,7 +104,6 @@ Plug 'Rykka/InstantRst'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-Plug 'sebastianmarkow/deoplete-rust'
 Plug 'mattn/webapi-vim'
 Plug 'racer-rust/vim-racer'
 
@@ -208,8 +207,6 @@ let g:startify_custom_header = [
 
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
-" deoplete
-let g:deoplete#enable_at_startup = 1
 " tagbar
 nmap <F3> :TagbarToggle<CR>
 
