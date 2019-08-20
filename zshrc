@@ -59,7 +59,7 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/home/nicolas/.gem/ruby/2.5.0/bin:~/.npm-global/bin:$HOME/.poetry/bin:$HOME/.local/kitty.app/bin:$PATH
 unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -99,3 +99,24 @@ HEROKU_AC_ZSH_SETUP_PATH=/home/nicolas/.cache/heroku/autocomplete/zsh_setup && t
 source $HOME/.cargo/env
 
 source /usr/share/google-cloud-sdk/completion.zsh.inc
+
+# added by travis gem
+[ -f /home/nicolas/.travis/travis.sh ] && source /home/nicolas/.travis/travis.sh
+
+
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+eval "$(direnv hook zsh)"
+
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
+# Kitty
+autoload -Uz compinit
+compinit
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
