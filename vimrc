@@ -110,6 +110,10 @@ Plug 'rust-lang/rust.vim'
 Plug 'mattn/webapi-vim'
 Plug 'racer-rust/vim-racer'
 
+" JS
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
 call plug#end()
 
 let g:session_autosave = 'no'
@@ -243,6 +247,8 @@ vmap y ygv<ESC>
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'typescript': ['yarn', 'run', 'typescript-language-server', '--stdio'],
+    \ 'typescript.tsx': ['yarn', 'run', 'typescript-language-server', '--stdio'],
     \ 'python': ['pyls'],
     \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
