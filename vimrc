@@ -30,7 +30,6 @@ endfunction
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -49,7 +48,6 @@ Plug 'ncm2/ncm2-jedi'
 Plug 'ncm2/ncm2-racer'
 Plug 'ncm2/ncm2-match-highlight'
 Plug 'ncm2/ncm2-highprio-pop'
-Plug 'ncm2/ncm2-github'
 Plug 'ncm2/ncm2-markdown-subscope'
 
 Plug 'roxma/nvim-yarp'
@@ -81,8 +79,13 @@ Plug 'hashivim/vim-vagrant'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'jamessan/vim-gnupg'
 Plug 'sbdchd/neoformat'
-Plug 'airblade/vim-gitgutter'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+
+"git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'ncm2/ncm2-github'
+Plug 'lambdalisue/gina.vim'
 
 " toml
 Plug 'cespare/vim-toml'
