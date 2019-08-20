@@ -250,6 +250,7 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['yarn', 'run', 'typescript-language-server', '--stdio'],
     \ 'typescript.tsx': ['yarn', 'run', 'typescript-language-server', '--stdio'],
     \ 'python': ['pyls'],
+    \ 'go': ['~/go/bin/go-langserver'],
     \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
