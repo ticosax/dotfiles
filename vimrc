@@ -125,7 +125,7 @@ set wildignore+=*.pyc
 
 " https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
 " let g:python_host_prog = '/home/nicolas/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/home/nicolas/.pyenv/versions/neovim3/bin/python'
+" let g:python3_host_prog = '/home/nicolas/.pyenv/versions/neovim3/bin/python'
 
 " airline
 let g:airline_powerline_fonts = 1
