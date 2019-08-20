@@ -1,7 +1,7 @@
 REPO_PATH=~/src
 
 .PHONY: install
-install: pre-install ~/.oh-my-zsh ~/.zshrc life-saver
+install: pre-install ~/.oh-my-zsh ~/.zshrc life-saver /lib/udev/rules.d/78-mm-whitelist-internal-modem.rules
 	# - crontab -l | grep ctags;\
 	# 	status=$$?; \
 	# 	if [ $$status = 1 ]; then \
@@ -83,6 +83,10 @@ pre-install: $(REPO_PATH)/powerline-fonts ~/.local/share/nvim/site/autoload/plug
 	sudo cp $(pwd)/70-u2f.rules $@
 	sudo udevadm control --reload-rules
 	sudo udevadm trigger
+
+/lib/udev/rules.d/78-mm-whitelist-internal-modem.rules:
+	sudo cp 78-mm-whitelist-internal-modem.rules $@
+	sudo chmod 0644 $@
 
 .PHONY: life-saver
 life-saver:

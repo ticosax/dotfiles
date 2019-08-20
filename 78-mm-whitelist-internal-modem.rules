@@ -1,0 +1,3 @@
+ACTION!="add|change|move", GOTO="mm_whitelist_internal_modem_end"
+ATTRS{idVendor}=="22b8", ATTRS{idProduct}=="2e24", ENV{ID_MM_DEVICE_PROCESS}="1"
+LABEL="mm_whitelist_internal_modem_end"
