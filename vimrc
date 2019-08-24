@@ -97,6 +97,7 @@ Plug 'alfredodeza/pytest.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'plytophogy/vim-virtualenv'
 Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'raimon49/requirements.txt.vim'
 
 " scala
 Plug 'derekwyatt/vim-scala'
