@@ -86,6 +86,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'ncm2/ncm2-github'
 Plug 'lambdalisue/gina.vim'
+Plug 'rbong/vim-flog'
 
 " toml
 Plug 'cespare/vim-toml'
