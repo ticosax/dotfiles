@@ -9,3 +9,5 @@ pylama.ini
 .pytest_cache/
 .env
 .vscode/
+.mypy_cache/
+pip-wheel-metadata/
