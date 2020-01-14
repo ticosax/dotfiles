@@ -52,8 +52,9 @@ delete-vimrc:
 .PHONY: pre-install
 pre-install: $(REPO_PATH)/powerline-fonts ~/.local/share/nvim/site/autoload/plug.vim $(REPO_PATH)/gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
 	sudo add-apt-repository ppa:neovim-ppa/stable -y
+	sudo add-apt-repository ppa:longsleep/golang-backports -y
 	sudo apt update
-	sudo apt install -y neovim exuberant-ctags python-fontforge cmake python-dev python3-dev python3-pip zsh build-essential ack-grep libffi-dev direnv
+	sudo apt install -y neovim exuberant-ctags python-fontforge cmake python-dev python3-dev python3-pip zsh build-essential ack-grep libffi-dev direnv golang-go
 	sudo snap install hub --classic
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.?tf' -exec cp {} -t $$HOME/.fonts/ \;

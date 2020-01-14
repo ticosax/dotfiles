@@ -89,7 +89,7 @@ unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias s="cd .."
-export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$HOME/go/bin:$PATH"
 export GOPATH="$HOME/go"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
