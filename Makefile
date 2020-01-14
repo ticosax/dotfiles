@@ -1,7 +1,13 @@
 REPO_PATH=~/src
 
+$(REPO_PATH)/terraform-lsp/terraform-lsp:
+	git clone git@github.com:juliosueiras/terraform-lsp.git $(REPO_PATH)/terraform-lsp
+	cd $(REPO_PATH)/terraform-lsp
+	go build
+	cd -
+
 .PHONY: install
-install: pre-install ~/.oh-my-zsh ~/.zshrc life-saver /lib/udev/rules.d/78-mm-whitelist-internal-modem.rules
+install: ~/src/terraform-lsp/terraform-lsp pre-install ~/.oh-my-zsh ~/.zshrc life-saver /lib/udev/rules.d/78-mm-whitelist-internal-modem.rules
 	# - crontab -l | grep ctags;\
 	# 	status=$$?; \
 	# 	if [ $$status = 1 ]; then \

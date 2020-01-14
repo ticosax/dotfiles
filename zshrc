@@ -123,3 +123,6 @@ kitty + complete setup zsh | source /dev/stdin
 
 # https://github.com/sdispater/poetry/issues/571#issuecomment-474017926
 alias poetry_shell=$'source "$(poetry debug:info | rg \'.*Path:[^/]+(.*)\' -r \'$1\')/bin/activate"'
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /home/nicolas/bin/terraform terraform

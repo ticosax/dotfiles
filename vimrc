@@ -254,6 +254,7 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript.tsx': ['yarn', 'run', 'typescript-language-server', '--stdio'],
     \ 'python': ['pyls'],
     \ 'go': ['~/go/bin/go-langserver'],
+    \ 'tf': ['~/src/terraform-lsp/terraform-lsp'],
     \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
