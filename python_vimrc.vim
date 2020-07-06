@@ -22,8 +22,8 @@ let g:qf_auto_open_loclist = 0
 let g:vim_isort_map = '<C-i>'
 
 " Sort Python imports.
-command! -range=% -nargs=* Isort :<line1>,<line2>! isort --lines 90 <args> -
-command! -range=% -nargs=* Isortdiff :<line1>,<line2>w !isort --lines 90 --diff <args> -"
+command! -range=% -nargs=* Isort :<line1>,<line2>! isort -
+command! -range=% -nargs=* Isortdiff :<line1>,<line2>w !isort -
 
 " jedi.vim
 let g:jedi#show_call_signatures="2"
