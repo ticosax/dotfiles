@@ -80,6 +80,7 @@ Plug 'andrewstuart/vim-kubernetes'
 Plug 'jamessan/vim-gnupg'
 Plug 'sbdchd/neoformat'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+Plug 'psliwka/vim-smoothie'
 
 "git
 Plug 'tpope/vim-fugitive'
@@ -238,7 +239,7 @@ noremap <Leader>fu :CtrlPFunky<CR>
 noremap <Leader>t :CtrlP<CR>
 noremap <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox|ropeproject)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox|ropeproject|tmp)$'
 
 " move cursor at end of selection once yanked
 vmap y ygv<ESC>

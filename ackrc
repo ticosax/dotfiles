@@ -5,3 +5,4 @@
 --ignore-dir=.pytest_cache
 --ignore-file=is:.coveragerc
 --ignore-file=is:.coverage
+--ignore-dir=.tmp

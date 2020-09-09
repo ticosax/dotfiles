@@ -48,7 +48,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export WORKON_HOME=$HOME/.virtualenvs
-plugins=(git django docker python zsh-completions aws virtualenvwrapper virtualenv zsh-nvm pyenv kubectl)
+plugins=(git django docker python zsh-completions aws virtualenvwrapper virtualenv zsh-nvm pyenv kubectl systemd minikube pip npm)
 
 # poetry
 fpath+=~/.zfunc
@@ -59,7 +59,7 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/home/nicolas/.gem/ruby/2.5.0/bin:~/.npm-global/bin:$HOME/.poetry/bin:$HOME/.local/kitty.app/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/home/nicolas/.gem/ruby/2.5.0/bin:~/.npm-global/bin:$HOME/.poetry/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.serverless/bin:$PATH:$PATH
 unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -89,6 +89,8 @@ unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias s="cd .."
+alias ktl="kubectl"
+alias cat="bat"
 export PATH="$HOME/.pyenv/bin:$HOME/go/bin:$PATH"
 export GOPATH="$HOME/go"
 eval "$(pyenv init -)"
@@ -118,8 +120,6 @@ export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 # Kitty
 autoload -Uz compinit
 compinit
-# Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /home/nicolas/bin/terraform terraform
