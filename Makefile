@@ -1,13 +1,11 @@
 REPO_PATH=~/src
 
 $(REPO_PATH)/terraform-lsp/terraform-lsp:
-	git clone git@github.com:juliosueiras/terraform-lsp.git $(REPO_PATH)/terraform-lsp
-	cd $(REPO_PATH)/terraform-lsp
-	go build
-	cd -
+	git clone git@github.com:juliosueiras/terraform-lsp.git $@
+	cd $@ && go build
 
 .PHONY: install
-install: ~/src/terraform-lsp/terraform-lsp pre-install ~/.oh-my-zsh ~/.zshrc life-saver /lib/udev/rules.d/78-mm-whitelist-internal-modem.rules
+install: pre-install $(REPO_PATH)/terraform-lsp/terraform-lsp ~/.oh-my-zsh ~/.zshrc life-saver /lib/udev/rules.d/78-mm-whitelist-internal-modem.rules
 	# - crontab -l | grep ctags;\
 	# 	status=$$?; \
 	# 	if [ $$status = 1 ]; then \
@@ -22,7 +20,7 @@ $(REPO_PATH)/powerline-fonts:
 	git clone https://github.com/Lokaltog/powerline-fonts.git $@
 
 ~/.local/share/nvim/site/autoload/plug.vim:
-	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim<Paste>
+	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 $(REPO_PATH)/gnome-terminal-colors-solarized:
 	# Solarized for terminal
@@ -57,24 +55,15 @@ delete-vimrc:
 
 .PHONY: pre-install
 pre-install: $(REPO_PATH)/powerline-fonts ~/.local/share/nvim/site/autoload/plug.vim $(REPO_PATH)/gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
-	sudo add-apt-repository ppa:neovim-ppa/stable -y
-	sudo add-apt-repository ppa:longsleep/golang-backports -y
 	sudo apt update
-	sudo apt install -y neovim exuberant-ctags python-fontforge cmake python-dev python3-dev python3-pip zsh build-essential ack-grep libffi-dev direnv golang-go
+	sudo apt install -y neovim exuberant-ctags python-fontforge cmake python-dev python3-dev python3-pip zsh build-essential ack-grep libffi-dev direnv golang
 	sudo snap install hub --classic
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.?tf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
 	curl https://bootstrap.pypa.io/get-pip.py | python3 - --user
-	pip3 install --user neovim -U
 	vim +BundleInstall +qall
 	git config --global core.excludesfile ~/.gitignore_global
-	sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-	sudo update-alternatives --config vi
-	sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-	sudo update-alternatives --config vim
-	sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-	sudo update-alternatives --config editor
 
 ~/.oh-my-zsh/custom/plugins/zsh-completions:
 	git clone https://github.com/zsh-users/zsh-completions $@
@@ -83,7 +72,7 @@ pre-install: $(REPO_PATH)/powerline-fonts ~/.local/share/nvim/site/autoload/plug
 	git clone git://github.com/robbyrussell/oh-my-zsh.git $@
 
 ~/.zshrc: ~/.oh-my-zsh ~/.oh-my-zsh/custom/plugins/zsh-completions
-	ln -s $(REPO_PATH)/dotfiles/zshrc $@
+	ln -fs $(REPO_PATH)/dotfiles/zshrc $@
 
 /etc/udev/rules.d/70-u2f.rules:
 	git clone https://github.com/Yubico/libu2f-host ~/src/libu2f-host
