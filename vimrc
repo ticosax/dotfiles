@@ -260,12 +260,14 @@ let g:LanguageClient_serverCommands = {
     \ 'go': ['~/go/bin/go-langserver'],
     \ 'tf': ['~/src/terraform-lsp/terraform-lsp'],
     \ }
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nmap <F5> <Plug>(lcn-menu)
 " Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-nnoremap <silent> FF :call LanguageClient#textDocument_formatting()<CR>
+nmap <silent>K <Plug>(lcn-hover)
+nmap <silent>FF <Plug>(lcn-format)
+nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> gr <Plug>(lcn-references)
+nmap <silent> gi <Plug>(lcn-implementation)
+nmap <silent> <F2> <Plug>(lcn-rename)
 
 " ncm2/ncm2
 " enable ncm2 for all buffers
