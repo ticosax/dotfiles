@@ -34,7 +34,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tomtom/tcomment_vim'
-Plug 'iCyMind/NeoSolarized'
+"Plug 'iCyMind/NeoSolarized'
 Plug 'blueyed/vim-qf_resize'
 Plug 'romainl/vim-qf'
 Plug 'powerline/fonts'
@@ -81,6 +81,7 @@ Plug 'jamessan/vim-gnupg'
 Plug 'sbdchd/neoformat'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 Plug 'psliwka/vim-smoothie'
+Plug 'wadackel/vim-dogrun'
 
 "git
 Plug 'tpope/vim-fugitive'
@@ -143,7 +144,9 @@ set laststatus=2
 syntax enable
 set background=dark
 let g:neosolarized_vertSplitBgTrans = 1
-colorscheme NeoSolarized
+colorscheme dogrun
+" comes with dogrun
+hi Search ctermfg=7
 
 let g:gitgutter_override_sign_column_highlight = 0
 
