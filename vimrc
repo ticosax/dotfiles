@@ -262,8 +262,8 @@ let g:LanguageClient_serverCommands = {
     \ }
 nmap <F5> <Plug>(lcn-menu)
 " Or map each action separately
-nmap <silent>K <Plug>(lcn-hover)
-nmap <silent>FF <Plug>(lcn-format)
+nmap <silent> K <Plug>(lcn-hover)
+nmap <silent> FF <Plug>(lcn-format)
 nmap <silent> gd <Plug>(lcn-definition)
 nmap <silent> gr <Plug>(lcn-references)
 nmap <silent> gi <Plug>(lcn-implementation)
