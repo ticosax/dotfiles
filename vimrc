@@ -82,6 +82,14 @@ Plug 'sbdchd/neoformat'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 Plug 'psliwka/vim-smoothie'
 Plug 'wadackel/vim-dogrun'
+Plug 'tyru/caw.vim'
+Plug 'kana/vim-repeat'
+
+" Clap
+Plug 'liuchengxu/vim-clap'
+Plug 'liuchengxu/vista.vim'
+" run this command to install fuzzy file search
+" :call clap#installer#build_maple()
 
 "git
 Plug 'tpope/vim-fugitive'
@@ -253,9 +261,10 @@ vmap y ygv<ESC>
 " "\ 'python': ['/home/nicolas/.cache/pypoetry/virtualenvs/kompost-py3.7/bin/pyls'],
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ 'typescript': ['yarn', 'run', 'typescript-language-server', '--stdio'],
-    \ 'typescript.tsx': ['yarn', 'run', 'typescript-language-server', '--stdio'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'typescript': ['javascript-typescript-stdio'],
+    \ 'typescript.tsx': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
     \ 'go': ['~/go/bin/go-langserver'],
     \ 'tf': ['~/src/terraform-lsp/terraform-lsp'],
