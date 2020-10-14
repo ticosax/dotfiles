@@ -267,7 +267,7 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript.tsx': ['javascript-typescript-stdio'],
     \ 'python': ['pyls'],
     \ 'go': ['~/go/bin/go-langserver'],
-    \ 'tf': ['~/src/terraform-lsp/terraform-lsp'],
+    \ 'tf': ['~/bin/terraform-ls', 'serve'],
     \ }
 nmap <F5> <Plug>(lcn-menu)
 " Or map each action separately
