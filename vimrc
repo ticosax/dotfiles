@@ -77,7 +77,7 @@ Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'hashivim/vim-vagrant'
 Plug 'andrewstuart/vim-kubernetes'
-Plug 'jamessan/vim-gnupg'
+Plug 'jamessan/vim-gnupg', {'branch': 'main'}
 Plug 'sbdchd/neoformat'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 Plug 'psliwka/vim-smoothie'
