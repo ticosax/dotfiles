@@ -2,6 +2,6 @@
     ci = commit
     co = checkout
     st = status
-    rbi = "!git rebase -i $(git merge-base $(git rev-parse --abbrev-ref HEAD) master) --autosquash"
-    cm = "!for name in $(git branch --merged | grep -v master | grep -v '*'); do git branch -d $name; done"
+    rbi = "!git rebase -i $(git merge-base $(git rev-parse --abbrev-ref HEAD) main) --autosquash"
+    cm = "!for name in $(git branch --merged | grep -v main | grep -v '*'); do git branch -d $name; done"
     cf = commit --fixup=HEAD
