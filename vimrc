@@ -31,10 +31,7 @@ endfunction
 call plug#begin('~/.vim/plugged')
 
 Plug 'Lokaltog/vim-easymotion'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'tomtom/tcomment_vim'
-"Plug 'iCyMind/NeoSolarized'
 Plug 'blueyed/vim-qf_resize'
 Plug 'romainl/vim-qf'
 Plug 'powerline/fonts'
@@ -84,6 +81,10 @@ Plug 'psliwka/vim-smoothie'
 Plug 'wadackel/vim-dogrun'
 Plug 'tyru/caw.vim'
 Plug 'kana/vim-repeat'
+
+" colorschemes
+Plug 'wadackel/vim-dogrun'
+Plug 'bluz71/vim-nightfly-guicolors'
 
 " Clap
 Plug 'liuchengxu/vim-clap'
@@ -140,21 +141,18 @@ set wildignore+=*.pyc
 " let g:python_host_prog = '/home/nicolas/.pyenv/versions/neovim2/bin/python'
 " let g:python3_host_prog = '/home/nicolas/.pyenv/versions/neovim3/bin/python'
 
-" airline
-let g:airline_powerline_fonts = 1
-let g:airline_extensions_add = ['neomake']
-let g:airline_theme = 'solarized'
-
 set laststatus=2
-" let g:indentobject_meaningful_indentation = ["python", "markdown", "xml"]
 
-" solarized
 syntax enable
 set background=dark
-let g:neosolarized_vertSplitBgTrans = 1
-colorscheme dogrun
+
+set termguicolors
+colorscheme nightfly
+let g:nightflyCursorColor = 1
+let g:nightflyUnderlineMatchParen = 1
+
 " comes with dogrun
-hi Search ctermfg=7
+" hi Search ctermfg=7
 
 let g:gitgutter_override_sign_column_highlight = 0
 

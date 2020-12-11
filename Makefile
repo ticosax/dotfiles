@@ -22,10 +22,6 @@ $(REPO_PATH)/powerline-fonts:
 ~/.local/share/nvim/site/autoload/plug.vim:
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-$(REPO_PATH)/gnome-terminal-colors-solarized:
-	# Solarized for terminal
-	git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git $@
-
 ~/.ctags:
 	ln -s `pwd`/ctags $@
 
@@ -54,11 +50,11 @@ delete-vimrc:
 	ln -s `pwd`/gitignore_global $@
 
 .PHONY: pre-install
-pre-install: $(REPO_PATH)/powerline-fonts ~/.local/share/nvim/site/autoload/plug.vim $(REPO_PATH)/gnome-terminal-colors-solarized ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
+pre-install: $(REPO_PATH)/powerline-fonts ~/.local/share/nvim/site/autoload/plug.vim ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
 	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 	sudo apt-add-repository https://cli.github.com/packages
 	sudo apt update
-	sudo apt install -y neovim exuberant-ctags python-fontforge cmake python-dev python3-dev python3-pip zsh build-essential ack-grep libffi-dev direnv golang gh
+	sudo apt install -y neovim exuberant-ctags python-fontforge cmake python-dev python3-dev python3-pip zsh build-essential ack-grep libffi-dev direnv golang gh dconf-cli
 	sudo snap install hub --classic
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.?tf' -exec cp {} -t $$HOME/.fonts/ \;
@@ -66,6 +62,7 @@ pre-install: $(REPO_PATH)/powerline-fonts ~/.local/share/nvim/site/autoload/plug
 	curl https://bootstrap.pypa.io/get-pip.py | python3 - --user
 	vim +BundleInstall +qall
 	git config --global core.excludesfile ~/.gitignore_global
+	curl https://raw.githubusercontent.com/bluz71/vim-nightfly-guicolors/6541279337154b9b3ec70fc11a2003e07951e59a/terminal_themes/gnome-terminal-nightfly.sh | sh
 
 ~/.oh-my-zsh/custom/plugins/zsh-completions:
 	git clone https://github.com/zsh-users/zsh-completions $@
