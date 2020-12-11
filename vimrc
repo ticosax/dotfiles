@@ -46,6 +46,11 @@ Plug 'ncm2/ncm2-racer'
 Plug 'ncm2/ncm2-match-highlight'
 Plug 'ncm2/ncm2-highprio-pop'
 Plug 'ncm2/ncm2-markdown-subscope'
+Plug 'subnut/ncm2-github-emoji'
+Plug 'ncm2/ncm2-github'
+Plug 'ncm2/ncm2-gtags'
+" useful for above plugin :arrow-up:
+Plug 'jsfaint/gen_tags.vim'
 
 Plug 'roxma/nvim-yarp'
 Plug 'mileszs/ack.vim'
@@ -64,7 +69,6 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'mhinz/vim-startify'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-eunuch'
 Plug 'chrisbra/SudoEdit.vim'
@@ -75,16 +79,23 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'hashivim/vim-vagrant'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'jamessan/vim-gnupg', {'branch': 'main'}
-Plug 'sbdchd/neoformat'
+" Plug 'sbdchd/neoformat'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 Plug 'psliwka/vim-smoothie'
-Plug 'wadackel/vim-dogrun'
 Plug 'tyru/caw.vim'
 Plug 'kana/vim-repeat'
+Plug 'liuchengxu/eleline.vim'
+" XXX neovim 5
+"Plug 'glepnir/indent-guides.nvim', {'branch': 'main'}
+Plug 'kyazdani42/nvim-web-devicons'
 
 " colorschemes
 Plug 'wadackel/vim-dogrun'
 Plug 'bluz71/vim-nightfly-guicolors'
+
+" Emojis support
+Plug 'ryanoasis/vim-devicons'
+Plug 'adelarsq/vim-devicons-emoji'
 
 " Clap
 Plug 'liuchengxu/vim-clap'
@@ -98,6 +109,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ncm2/ncm2-github'
 Plug 'lambdalisue/gina.vim'
 Plug 'rbong/vim-flog'
+Plug 'tpope/vim-rhubarb'
 
 " toml
 Plug 'cespare/vim-toml'
@@ -111,6 +123,7 @@ Plug 'plytophogy/vim-virtualenv'
 Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'raimon49/requirements.txt.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'alfredodeza/pytest.vim'
 
 " scala
 Plug 'derekwyatt/vim-scala'
@@ -230,10 +243,6 @@ let g:startify_change_to_vcs_root = 1
 " tagbar
 nmap <F3> :TagbarToggle<CR>
 
-" set inccommand=split
-" NERDTree
-nmap <F2> :NERDTreeToggle<CR>
-
 " vim-preview
 nmap <Leader>pre :Preview<CR>
 
@@ -275,6 +284,7 @@ nmap <silent> gd <Plug>(lcn-definition)
 nmap <silent> gr <Plug>(lcn-references)
 nmap <silent> gi <Plug>(lcn-implementation)
 nmap <silent> <F2> <Plug>(lcn-rename)
+nmap <silent><Leader>f <Esc>:Pytest function<CR>
 
 " ncm2/ncm2
 " enable ncm2 for all buffers
