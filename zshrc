@@ -48,7 +48,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export WORKON_HOME=$HOME/.virtualenvs
-plugins=(git django docker python zsh-completions aws virtualenvwrapper virtualenv nvm pyenv kubectl systemd minikube pip npm terraform)
+plugins=(git django docker python zsh-completions aws virtualenv nvm pyenv kubectl systemd minikube pip npm terraform)
 
 # poetry
 fpath+=~/.zfunc
@@ -96,16 +96,12 @@ export GOPATH="$HOME/go"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/home/nicolas/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 source $HOME/.cargo/env
 
 source /usr/share/google-cloud-sdk/completion.zsh.inc
 
 # added by travis gem
 [ -f /home/nicolas/.travis/travis.sh ] && source /home/nicolas/.travis/travis.sh
-
-
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator

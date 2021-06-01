@@ -14,9 +14,6 @@ set noswapfile
 set hidden
 set relativenumber
 
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-
 " for euclio/vim-markdown-composer
 function! BuildComposer(info)
   if a:info.status != 'unchanged' || a:info.force
@@ -35,29 +32,37 @@ Plug 'tomtom/tcomment_vim'
 Plug 'blueyed/vim-qf_resize'
 Plug 'romainl/vim-qf'
 Plug 'powerline/fonts'
-Plug 'junegunn/fzf'
-Plug 'ncm2/ncm2'
-" NOTE: you need to install completion sources to get completions. Check
-" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-racer'
-Plug 'ncm2/ncm2-match-highlight'
-Plug 'ncm2/ncm2-highprio-pop'
-Plug 'ncm2/ncm2-markdown-subscope'
-Plug 'subnut/ncm2-github-emoji'
-Plug 'ncm2/ncm2-github'
-Plug 'ncm2/ncm2-gtags'
-" useful for above plugin :arrow-up:
-Plug 'jsfaint/gen_tags.vim'
+" Plug 'junegunn/fzf'
+
+" LSP
+Plug 'neovim/nvim-lspconfig'
+" Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+
+" Completion
+Plug 'hrsh7th/nvim-compe'
+" Plug 'ncm2/ncm2'
+" " NOTE: you need to install completion sources to get completions. Check
+" " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-jedi'
+" Plug 'ncm2/ncm2-racer'
+" Plug 'ncm2/ncm2-match-highlight'
+" Plug 'ncm2/ncm2-highprio-pop'
+" Plug 'ncm2/ncm2-markdown-subscope'
+" Plug 'subnut/ncm2-github-emoji'
+" Plug 'ncm2/ncm2-github'
+" Plug 'ncm2/ncm2-gtags'
+" " useful for above plugin :arrow-up:
+" Plug 'jsfaint/gen_tags.vim'
+" Plug 'ncm2/ncm2-neoinclude'
+" Plug 'Shougo/neoinclude.vim'
+" Plug 'fgrsnau/ncm2-aspell'
+" Plug 'fgrsnau/ncm2-otherbuf'
+" Plug 'TyberiusPrime/ncm2-bufline'
 
 Plug 'roxma/nvim-yarp'
-Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/IndexedSearch'
-Plug 'vim-scripts/git-log'
-Plug 'euclio/vim-markdown-composer', {'do': function('BuildComposer')}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'saltstack/salt-vim'
 Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
@@ -73,36 +78,41 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-eunuch'
 Plug 'chrisbra/SudoEdit.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tacahiroy/ctrlp-funky'
-Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'hashivim/vim-vagrant'
 Plug 'andrewstuart/vim-kubernetes'
-Plug 'jamessan/vim-gnupg', {'branch': 'main'}
-" Plug 'sbdchd/neoformat'
-Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'psliwka/vim-smoothie'
 Plug 'tyru/caw.vim'
 Plug 'kana/vim-repeat'
-Plug 'liuchengxu/eleline.vim'
-" XXX neovim 5
-"Plug 'glepnir/indent-guides.nvim', {'branch': 'main'}
+Plug 'glepnir/indent-guides.nvim', {'branch': 'main'}
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+
+" Files
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" tablines
+" Plug 'bagrat/vim-buffet'
 Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'romgrk/barbar.nvim'
+" Plug 'liuchengxu/eleline.vim'
+Plug 'itchyny/lightline.vim'
 
 " colorschemes
 Plug 'wadackel/vim-dogrun'
 Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'mhartington/oceanic-next'
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
 " Emojis support
 Plug 'ryanoasis/vim-devicons'
 Plug 'adelarsq/vim-devicons-emoji'
 
-" Clap
-Plug 'liuchengxu/vim-clap'
-Plug 'liuchengxu/vista.vim'
-" run this command to install fuzzy file search
-" :call clap#installer#build_maple()
-
+" https://www.chrisatmachine.com/Neovim/12-git-integration/
 "git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -110,17 +120,18 @@ Plug 'ncm2/ncm2-github'
 Plug 'lambdalisue/gina.vim'
 Plug 'rbong/vim-flog'
 Plug 'tpope/vim-rhubarb'
+Plug 'mhinz/vim-signify'
+Plug 'junegunn/gv.vim'
+" neovim 5
+Plug 'f-person/git-blame.nvim'
 
 " toml
 Plug 'cespare/vim-toml'
 Plug 'maralla/vim-toml-enhance'
 
 " python
-" Plug 'davidhalter/jedi-vim'
-Plug 'alfredodeza/pytest.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'plytophogy/vim-virtualenv'
-Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'raimon49/requirements.txt.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'alfredodeza/pytest.vim'
@@ -140,8 +151,16 @@ Plug 'racer-rust/vim-racer'
 " JS
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'ncm2/nvim-typescript', {'do': './install.sh'}
+
+" Markdown
+Plug 'euclio/vim-markdown-composer', {'do': function('BuildComposer')}
+Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
 
 call plug#end()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
 
 let g:session_autosave = 'no'
 set backspace=indent,eol,start
@@ -150,22 +169,23 @@ set scrolloff=5
 set wildignore+=*.pyc
 
 
-" https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
-" let g:python_host_prog = '/home/nicolas/.pyenv/versions/neovim2/bin/python'
-" let g:python3_host_prog = '/home/nicolas/.pyenv/versions/neovim3/bin/python'
-
 set laststatus=2
 
 syntax enable
-set background=dark
+" set background=dark
 
-set termguicolors
-colorscheme nightfly
-let g:nightflyCursorColor = 1
-let g:nightflyUnderlineMatchParen = 1
+" set termguicolors
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" colorscheme nightfly
+if exists('+termguicolors')
+     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+     set termguicolors
+endif
 
-" comes with dogrun
-" hi Search ctermfg=7
+colorscheme spaceduck
+let g:lightline = { 'colorscheme': 'spaceduck'}
 
 let g:gitgutter_override_sign_column_highlight = 0
 
@@ -243,65 +263,59 @@ let g:startify_change_to_vcs_root = 1
 " tagbar
 nmap <F3> :TagbarToggle<CR>
 
-" vim-preview
-nmap <Leader>pre :Preview<CR>
-
 noremap <F6> :CommandTFlush<CR>
 nnoremap <F4> :set hlsearch!<CR>
 
 " WhiteSpace
 autocmd BufWritePre * ToggleStripWhitespaceOnSave
 
-" CtrlP
-noremap <Leader>fu :CtrlPFunky<CR>
-noremap <Leader>t :CtrlP<CR>
-noremap <Leader>b :CtrlPBuffer<CR>
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox|ropeproject|tmp)$'
-
 " move cursor at end of selection once yanked
 vmap y ygv<ESC>
 
-" lsp
-"
-" \ 'python': ['/home/nicolas/.pyenv/shims/pyls'],
-" "\ 'python': ['/home/nicolas/.cache/pypoetry/virtualenvs/kompost-py3.7/bin/pyls'],
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ 'typescript': ['javascript-typescript-stdio'],
-    \ 'typescript.tsx': ['javascript-typescript-stdio'],
-    \ 'python': ['pyls'],
-    \ 'go': ['~/go/bin/go-langserver'],
-    \ 'tf': ['~/bin/terraform-ls', 'serve'],
-    \ }
-nmap <F5> <Plug>(lcn-menu)
-" Or map each action separately
-nmap <silent> K <Plug>(lcn-hover)
-nmap <silent> FF <Plug>(lcn-format)
-nmap <silent> gd <Plug>(lcn-definition)
-nmap <silent> gr <Plug>(lcn-references)
-nmap <silent> gi <Plug>(lcn-implementation)
-nmap <silent> <F2> <Plug>(lcn-rename)
-nmap <silent><Leader>f <Esc>:Pytest function<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" ncm2/ncm2
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+lua << EOF
+local nvim_lsp = require('lspconfig')
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
-" found' messages
-" set shortmess+=c
-"
-" " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-" inoremap <c-c> <ESC>
-"
-" " When the <Enter> key is pressed while the popup menu is visible, it only
-" " hides the menu. Use this mapping to close the menu and also start a new
-" " line.
-" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  local opts = { noremap=true, silent=true }
+
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap("n", "FF", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+end
+local servers = { "pylsp", "rust_analyzer", "tsserver" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup{ on_attach = on_attach }
+end
+nvim_lsp['terraformls'].setup{on_attach = on_attach, filetypes = { "terraform", "hcl", "tf"} }
+EOF
+
 "
 " " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+nmap <leader>p :Glow<CR>
+nnoremap <leader>ff :Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<cr>
