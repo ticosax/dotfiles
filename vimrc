@@ -36,7 +36,6 @@ Plug 'powerline/fonts'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
-" Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 
 " Completion
 Plug 'hrsh7th/nvim-compe'
