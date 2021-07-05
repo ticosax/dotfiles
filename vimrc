@@ -69,6 +69,7 @@ Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Plug 'fatih/vim-go'
 Plug 'elzr/vim-json'
 Plug 'tommcdo/vim-exchange'
+Plug 'inkarkat/argtextobj.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'mhinz/vim-startify'
