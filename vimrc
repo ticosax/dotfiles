@@ -306,7 +306,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "FF", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
-local servers = { "pylsp", "rust_analyzer", "tsserver" }
+local servers = { "pylsp", "rust_analyzer", "tsserver", "pyright", "jedi_language_server" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup{ on_attach = on_attach }
 end
