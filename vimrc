@@ -89,6 +89,8 @@ Plug 'kana/vim-repeat'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+" Status lines
+Plug 'hoob3rt/lualine.nvim'
 " Files
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -99,7 +101,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'romgrk/barbar.nvim'
 " Plug 'liuchengxu/eleline.vim'
-Plug 'itchyny/lightline.vim'
 
 " colorschemes
 Plug 'wadackel/vim-dogrun'
@@ -165,6 +166,9 @@ set wildignore+=*.pyc
 
 
 set laststatus=2
+lua << EOF
+require('lualine').setup{ options = { theme = 'molokai'} }
+EOF
 
 syntax enable
 " set background=dark
@@ -180,8 +184,6 @@ if exists('+termguicolors')
 endif
 
 colorscheme spaceduck
-let g:lightline = { 'colorscheme': 'spaceduck'}
-
 let g:gitgutter_override_sign_column_highlight = 0
 
 au FileType python source ~/src/dotfiles/python_vimrc.vim
