@@ -38,6 +38,10 @@ Plug 'powerline/fonts'
 Plug 'neovim/nvim-lspconfig'
 
 " Completion
+Plug 'nvim-lua/completion-nvim'
+Plug 'steelsojka/completion-buffers'
+Plug 'nvim-treesitter/completion-treesitter'
+Plug 'kristijanhusak/completion-tags'
 Plug 'hrsh7th/nvim-compe'
 " Plug 'ncm2/ncm2'
 " " NOTE: you need to install completion sources to get completions. Check
