@@ -85,7 +85,6 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'psliwka/vim-smoothie'
 Plug 'tyru/caw.vim'
 Plug 'kana/vim-repeat'
-Plug 'glepnir/indent-guides.nvim', {'branch': 'main'}
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
@@ -130,10 +129,8 @@ Plug 'cespare/vim-toml'
 Plug 'maralla/vim-toml-enhance'
 
 " python
-Plug 'hynek/vim-python-pep8-indent'
 Plug 'plytophogy/vim-virtualenv'
 Plug 'raimon49/requirements.txt.vim'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'alfredodeza/pytest.vim'
 
 " scala
@@ -381,4 +378,32 @@ vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
+EOF
+"Treesitter
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+  indent = {
+    enable = true
+  },
+   incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+}
 EOF
