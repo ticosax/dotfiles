@@ -93,6 +93,12 @@ Plug 'kana/vim-repeat'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+" Debuggers
+Plug 'mfussenegger/nvim-dap'
+Plug 'mfussenegger/nvim-dap-python'
+Plug 'rcarriga/nvim-dap-ui'
+
+Plug 'onsails/lspkind-nvim'
 " Status lines
 Plug 'hoob3rt/lualine.nvim'
 " Files
@@ -413,3 +419,14 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+" DAP
+lua require('dap-python').setup('python')
+lua require('dap-python').test_runner = 'pytest'
+lua require("dapui").setup()
+nnoremap <silent> <leader>dr :lua require('dap').toggle_breakpoint()<CR>
+nnoremap <silent> <leader>dm :lua require('dap-python').test_method()<CR>
+nnoremap <silent> <leader>dk :lua require('dap-python').test_class()<CR>
+nnoremap <silent> <leader>dc :lua require('dap').continue()<CR>
+nnoremap <silent> <leader>ds :lua require('dap').step_into()<CR>
+vnoremap <silent> <leader>dv <ESC>:lua require('dap-python').debug_selection()<CR>
