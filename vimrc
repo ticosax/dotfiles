@@ -32,7 +32,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'blueyed/vim-qf_resize'
 Plug 'romainl/vim-qf'
 Plug 'powerline/fonts'
-" Plug 'junegunn/fzf'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -43,26 +42,6 @@ Plug 'steelsojka/completion-buffers'
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'kristijanhusak/completion-tags'
 Plug 'hrsh7th/nvim-compe'
-" Plug 'ncm2/ncm2'
-" " NOTE: you need to install completion sources to get completions. Check
-" " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-jedi'
-" Plug 'ncm2/ncm2-racer'
-" Plug 'ncm2/ncm2-match-highlight'
-" Plug 'ncm2/ncm2-highprio-pop'
-" Plug 'ncm2/ncm2-markdown-subscope'
-" Plug 'subnut/ncm2-github-emoji'
-" Plug 'ncm2/ncm2-github'
-" Plug 'ncm2/ncm2-gtags'
-" " useful for above plugin :arrow-up:
-" Plug 'jsfaint/gen_tags.vim'
-" Plug 'ncm2/ncm2-neoinclude'
-" Plug 'Shougo/neoinclude.vim'
-" Plug 'fgrsnau/ncm2-aspell'
-" Plug 'fgrsnau/ncm2-otherbuf'
-" Plug 'TyberiusPrime/ncm2-bufline'
 
 Plug 'roxma/nvim-yarp'
 Plug 'tpope/vim-surround'
@@ -155,11 +134,6 @@ Plug 'Rykka/InstantRst'
 Plug 'rust-lang/rust.vim'
 Plug 'mattn/webapi-vim'
 Plug 'racer-rust/vim-racer'
-
-" JS
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-Plug 'ncm2/nvim-typescript', {'do': './install.sh'}
 
 " Markdown
 Plug 'euclio/vim-markdown-composer', {'do': function('BuildComposer')}
