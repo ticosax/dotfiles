@@ -256,8 +256,10 @@ vmap y ygv<ESC>
 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fw <cmd>Telescope grep_string<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fB <cmd>Telescope file_browser<cr>
 
 lua << EOF
 local nvim_lsp = require('lspconfig')
