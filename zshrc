@@ -48,10 +48,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export WORKON_HOME=$HOME/.virtualenvs
-plugins=(git django docker python zsh-completions aws virtualenv nvm pyenv kubectl systemd minikube pip npm terraform)
-
-# poetry
-fpath+=~/.zfunc
+plugins=(git docker python zsh-completions aws virtualenv nvm pyenv kubectl systemd minikube pip npm terraform poetry)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -59,7 +56,8 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/home/nicolas/.gem/ruby/2.5.0/bin:~/.npm-global/bin:$HOME/.poetry/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.serverless/bin:$PATH:$PATH
+source $HOME/.poetry/env
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/home/nicolas/.gem/ruby/2.5.0/bin:~/.npm-global/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.serverless/bin:$HOME/.yarn/bin:$PATH
 unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # export MANPATH="/usr/local/man:$MANPATH"
 
