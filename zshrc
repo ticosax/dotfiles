@@ -94,7 +94,7 @@ unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 alias s="cd .."
 alias ktl="kubectl"
 alias cat="bat"
-alias bootstrap-neovim="pip install -U pynvim python-lsp-server pyls-flake8 pyls-isort python-lsp-black pyls-memestra mypy-ls debugpy pyright jedi-language-server"
+alias bootstrap-neovim="pip install -U pynvim python-lsp-server pyls-flake8 pyls-isort python-lsp-black pyls-memestra mypy-ls debugpy jedi-language-server"
 export PATH="$HOME/.pyenv/bin:$HOME/go/bin:$PATH"
 export GOPATH="$HOME/go"
 eval "$(pyenv init -)"
