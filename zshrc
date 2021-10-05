@@ -61,7 +61,6 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 
-source $HOME/.poetry/env
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/home/nicolas/.gem/ruby/2.5.0/bin:~/.npm-global/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.serverless/bin:$HOME/.yarn/bin:$PATH
 unsetopt INC_APPEND_HISTORY SHARE_HISTORY
 # export MANPATH="/usr/local/man:$MANPATH"
