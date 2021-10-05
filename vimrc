@@ -96,7 +96,7 @@ Plug 'wadackel/vim-dogrun'
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'mhartington/oceanic-next'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
-Plug 'NTBBloodbath/doom-one.nvim'
+Plug 'NTBBloodbath/doom-one.nvim', {'branch': 'main'}
 
 " Emojis support
 Plug 'ryanoasis/vim-devicons'
@@ -138,7 +138,7 @@ Plug 'racer-rust/vim-racer'
 
 " Markdown
 Plug 'euclio/vim-markdown-composer', {'do': function('BuildComposer')}
-Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
+Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
 
 call plug#end()
 
