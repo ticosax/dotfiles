@@ -51,16 +51,14 @@ delete-vimrc:
 
 .PHONY: pre-install
 pre-install: $(REPO_PATH)/powerline-fonts ~/.local/share/nvim/site/autoload/plug.vim ~/.ctags ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
-	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-	sudo apt-add-repository https://cli.github.com/packages
+	curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 	sudo apt update
 	sudo apt install -y neovim exuberant-ctags python-fontforge cmake python-dev python3-dev python3-pip zsh build-essential ack-grep libffi-dev direnv golang gh dconf-cli
-	sudo snap install hub --classic
 	mkdir -p ~/.fonts/
 	find ../powerline-fonts -name '*.?tf' -exec cp {} -t $$HOME/.fonts/ \;
 	fc-cache -vf ~/.fonts
-	curl https://bootstrap.pypa.io/get-pip.py | python3 - --user
-	vim +BundleInstall +qall
+	vim +PlugInstall
 	git config --global core.excludesfile ~/.gitignore_global
 	curl https://raw.githubusercontent.com/bluz71/vim-nightfly-guicolors/6541279337154b9b3ec70fc11a2003e07951e59a/terminal_themes/gnome-terminal-nightfly.sh | sh
 
@@ -68,7 +66,7 @@ pre-install: $(REPO_PATH)/powerline-fonts ~/.local/share/nvim/site/autoload/plug
 	git clone https://github.com/zsh-users/zsh-completions $@
 
 ~/.oh-my-zsh:
-	git clone git://github.com/robbyrussell/oh-my-zsh.git $@
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ~/.zshrc: ~/.oh-my-zsh ~/.oh-my-zsh/custom/plugins/zsh-completions
 	ln -fs $(REPO_PATH)/dotfiles/zshrc $@
