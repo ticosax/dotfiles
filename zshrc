@@ -1,4 +1,4 @@
-export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH:${HOME}/.krew/bin"
 export ZSH="/home/nicolas/.oh-my-zsh"
 export EDITOR=nvim
 source /usr/share/zsh/share/antigen.zsh
