@@ -254,7 +254,7 @@ autocmd BufWritePre * ToggleStripWhitespaceOnSave
 " move cursor at end of selection once yanked
 vmap y ygv<ESC>
 
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fw <cmd>Telescope grep_string<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
@@ -306,8 +306,6 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 nmap <leader>p :Glow<CR>
-nnoremap <leader>ff :Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<cr>
-
 
 lua << EOF
 -- Compe setup
