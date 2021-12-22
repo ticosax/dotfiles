@@ -1,5 +1,5 @@
 export PATH="$HOME/.pyenv/bin:$PATH:${HOME}/.krew/bin"
-export ZSH="/home/nicolas/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 source /usr/share/zsh/share/antigen.zsh
 antigen bundle zsh-users/zsh-completions
@@ -11,10 +11,11 @@ plugins=(git docker python aws virtualenv nvm pyenv kubectl systemd minikube pip
 
 alias s="cd .."
 alias ktl="kubectl"
+alias k="kubectl"
 alias cat="bat"
 alias bootstrap-neovim="pip install -U pynvim python-lsp-server pyls-flake8 pyls-isort python-lsp-black pyls-memestra mypy-ls debugpy jedi-language-server"
 eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook zsh)"
-source $ZSH/oh-my-zsh.sh
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
