@@ -11,3 +11,4 @@ pylama.ini
 .vscode/
 .mypy_cache/
 pip-wheel-metadata/
+.envrc
