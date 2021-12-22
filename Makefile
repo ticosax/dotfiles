@@ -1,14 +1,10 @@
 REPO_PATH=~/src
 
-$(REPO_PATH)/terraform-lsp/terraform-lsp:
-	git clone git@github.com:juliosueiras/terraform-lsp.git $@
-	cd $@ && go build
-
 ~/.zshrc:
 	ln -fs $(REPO_PATH)/dotfiles/zshrc $@
 
 .PHONY: install
-install: pre-install $(REPO_PATH)/terrcform-lsp/terraform-lsp ~/.zshrc
+install: pre-install ~/.zshrc
 	echo "Done"
 
 
