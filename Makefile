@@ -37,6 +37,6 @@ delete-vimrc:
 
 .PHONY: pre-install
 pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
-	sudo pacman -S --needed oh-my-zsh ruby terraform neovim powerline-fonts go github-cli gitg
+	sudo pamac install zsh oh-my-zsh ruby terraform neovim powerline-fonts go github-cli gitg gcc zig ripgrep docker docker-compose krew antigen pyenv thunderbird direnv pyenv-virtualenv bat
 	nvim +PlugInstall
 	git config --global core.excludesfile ~/.gitignore_global
