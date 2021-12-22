@@ -97,6 +97,7 @@ Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'mhartington/oceanic-next'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'NTBBloodbath/doom-one.nvim', {'branch': 'main'}
+Plug 'ray-x/aurora'
 
 " Emojis support
 Plug 'ryanoasis/vim-devicons'
@@ -168,7 +169,7 @@ if exists('+termguicolors')
      set termguicolors
 endif
 
-colorscheme nightfly
+colorscheme aurora
 let g:gitgutter_override_sign_column_highlight = 0
 
 au FileType python source ~/src/dotfiles/python_vimrc.vim
