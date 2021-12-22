@@ -64,7 +64,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'hashivim/vim-vagrant'
 Plug 'andrewstuart/vim-kubernetes'
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'psliwka/vim-smoothie'
 Plug 'tyru/caw.vim'
 Plug 'kana/vim-repeat'
