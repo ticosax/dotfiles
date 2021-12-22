@@ -12,6 +12,7 @@ plugins=(git docker python aws virtualenv nvm pyenv kubectl systemd minikube pip
 alias s="cd .."
 alias ktl="kubectl"
 alias cat="bat"
+alias bootstrap-neovim="pip install -U pynvim python-lsp-server pyls-flake8 pyls-isort python-lsp-black pyls-memestra mypy-ls debugpy jedi-language-server"
 eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
