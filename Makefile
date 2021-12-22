@@ -59,6 +59,8 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.vimrc
 		direnv \
 		pyenv-virtualenv \
 		bat \
+		gitui \
+		terraform-lsp \
 		vscode-json-languageserver
 	nvim +PlugInstall
 	git config --global core.excludesfile ~/.gitignore_global
