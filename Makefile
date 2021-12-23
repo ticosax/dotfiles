@@ -3,8 +3,12 @@ REPO_PATH=~/src
 ~/.zshrc:
 	ln -fs $(REPO_PATH)/dotfiles/zshrc $@
 
+~/.config/wezterm/wezterm.lua:
+	mkdir -p ~/.config/wezterm
+	ln -s $(REPO_PATH)/dotfiles/wezterm.lua $@
+
 .PHONY: install
-install: pre-install ~/.zshrc
+install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 	echo "Done"
 
 
@@ -61,6 +65,8 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.vimrc
 		bat \
 		gitui \
 		terraform-lsp \
+		lua-language-server \
+		ttf-fira-code \
 		vscode-json-languageserver
 	nvim +PlugInstall
 	git config --global core.excludesfile ~/.gitignore_global
