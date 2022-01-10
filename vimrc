@@ -290,12 +290,14 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "FF", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
-local servers = { "rust_analyzer", "tsserver", "pyright", "graphql", "tflint", "yamlls", "dockerls", "terraformls", "vimls", "jsonls", "sumneko_lua" }
+-- jedi_language_server
+local servers = { "pylsp", "rust_analyzer", "tsserver", "pyright", "graphql", "tflint", "yamlls", "dockerls", "terraformls", "vimls", "sumneko_lua" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup{ on_attach = on_attach }
 end
 nvim_lsp['terraformls'].setup{on_attach = on_attach, filetypes = { "terraform", "hcl", "tf"} }
 nvim_lsp['sqlls'].setup{cmd = {"sql-language-server", "up", "--method", "stdio"}}
+nvim_lsp['jsonls'].setup{on_attach = on_attach, cmd = {"vscode-json-languageserver", "--stdio"}}
 EOF
 
 autocmd BufEnter * lua require'completion'.on_attach()
