@@ -67,6 +67,7 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.vimrc
 		terraform-lsp \
 		lua-language-server \
 		ttf-fira-code \
-		vscode-json-languageserver
+		vscode-json-languageserver \
+		wezterm
 	nvim +PlugInstall
 	git config --global core.excludesfile ~/.gitignore_global
