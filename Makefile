@@ -39,6 +39,9 @@ delete-vimrc:
 ~/.gitignore_global:
 	ln -s `pwd`/gitignore_global $@
 
+~/.config/wezterm/wezterm.lua:
+	ln -s `pwd`/wezterm.lua $@
+
 .PHONY: pre-install
 pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
 	sudo pamac install \
