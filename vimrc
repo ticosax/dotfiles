@@ -164,8 +164,8 @@ syntax enable
 " let g:oceanic_next_terminal_italic = 1
 " colorscheme nightfly
 if exists('+termguicolors')
-     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
      set termguicolors
 endif
 
