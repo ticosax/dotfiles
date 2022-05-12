@@ -10,7 +10,7 @@ return {
 	-- color_scheme = "Aurora",
 	font_size = 11,
 	keys = {
-		{key="V", mods="CTRL", action=wezterm.action{PasteFrom="Clipboard"}},
+		{key="V", mods="CTRL|SHIFT", action=wezterm.action{PasteFrom="Clipboard"}},
 	},
 	colors = { compose_cursor = "orange" },
 	scrollback_lines = 7000,
