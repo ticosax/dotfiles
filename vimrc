@@ -102,7 +102,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Emojis support
 Plug 'ryanoasis/vim-devicons'
-Plug 'adelarsq/vim-devicons-emoji'
 
 " https://www.chrisatmachine.com/Neovim/12-git-integration/
 "git
