@@ -64,7 +64,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'hashivim/vim-vagrant'
 Plug 'andrewstuart/vim-kubernetes'
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'psliwka/vim-smoothie'
 Plug 'tyru/caw.vim'
 Plug 'kana/vim-repeat'
@@ -84,6 +83,7 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-symbols.nvim'
 
 " tablines
 " Plug 'bagrat/vim-buffet'
@@ -98,10 +98,10 @@ Plug 'mhartington/oceanic-next'
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'NTBBloodbath/doom-one.nvim', {'branch': 'main'}
 Plug 'ray-x/aurora'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Emojis support
 Plug 'ryanoasis/vim-devicons'
-Plug 'adelarsq/vim-devicons-emoji'
 
 " https://www.chrisatmachine.com/Neovim/12-git-integration/
 "git
@@ -164,8 +164,8 @@ syntax enable
 " let g:oceanic_next_terminal_italic = 1
 " colorscheme nightfly
 if exists('+termguicolors')
-     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
      set termguicolors
 endif
 
@@ -285,17 +285,19 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "FF", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
-local servers = { "pylsp", "rust_analyzer", "tsserver", "jedi_language_server", "pyright", "graphql", "tflint", "yamlls", "dockerls", "terraformls", "vimls", "jsonls" }
+-- jedi_language_server
+local servers = { "pylsp", "rust_analyzer", "tsserver", "pyright", "graphql", "tflint", "yamlls", "dockerls", "terraformls", "vimls", "sumneko_lua" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup{ on_attach = on_attach }
 end
 nvim_lsp['terraformls'].setup{on_attach = on_attach, filetypes = { "terraform", "hcl", "tf"} }
 nvim_lsp['sqlls'].setup{cmd = {"sql-language-server", "up", "--method", "stdio"}}
+nvim_lsp['jsonls'].setup{on_attach = on_attach, cmd = {"vscode-json-languageserver", "--stdio"}}
 EOF
 
 autocmd BufEnter * lua require'completion'.on_attach()
@@ -373,7 +375,7 @@ EOF
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true,              -- false will disable the whole extension
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
