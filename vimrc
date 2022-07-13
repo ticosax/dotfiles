@@ -46,7 +46,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'roxma/nvim-yarp'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'saltstack/salt-vim'
+" Plug 'saltstack/salt-vim'
 Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Plug 'fatih/vim-go'
 Plug 'elzr/vim-json'
