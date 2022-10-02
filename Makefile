@@ -27,6 +27,9 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 #
 # 	ln -s `pwd`/vimrc ~/.config/nvim/init.vim
 ~/.config/nvim/lua/custom:
+	# rm -rf /home/nicolas/.config/nvim
+	# rm -rf ~/.local/share/nvim
+	# git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 	ln -s `pwd`/nvchad/custom $@
 
 ~/.ackrc:
