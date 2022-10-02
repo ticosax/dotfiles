@@ -7,7 +7,7 @@ antigen bundle darvid/zsh-poetry
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
-plugins=(git docker python aws virtualenv nvm pyenv kubectl systemd minikube pip npm terraform postgres)
+plugins=(git docker python aws virtualenv nvm pyenv kubectl systemd minikube pip npm terraform postgres poetry)
 
 alias s="cd .."
 alias ktl="kubectl"
@@ -18,4 +18,5 @@ eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook zsh)"
+eval "$(mcfly init zsh)"
 source $HOME/.oh-my-zsh/oh-my-zsh.sh

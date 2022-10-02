@@ -91,14 +91,19 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'romgrk/barbar.nvim'
 " Plug 'liuchengxu/eleline.vim'
 
+" Scrollbar
+Plug 'petertriho/nvim-scrollbar'
+
 " colorschemes
-Plug 'wadackel/vim-dogrun'
-Plug 'bluz71/vim-nightfly-guicolors'
-Plug 'mhartington/oceanic-next'
-Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
-Plug 'NTBBloodbath/doom-one.nvim', {'branch': 'main'}
+" Plug 'wadackel/vim-dogrun'
+" Plug 'bluz71/vim-nightfly-guicolors'
+" Plug 'mhartington/oceanic-next'
+" Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+" Plug 'NTBBloodbath/doom-one.nvim', {'branch': 'main'}
 Plug 'ray-x/aurora'
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'katawful/kat.nvim'
+Plug 'kaiuri/nvim-juliana'
 
 " Emojis support
 Plug 'ryanoasis/vim-devicons'
@@ -159,17 +164,23 @@ EOF
 syntax enable
 " set background=dark
 
-" set termguicolors
+set termguicolors
+let g:aurora_italic = 1
+let g:aurora_bold = 1
+" let g:aurora_transparent = 1
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
 " colorscheme nightfly
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-     set termguicolors
-endif
-
 colorscheme aurora
+" Neovim 0.8
+" colorscheme juliana
+" colorscheme kat.nwim
+" if exists('+termguicolors')
+"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"      set termguicolors
+" endif
+
 let g:gitgutter_override_sign_column_highlight = 0
 
 au FileType python source ~/src/dotfiles/python_vimrc.vim
@@ -291,10 +302,16 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "FF", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 -- jedi_language_server
-local servers = { "pylsp", "rust_analyzer", "tsserver", "pyright", "graphql", "tflint", "yamlls", "dockerls", "terraformls", "vimls", "sumneko_lua" }
+local servers = { "rust_analyzer", "tsserver", "pyright", "graphql", "tflint", "yamlls", "dockerls", "terraformls", "vimls", "sumneko_lua" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup{ on_attach = on_attach }
 end
+local pylsp_settings = {
+  ["pylsp.plugins.flake8.enabled"] = true,
+  ["pylsp.plugins.pycodestyle.enabled"] = false,
+  ["pylsp.plugins.autopep8.enabled"] = false,
+}
+nvim_lsp['pylsp'].setup{on_attach = on_attach, settings = pylsp_settings}
 nvim_lsp['terraformls'].setup{on_attach = on_attach, filetypes = { "terraform", "hcl", "tf"} }
 nvim_lsp['sqlls'].setup{cmd = {"sql-language-server", "up", "--method", "stdio"}}
 nvim_lsp['jsonls'].setup{on_attach = on_attach, cmd = {"vscode-json-languageserver", "--stdio"}}
@@ -409,3 +426,7 @@ nnoremap <silent> <leader>dk :lua require('dap-python').test_class()<CR>
 nnoremap <silent> <leader>dc :lua require('dap').continue()<CR>
 nnoremap <silent> <leader>ds :lua require('dap').step_into()<CR>
 vnoremap <silent> <leader>dv <ESC>:lua require('dap-python').debug_selection()<CR>
+
+lua <<EOF
+require("scrollbar").setup()
+EOF
