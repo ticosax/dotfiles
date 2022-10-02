@@ -18,14 +18,16 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 ~/.bash_aliases:
 	ln -s `pwd`/bash_aliases $@
 
-.PHONY: delete-vimrc
-delete-vimrc:
-	mkdir -p ~/.config/nvim
-	rm -f ~/.config/nvim/init.vim
-
-~/.vimrc: delete-vimrc
-
-	ln -s `pwd`/vimrc ~/.config/nvim/init.vim
+# .PHONY: delete-vimrc
+# delete-vimrc:
+# 	mkdir -p ~/.config/nvim
+# 	rm -f ~/.config/nvim/init.vim
+#
+# ~/.vimrc: delete-vimrc
+#
+# 	ln -s `pwd`/vimrc ~/.config/nvim/init.vim
+~/.config/nvim/lua/custom:
+	ln -s `pwd`/nvchad/custom $@
 
 ~/.ackrc:
 	ln -s `pwd`/ackrc $@
@@ -43,7 +45,7 @@ delete-vimrc:
 	ln -s `pwd`/wezterm.lua $@
 
 .PHONY: pre-install
-pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.vimrc ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf
+pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/nvim/lua/custom
 	sudo pamac install \
 		zsh \
 		oh-my-zsh \
