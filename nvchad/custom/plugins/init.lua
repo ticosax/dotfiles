@@ -26,4 +26,7 @@ return {
 	["nvim-lua/lsp-status.nvim"] = {},
 	["tpope/vim-surround"] = {},
 	["psliwka/vim-smoothie"] = {},
+	["rmehri01/onenord.nvim"] = {},
+	["f-person/git-blame.nvim"] = {},
+	["TimUntersberger/neogit"] = { requires = "nvim-lua/plenary.nvim" },
 }
