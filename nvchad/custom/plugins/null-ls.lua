@@ -17,15 +17,15 @@ local sources = {
 	b.formatting.shfmt,
 	b.diagnostics.shellcheck.with({ diagnostics_format = "#{m} [#{c}]" }),
 
-  -- rust
+	-- rust
 	b.formatting.rustfmt,
 
-  -- pyton
-	b.formatting.black,
+	-- pyton
+	b.formatting.black.with({ extra_args = { "--fast" } }),
+	b.formatting.isort.with({ extra_args = { "--profile", "black" } }),
 	b.diagnostics.flake8,
-	b.formatting.isort.with({ extra_args = { "--profile black" } }),
 
-  -- terraform
+	-- terraform
 	b.formatting.terrafmt,
 	b.formatting.terraform_fmt,
 }
