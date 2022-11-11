@@ -8,7 +8,7 @@ local b = null_ls.builtins
 
 local sources = {
 
-	b.formatting.prettier.with({ filetypes = { "python", "markdown", "sql", "lua" } }),
+	b.formatting.prettier.with({ filetypes = { "python", "markdown", "sql", "lua", "typescript", "javascript", "javascriptreact", "typescriptreact"} }),
 
 	-- Lua
 	b.formatting.stylua,
