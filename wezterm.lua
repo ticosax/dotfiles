@@ -11,9 +11,7 @@ end
 table.insert(mykeys, { key = "V", mods = "CTRL|SHIFT", action = wezterm.action({ PasteFrom = "Clipboard" }) })
 return {
 	font = wezterm.font("Victor Mono Nerd Font", { weight = "Medium" }),
-	warn_about_missing_glyphs = false,
 	exit_behavior = "Close",
-
 	color_scheme = "Whimsy",
 	keys = mykeys,
 	scrollback_lines = 14000,

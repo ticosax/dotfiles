@@ -77,7 +77,10 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc
 		ttf-fira-code \
 		vscode-json-languageserver \
 		wezterm \
-		mcfly
+		mcfly \
+		pgformatter \
+		prettierd \
+		sqlfluff
 
 	nvim +PlugInstall
 	git config --global core.excludesfile ~/.gitignore_global

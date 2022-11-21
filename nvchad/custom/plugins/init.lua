@@ -26,12 +26,10 @@ return {
 	["nvim-lua/lsp-status.nvim"] = {},
 	["tpope/vim-surround"] = {},
 	["psliwka/vim-smoothie"] = {},
-	["rmehri01/onenord.nvim"] = {},
-	["f-person/git-blame.nvim"] = {},
 	["sindrets/diffview.nvim"] = { requires = "nvim-lua/plenary.nvim" },
 	["TimUntersberger/neogit"] = {
 		requires = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" },
-		run = function()
+		config = function()
 			local neogit = require("neogit")
 			neogit.setup({
 				integrations = {
@@ -40,4 +38,50 @@ return {
 			})
 		end,
 	},
+	["blueyed/vim-diminactive"] = {},
+
+	["ellisonleao/glow.nvim"] = {},
+	["gbrlsnchs/telescope-lsp-handlers.nvim"] = {
+		requires = { "nvim-telescope/telescope.nvim" },
+		-- config = function()
+		-- 	local telescope = require("telescope")
+		-- 	telescope.load_extension("lsp_handlers")
+		-- end,
+	},
+	["nvim-treesitter/nvim-treesitter-textobjects"] = {},
+	-- ["glacambre/firenvim"] = {
+	-- 	config = function()
+	-- 		vim.fn["firenvim#install"](0)
+	-- 		vim.fn["https://www.linkedin.com/"] = { takeover = "never" }
+	-- 	end,
+	-- },
+	["tpope/vim-fugitive"] = {},
+	["rbong/vim-flog"] = {
+		requires = { "tpope/vim-fugitive" },
+	},
+	-- ["startup-nvim/startup.nvim"] = {
+	-- 	requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	-- 	config = function()
+	-- 		require("startup").setup({ theme = "dashboard" })
+	-- 	end,
+	-- },
+
+	-- Themes
+	-- ["rmehri01/onenord.nvim"] = {},
+	-- ["ray-x/aurora"] = {},
+	-- ["bluz71/vim-moonfly-colors"] = {},
+	-- ["bluz71/vim-nightfly-guicolors"] = {},
+	-- ["christianchiarulli/nvcode-color-schemes.vim"] = {},
+	-- ["marko-cerovac/material.nvim"] = {
+	-- 	config = function()
+	-- 		require("material").setup()
+	-- 	end,
+	-- },
+	-- ["Everblush/everblush.nvim"] = {
+	-- 	as = "everblush",
+	-- 	config = function()
+	-- 		local everblush = require("everblush")
+	-- 		everblush.setup()
+	-- 	end,
+	-- },
 }

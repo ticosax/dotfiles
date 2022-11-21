@@ -1,6 +1,7 @@
 export PATH="$HOME/.pyenv/bin:$PATH:${HOME}/.krew/bin"
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
+export DISABLE_CORRECTION="true"
 source /usr/share/zsh/share/antigen.zsh
 antigen bundle zsh-users/zsh-completions
 antigen bundle darvid/zsh-poetry
@@ -20,3 +21,4 @@ eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook zsh)"
 eval "$(mcfly init zsh)"
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True

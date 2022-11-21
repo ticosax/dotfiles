@@ -8,7 +8,18 @@ local b = null_ls.builtins
 
 local sources = {
 
-	b.formatting.prettier.with({ filetypes = { "python", "markdown", "sql", "lua", "typescript", "javascript", "javascriptreact", "typescriptreact"} }),
+	b.formatting.prettierd.with({
+		filetypes = {
+			"python",
+			"markdown",
+			"sql",
+			"lua",
+			"typescript",
+			"javascript",
+			"javascriptreact",
+			"typescriptreact",
+		},
+	}),
 
 	-- Lua
 	b.formatting.stylua,
@@ -30,6 +41,10 @@ local sources = {
 	-- terraform
 	b.formatting.terrafmt,
 	b.formatting.terraform_fmt,
+
+	-- SQL
+	b.formatting.pg_format,
+	b.formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
 }
 
 null_ls.setup({
