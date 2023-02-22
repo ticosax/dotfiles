@@ -2,7 +2,7 @@ local M = {}
 
 M.ui = {
 	theme_toggle = { "ayu-dark", "one_light" },
-	theme = "nightowl",
+	theme = "gatekeeper",
 	hl_override = require("custom.highlights"),
 }
 M.plugins = require("custom.plugins")
