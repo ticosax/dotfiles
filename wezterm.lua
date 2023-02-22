@@ -10,20 +10,12 @@ for i = 1, 8 do
 end
 table.insert(mykeys, { key = "V", mods = "CTRL|SHIFT", action = wezterm.action({ PasteFrom = "Clipboard" }) })
 return {
-	-- font = wezterm.font("Fira Code", {font_size=11, weight="ExtraLight"}),
-	font = wezterm.font("DejaVuSansMono Nerd Font", { weight = "Regular" }),
+	font = wezterm.font("Victor Mono Nerd Font", { weight = "Medium" }),
 	warn_about_missing_glyphs = false,
-	-- font = wezterm.font("NotoSansMono Font" , { weight = "Light" }),
 	exit_behavior = "Close",
 
-	-- color_scheme = "AtelierSulphurpool",
-	-- color_scheme = "Belafonte Night",
-	-- color_scheme = "Aurora",
 	color_scheme = "Whimsy",
-	-- color_scheme = "Spacedust",
-	font_size = 11,
 	keys = mykeys,
-	-- colors = { compose_cursor = "orange" },
 	scrollback_lines = 14000,
 	enable_scroll_bar = true,
 	hyperlink_rules = {
