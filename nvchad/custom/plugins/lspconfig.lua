@@ -14,7 +14,10 @@ local servers = {
 	"dockerls",
 	"terraformls",
 	"vimls",
-	"sumneko_lua",
+	"lua_ls",
+	"taplo",
+	"sqlls",
+	"ruff_lsp",
 }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({

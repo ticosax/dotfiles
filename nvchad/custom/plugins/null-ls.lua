@@ -22,8 +22,10 @@ local sources = {
 
 	-- pyton
 	b.formatting.black.with({ extra_args = { "--fast" } }),
-	b.formatting.isort.with({ extra_args = { "--profile", "black" } }),
-	b.diagnostics.flake8,
+	-- b.formatting.isort.with({ extra_args = { "--profile", "black" } }),
+	-- b.diagnostics.flake8,
+	b.diagnostics.ruff,
+  b.formatting.ruff,
 
 	-- terraform
 	b.formatting.terrafmt,
