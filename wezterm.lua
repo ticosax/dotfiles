@@ -1,17 +1,17 @@
-local wezterm = require 'wezterm';
+local wezterm = require("wezterm")
 local mykeys = {}
 for i = 1, 8 do
-  -- CTRL+ALT + number to move to that position
-  table.insert(mykeys, {
-    key = tostring(i),
-    mods = 'CTRL|ALT',
-    action = wezterm.action.MoveTab(i - 1),
-  })
+	-- CTRL+ALT + number to move to that position
+	table.insert(mykeys, {
+		key = tostring(i),
+		mods = "CTRL|ALT",
+		action = wezterm.action.MoveTab(i - 1),
+	})
 end
-table.insert(mykeys, { key = "V", mods = "CTRL|SHIFT", action = wezterm.action { PasteFrom = "Clipboard" } })
+table.insert(mykeys, { key = "V", mods = "CTRL|SHIFT", action = wezterm.action({ PasteFrom = "Clipboard" }) })
 return {
 	-- font = wezterm.font("Fira Code", {font_size=11, weight="ExtraLight"}),
-	font = wezterm.font("DejaVuSansMono Nerd Font", { weight = "ExtraLight" }),
+	font = wezterm.font("DejaVuSansMono Nerd Font", { weight = "Regular" }),
 	warn_about_missing_glyphs = false,
 	-- font = wezterm.font("NotoSansMono Font" , { weight = "Light" }),
 	exit_behavior = "Close",
@@ -24,7 +24,7 @@ return {
 	font_size = 11,
 	keys = mykeys,
 	-- colors = { compose_cursor = "orange" },
-	scrollback_lines = 7000,
+	scrollback_lines = 14000,
 	enable_scroll_bar = true,
 	hyperlink_rules = {
 		-- Linkify things that look like URLs with numeric addresses as hosts.
@@ -37,6 +37,11 @@ return {
 		-- infarm JIRA board
 		{
 			regex = [[\bOSDOPM-(\d+)\b]],
+			format = "https://infarm.atlassian.net/browse/$0",
+		},
+		-- infarm JIRA board
+		{
+			regex = [[\SWPD-(\d+)\b]],
 			format = "https://infarm.atlassian.net/browse/$0",
 		},
 	},
