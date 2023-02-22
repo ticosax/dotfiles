@@ -1,6 +1,7 @@
 export PATH="$HOME/.pyenv/bin:$PATH:${HOME}/.krew/bin"
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 source /usr/share/zsh/share/antigen.zsh
 antigen bundle zsh-users/zsh-completions
 antigen bundle darvid/zsh-poetry
