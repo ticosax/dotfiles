@@ -16,7 +16,7 @@ return {
 
 	color_scheme = "mellow",
 	keys = mykeys,
-	scrollback_lines = 14000,
+	scrollback_lines = 30000,
 	enable_scroll_bar = true,
 	hyperlink_rules = {
 		-- Linkify things that look like URLs with numeric addresses as hosts.
