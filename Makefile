@@ -47,8 +47,15 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 ~/.config/wezterm/wezterm.lua:
 	ln -s `pwd`/wezterm.lua $@
 
+~/src/mellow.nvim:
+	git clone git@github.com:kvrohit/mellow.nvim.git ~/src/mellow.nvim
+
+~/.config/wezterm/colors/mellow.toml: ~/src/mellow.nvim
+	mkdir -p ~/.config/wezterm/colors
+	ln -s ~/src/mellow.nvim/extras/wezterm/colors/mellow.toml	 $@
+
 .PHONY: pre-install
-pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/nvim/lua/custom
+pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/nvim/lua/custom ~/.config/wezterm/colors/mellow.toml
 	sudo pamac install \
 		zsh \
 		oh-my-zsh \

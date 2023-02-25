@@ -14,7 +14,7 @@ return {
 	warn_about_missing_glyphs = false,
 	exit_behavior = "Close",
 
-	color_scheme = "Whimsy",
+	color_scheme = "mellow",
 	keys = mykeys,
 	scrollback_lines = 14000,
 	enable_scroll_bar = true,
