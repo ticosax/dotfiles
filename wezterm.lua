@@ -14,7 +14,7 @@ return {
 	warn_about_missing_glyphs = false,
 	exit_behavior = "Close",
 
-	color_scheme = "mellow",
+	color_scheme = "Oceanic-Next",
 	keys = mykeys,
 	scrollback_lines = 30000,
 	enable_scroll_bar = true,
