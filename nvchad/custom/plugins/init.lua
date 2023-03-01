@@ -40,4 +40,5 @@ return {
 			})
 		end,
 	},
+	["liuchengxu/vista.vim"] = {},
 }
