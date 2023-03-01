@@ -83,5 +83,4 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc
 		wezterm \
 		mcfly
 
-	nvim +PlugInstall
 	git config --global core.excludesfile ~/.gitignore_global
