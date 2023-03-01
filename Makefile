@@ -79,10 +79,7 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc
 		pyenv-virtualenv \
 		bat \
 		gitui \
-		terraform-lsp \
-		lua-language-server \
 		ttf-fira-code \
-		vscode-json-languageserver \
 		wezterm \
 		mcfly
 
