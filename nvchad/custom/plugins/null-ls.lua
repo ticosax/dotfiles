@@ -8,7 +8,18 @@ local b = null_ls.builtins
 
 local sources = {
 
-	b.formatting.prettier.with({ filetypes = { "python", "markdown", "sql", "lua", "typescript", "javascript", "javascriptreact", "typescriptreact"} }),
+	b.formatting.prettier.with({
+		filetypes = {
+			"python",
+			"markdown",
+			"sql",
+			"lua",
+			"typescript",
+			"javascript",
+			"javascriptreact",
+			"typescriptreact",
+		},
+	}),
 
 	-- Lua
 	b.formatting.stylua,
@@ -23,7 +34,7 @@ local sources = {
 	-- pyton
 	b.formatting.black.with({ extra_args = { "--fast" } }),
 	b.diagnostics.ruff,
-  b.formatting.ruff,
+	b.formatting.ruff,
 
 	-- terraform
 	b.formatting.terrafmt,
