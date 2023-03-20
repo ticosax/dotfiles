@@ -8,7 +8,7 @@ antigen bundle darvid/zsh-poetry
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
-plugins=(git docker python aws virtualenv nvm pyenv kubectl systemd minikube pip npm terraform postgres poetry)
+plugins=(git docker python aws virtualenv nvm pyenv kubectl systemd minikube pip npm terraform postgres)
 
 alias s="cd .."
 alias ktl="kubectl"
