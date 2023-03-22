@@ -10,7 +10,6 @@ local sources = {
 
 	b.formatting.prettier.with({
 		filetypes = {
-			"python",
 			"markdown",
 			"sql",
 			"lua",
