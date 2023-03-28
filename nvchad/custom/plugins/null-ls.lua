@@ -38,6 +38,9 @@ local sources = {
 	-- terraform
 	b.formatting.terrafmt,
 	b.formatting.terraform_fmt,
+
+  -- toml
+  b.formatting.taplo,
 }
 
 null_ls.setup({

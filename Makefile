@@ -81,6 +81,8 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc
 		gitui \
 		ttf-fira-code \
 		wezterm \
-		mcfly
+		mcfly \
+		prettier \
+		taplo
 
 	git config --global core.excludesfile ~/.gitignore_global
