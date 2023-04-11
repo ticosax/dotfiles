@@ -83,6 +83,7 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc
 		wezterm \
 		mcfly \
 		prettier \
-		taplo
+		taplo \
+		shellcheck
 
 	git config --global core.excludesfile ~/.gitignore_global
