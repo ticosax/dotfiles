@@ -13,31 +13,33 @@ M.treesitter = {
 }
 M.mason = {
 	ensure_installed = {
+		-- pyhton
 		"pylsp",
-		"rust_analyzer",
 		"pyright",
+		"black",
+		"ruff-lsp",
+		"pylyzer",
+
+		-- rust
+		"rust_analyzer",
+
+		-- lua stuff
+		"lua-language-server",
+		"stylua",
+		"sumneko_lua",
+
+		-- web dev stuff
+		"typescript-language-server",
 		"graphql",
+
+		"yamfmt",
+		"prettier",
+		"sql-formatter",
 		"tflint",
 		"yamlls",
 		"dockerls",
 		"terraformls",
 		"vimls",
-		"sumneko_lua",
-		"black",
-		"pyproject-flake8",
-		"ruff-lsp",
-
-		-- lua stuff
-		"lua-language-server",
-		"stylua",
-
-		-- web dev stuff
-		"typescript-language-server",
-
-		"yamfmt",
-		"prettier",
-		"sytlua",
-		"sql-formatter",
 	},
 }
 return M
