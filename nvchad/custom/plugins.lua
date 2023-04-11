@@ -23,18 +23,24 @@ local plugins = {
 		opts = overrides.nvimtree,
 	},
 
-	{ "tommcdo/vim-exchange" },
+	{ "tommcdo/vim-exchange", lazy = false },
 	{ "williamboman/mason.nvim", opts = overrides.mason },
 	{ "nvim-lua/lsp-status.nvim" },
-	{ "tpope/vim-surround" },
+	{ "tpope/vim-surround", lazy = false },
 	{
 		"karb94/neoscroll.nvim",
+		lazy = false,
 		config = function()
 			require("neoscroll").setup()
+			local t = {}
+			t["<C-b>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "100" } }
+			t["<PageUp>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "100" } }
+			t["<C-f>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "100" } }
+			t["<PageDown>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "100" } }
+			require("neoscroll.config").set_mappings(t)
 		end,
 	},
-	{ "rmehri01/onenord.nvim" },
 	{ "f-person/git-blame.nvim" },
-	{ "liuchengxu/vista.vim" },
+	{ "liuchengxu/vista.vim", lazy = false },
 }
 return plugins
