@@ -1,4 +1,5 @@
 local M = {}
+
 M.treesitter = {
 	ensure_installed = {
 		"vim",
@@ -10,7 +11,11 @@ M.treesitter = {
 		"hcl",
 		"toml",
 	},
+	indent = {
+		enable = true,
+	},
 }
+
 M.mason = {
 	ensure_installed = {
 		-- pyhton
@@ -42,4 +47,20 @@ M.mason = {
 		"vimls",
 	},
 }
+
+M.nvimtree = {
+	git = {
+		enable = true,
+	},
+
+	renderer = {
+		highlight_git = true,
+		icons = {
+			show = {
+				git = true,
+			},
+		},
+	},
+}
+
 return M
