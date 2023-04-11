@@ -1,4 +1,6 @@
-return {
+local M = {}
+
+M.hl_override = {
 	-- Type = { italic = true },
 	SpecialComment = { italic = true },
 	Comment = { italic = true },
@@ -8,3 +10,4 @@ return {
 	TSVariableBuiltin = { italic = true },
 	TSTagAttribute = { italic = true },
 }
+return M
