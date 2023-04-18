@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local act = wezterm.action
 
 local mykeys = {}
 for i = 1, 8 do
@@ -28,14 +29,33 @@ return {
 			format = "$0",
 		},
 		-- infarm JIRA board
+		-- OSDOPM-001
 		{
 			regex = [[\bOSDOPM-(\d+)\b]],
 			format = "https://infarm.atlassian.net/browse/$0",
 		},
 		-- infarm JIRA board
+		-- SWPD-001
 		{
 			regex = [[\SWPD-(\d+)\b]],
 			format = "https://infarm.atlassian.net/browse/$0",
+		},
+	},
+	hide_mouse_cursor_when_typing = false,
+	mouse_bindings = {
+		-- Change the default click behavior so that it only selects
+		-- text and doesn't open hyperlinks
+		{
+			event = { Up = { streak = 1, button = "Left" } },
+			mods = "NONE",
+			action = act.CompleteSelection("ClipboardAndPrimarySelection"),
+		},
+
+		-- and make CTRL-Click open hyperlinks
+		{
+			event = { Up = { streak = 1, button = "Left" } },
+			mods = "CTRL",
+			action = act.OpenLinkAtMouseCursor,
 		},
 	},
 }
