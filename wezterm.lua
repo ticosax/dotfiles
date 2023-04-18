@@ -25,7 +25,12 @@ return {
 		-- E.g. http://127.0.0.1:8000 for a local development server,
 		-- or http://192.168.1.1 for the web interface of many routers.
 		{
-			regex = [[\b\w+://(?:[\d]{1,3}\.){3}[\d]{1,3}\S*\b]],
+			regex = [[\w+://(?:[\d]{1,3}\.){3}[\d]{1,3}\S*]],
+			format = "$0",
+		},
+		-- or https://github.com/
+		{
+			regex = "\\b\\w+://\\S+[)/a-zA-Z0-9-]+/?",
 			format = "$0",
 		},
 		-- infarm JIRA board
