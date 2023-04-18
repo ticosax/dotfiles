@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+
 local mykeys = {}
 for i = 1, 8 do
 	-- CTRL+ALT + number to move to that position
@@ -13,9 +14,9 @@ return {
 	font = wezterm.font("Victor Mono Nerd Font", { weight = "Medium" }),
 	warn_about_missing_glyphs = false,
 	exit_behavior = "Close",
-
 	color_scheme = "Oceanic-Next",
 	keys = mykeys,
+	window_decorations = "RESIZE",
 	scrollback_lines = 30000,
 	enable_scroll_bar = true,
 	hyperlink_rules = {
