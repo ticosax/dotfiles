@@ -18,7 +18,7 @@ local servers = {
 	"taplo",
 	"sqlls",
 	"ruff_lsp",
-	"pylyzer",
+	-- "pylyzer",
 }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
