@@ -17,7 +17,7 @@ return {
 	exit_behavior = "Close",
 	color_scheme = "Oceanic-Next",
 	keys = mykeys,
-	window_decorations = "RESIZE",
+	window_decorations = "TITLE | RESIZE",
 	scrollback_lines = 30000,
 	enable_scroll_bar = true,
 	hyperlink_rules = {
