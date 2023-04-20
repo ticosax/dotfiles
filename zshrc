@@ -1,4 +1,4 @@
-export PATH="$HOME/.pyenv/bin:$PATH:${HOME}/.krew/bin"
+export PATH="$HOME/.pyenv/bin:${HOME}/.krew/bin:${HOME}/.cargo/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
