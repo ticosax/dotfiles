@@ -42,5 +42,6 @@ local plugins = {
 	},
 	{ "f-person/git-blame.nvim" },
 	{ "liuchengxu/vista.vim", lazy = false },
+	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 }
 return plugins
