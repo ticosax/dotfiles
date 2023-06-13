@@ -17,6 +17,7 @@ local sources = {
 			"javascript",
 			"javascriptreact",
 			"typescriptreact",
+			"hcl",
 		},
 	}),
 
