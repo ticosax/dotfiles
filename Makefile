@@ -58,7 +58,7 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/nvim/lua/custom ~/.config/wezterm/colors/mellow.toml
 	sudo pamac install \
 		zsh \
-		oh-my-zsh \
+		oh-my-zsh-git \
 		ruby \
 		terraform \
 		neovim \
