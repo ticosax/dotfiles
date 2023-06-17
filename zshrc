@@ -21,5 +21,5 @@ eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook zsh)"
-eval "$(mcfly init zsh)"
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
+# eval "$(mcfly init zsh)"
