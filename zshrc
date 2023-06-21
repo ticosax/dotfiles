@@ -1,5 +1,4 @@
 export PATH="$HOME/.pyenv/bin:${HOME}/.krew/bin:${HOME}/.cargo/bin:$PATH"
-export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export SYSTEMD_EDITOR=nvim
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
@@ -10,7 +9,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 # https://github.com/hsaunders1904/pyautoenv
-plugins=(git docker python aws virtualenv nvm pyenv kubectl systemd minikube pip npm terraform postgres pyautoenv)
+plugins=(git docker python aws virtualenv pyenv kubectl systemd minikube pip npm terraform postgres pyautoenv)
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 alias s="cd .."
 alias ktl="kubectl"
@@ -22,6 +22,5 @@ eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook zsh)"
 eval "$(mcfly init zsh)"
 eval "$(fnm env --use-on-cd)"
-source $HOME/.oh-my-zsh/oh-my-zsh.sh
 fpath+=~/.config/zsh/completions/_fnm
 compinit
