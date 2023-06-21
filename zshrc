@@ -21,5 +21,8 @@ eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook zsh)"
+eval "$(mcfly init zsh)"
+eval "$(fnm env --use-on-cd)"
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
-# eval "$(mcfly init zsh)"
+fpath+=~/.config/zsh/completions/_fnm
+compinit
