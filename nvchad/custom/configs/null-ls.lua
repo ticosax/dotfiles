@@ -17,6 +17,7 @@ local sources = {
 			"javascript",
 			"javascriptreact",
 			"typescriptreact",
+			"terraform",
 			"hcl",
 		},
 	}),
@@ -39,9 +40,10 @@ local sources = {
 	-- terraform
 	b.formatting.terrafmt,
 	b.formatting.terraform_fmt,
+	b.diagnostics.terraform_validate,
 
-  -- toml
-  b.formatting.taplo,
+	-- toml
+	b.formatting.taplo,
 }
 
 null_ls.setup({
