@@ -86,4 +86,5 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc
 		taplo \
 		shellcheck
 
+
 	git config --global core.excludesfile ~/.gitignore_global
