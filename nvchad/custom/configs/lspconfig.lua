@@ -12,7 +12,7 @@ local servers = {
 	"tflint",
 	"yamlls",
 	"dockerls",
-	"terraformls",
+	-- "terraformls",
 	"vimls",
 	"lua_ls",
 	"taplo",
@@ -26,6 +26,10 @@ for _, lsp in ipairs(servers) do
 		capabilities = capabilities,
 	})
 end
--- lspconfig['terraformls'].setup{on_attach = on_attach, filetypes = { "terraform", "hcl", "tf"} }
+lspconfig["terraformls"].setup({
+	on_attach = on_attach,
+	filetypes = { "terraform", "hcl", "tf" },
+	capabilities = capabilities,
+})
 -- lspconfig['sqlls'].setup{cmd = {"sql-language-server", "up", "--method", "stdio"}}
 -- lspconfig['jsonls'].setup{on_attach = on_attach, cmd = {"vscode-json-languageserver", "--stdio"}}
