@@ -23,21 +23,21 @@ M.mason = {
 		"pyright",
 		"black",
 		"ruff-lsp",
+    "python-lsp-server",
 		"pylyzer",
 
 		-- rust
-		"rust_analyzer",
+		"rust-analyzer",
 
 		-- lua stuff
 		"lua-language-server",
 		"stylua",
-		"sumneko_lua",
 
 		-- web dev stuff
 		"typescript-language-server",
-		"graphql",
+    "graphql-language-service-cli",
 
-		"yamfmt",
+		"yamlfmt",
 		"prettier",
 		"sql-formatter",
 		"tflint",
