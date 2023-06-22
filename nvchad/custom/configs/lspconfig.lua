@@ -4,15 +4,14 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 
 local servers = {
-	"pylsp",
-	"rust_analyzer",
+	"python-lsp-server",
+	"rust-analyzer",
 	"tsserver",
 	"pyright",
-	"graphql",
+	"graphql-language-service-cli",
 	"tflint",
 	"yamlls",
 	"dockerls",
-	-- "terraformls",
 	"vimls",
 	"lua_ls",
 	"taplo",
