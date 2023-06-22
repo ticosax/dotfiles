@@ -5,7 +5,7 @@ local lspconfig = require("lspconfig")
 
 local servers = {
   "python-lsp-server",
-	"rust-analyzer",
+	"rust_analyzer",
 	"tsserver",
 	"pyright",
   "graphql",
