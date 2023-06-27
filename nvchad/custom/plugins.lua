@@ -52,7 +52,7 @@ local plugins = {
 			{
 				"mfussenegger/nvim-dap",
 				config = function()
-					local dap = require("dap")
+					local dap, dapui = require("dap"), require("dapui")
 					dap.adapters.lldb = {
 						type = "executable",
 						command = "/usr/bin/lldb-vscode",
@@ -94,7 +94,17 @@ local plugins = {
 							end,
 						},
 					}
+          dap.listeners.after.event_initialized["dapui_config"] = function()
+            dapui.open()
+          end
+          dap.listeners.before.event_terminated["dapui_config"] = function()
+            dapui.close()
+          end
+          dap.listeners.before.event_exited["dapui_config"] = function()
+            dapui.close()
+          end
 				end,
+				dependencies = { "nvim-telescope/telescope-dap.nvim", "mfussenegger/nvim-dap-python", },
 			},
 		},
 	},
