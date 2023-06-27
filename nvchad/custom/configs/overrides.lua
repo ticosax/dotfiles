@@ -19,15 +19,16 @@ M.treesitter = {
 M.mason = {
 	ensure_installed = {
 		-- pyhton
-		"pylsp",
 		"pyright",
 		"black",
 		"ruff-lsp",
-    "python-lsp-server",
+		"python-lsp-server",
 		"pylyzer",
 
 		-- rust
 		"rust-analyzer",
+		"codelldb",
+		"cpptools",
 
 		-- lua stuff
 		"lua-language-server",
@@ -35,16 +36,16 @@ M.mason = {
 
 		-- web dev stuff
 		"typescript-language-server",
-    "graphql-language-service-cli",
+		"graphql-language-service-cli",
 
 		"yamlfmt",
 		"prettier",
 		"sql-formatter",
 		"tflint",
-		"yamlls",
-		"dockerls",
-		"terraformls",
-		"vimls",
+		"yaml-language-server",
+		"dockerfile-language-server",
+		"terraform-ls",
+		"vim-language-server",
 	},
 }
 
