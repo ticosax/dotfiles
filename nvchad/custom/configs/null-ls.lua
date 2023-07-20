@@ -30,7 +30,7 @@ local sources = {
 	b.diagnostics.shellcheck.with({ diagnostics_format = "#{m} [#{c}]" }),
 
 	-- rust
-	b.formatting.rustfmt,
+	b.formatting.rustfmt.with({ extra_args = {"--edition", "2021"} }),
 
 	-- pyton
 	b.formatting.black.with({ extra_args = { "--fast" } }),
