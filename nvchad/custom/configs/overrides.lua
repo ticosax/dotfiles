@@ -37,6 +37,13 @@ M.mason = {
 		-- web dev stuff
 		"typescript-language-server",
 		"graphql-language-service-cli",
+    "rome",
+
+    -- Go
+    "golangci-lint",
+    "golangci-lint-langserver",
+    "goimports-reviser",
+    "golines",
 
 		"yamlfmt",
 		"prettier",
@@ -63,5 +70,7 @@ M.nvimtree = {
 		},
 	},
 }
-
+M.telescope = {
+	extensions_list = { "themes", "terms", "dap" },
+}
 return M

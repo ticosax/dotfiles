@@ -17,8 +17,9 @@ local sources = {
 			"javascript",
 			"javascriptreact",
 			"typescriptreact",
-			"terraform",
-			"hcl",
+			-- "terraform",
+			-- "hcl",
+			"rust",
 		},
 	}),
 
@@ -31,6 +32,7 @@ local sources = {
 
 	-- rust
 	b.formatting.rustfmt.with({ extra_args = {"--edition", "2021"} }),
+	b.code_actions.ltrs,
 
 	-- pyton
 	b.formatting.black.with({ extra_args = { "--fast" } }),
@@ -38,12 +40,20 @@ local sources = {
 	b.formatting.ruff,
 
 	-- terraform
-	b.formatting.terrafmt,
-	b.formatting.terraform_fmt,
-	b.diagnostics.terraform_validate,
+	-- b.formatting.terrafmt,
+	b.formatting.terraform_fmt.with({
+		filetypes = { "hcl" },
+	}),
+	b.diagnostics.terraform_validate.with({
+		filetypes = { "hcl" },
+	}),
 
 	-- toml
 	b.formatting.taplo,
+
+  -- Go
+  b.formatting.goimports_reviser,
+  b.formatting.golines,
 }
 
 null_ls.setup({

@@ -4,20 +4,35 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 
 local servers = {
+	-- Python
 	"pylsp",
-	"rust_analyzer",
-	"tsserver",
 	"pyright",
-	"graphql",
-	"tflint",
-	"yamlls",
-	"dockerls",
-	"vimls",
-	"lua_ls",
-	"taplo",
-	"sqlls",
 	"ruff_lsp",
 	-- "pylyzer",
+
+	-- Rust
+	"rust_analyzer",
+
+	-- TS
+	"tsserver",
+	"rome",
+
+	-- Neovim
+	"vimls",
+	"lua_ls",
+
+	-- terraform
+	"tflint",
+
+  -- Go
+  "golangci_lint_ls",
+
+	-- Other
+	"graphql",
+	"taplo",
+	"dockerls",
+	"sqlls",
+	"yamlls",
 }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
