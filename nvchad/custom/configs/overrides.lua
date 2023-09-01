@@ -37,7 +37,7 @@ M.mason = {
 		-- web dev stuff
 		"typescript-language-server",
 		"graphql-language-service-cli",
-    "rome",
+    "biome",
 
     -- Go
     "golangci-lint",
