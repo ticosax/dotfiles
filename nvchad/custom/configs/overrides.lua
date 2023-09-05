@@ -37,24 +37,24 @@ M.mason = {
 		-- web dev stuff
 		"typescript-language-server",
 		"graphql-language-service-cli",
-    "biome",
+		"biome",
 		"prettier",
 
-    -- Go
-    "golangci-lint",
-    "golangci-lint-langserver",
-    "goimports-reviser",
-    "golines",
+		-- Go
+		"golangci-lint",
+		"golangci-lint-langserver",
+		"goimports-reviser",
+		"golines",
 
-    -- yaml
+		-- yaml
 		"yamlfmt",
 		"yaml-language-server",
 
-    -- terraform
+		-- terraform
 		"tflint",
 		"terraform-ls",
 
-    -- Others
+		-- Others
 		"sql-formatter",
 		"dockerfile-language-server",
 		"vim-language-server",
