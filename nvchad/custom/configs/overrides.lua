@@ -18,7 +18,7 @@ M.treesitter = {
 
 M.mason = {
 	ensure_installed = {
-		-- pyhton
+		-- python
 		"pyright",
 		"black",
 		"ruff-lsp",
@@ -38,6 +38,7 @@ M.mason = {
 		"typescript-language-server",
 		"graphql-language-service-cli",
     "biome",
+		"prettier",
 
     -- Go
     "golangci-lint",
@@ -45,13 +46,17 @@ M.mason = {
     "goimports-reviser",
     "golines",
 
+    -- yaml
 		"yamlfmt",
-		"prettier",
-		"sql-formatter",
-		"tflint",
 		"yaml-language-server",
-		"dockerfile-language-server",
+
+    -- terraform
+		"tflint",
 		"terraform-ls",
+
+    -- Others
+		"sql-formatter",
+		"dockerfile-language-server",
 		"vim-language-server",
 	},
 }
