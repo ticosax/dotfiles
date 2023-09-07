@@ -4,6 +4,7 @@ export EDITOR=nvim
 export SYSTEMD_EDITOR=nvim
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring
+export DISABLE_AUTO_UPDATE=true
 source /usr/share/zsh/share/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-completions
