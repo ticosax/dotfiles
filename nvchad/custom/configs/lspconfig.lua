@@ -15,7 +15,7 @@ local servers = {
 
 	-- TS
 	"tsserver",
-	"rome",
+	"biome",
 
 	-- Neovim
 	"vimls",
