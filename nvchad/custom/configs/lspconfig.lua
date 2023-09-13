@@ -5,7 +5,7 @@ local lspconfig = require("lspconfig")
 
 local servers = {
 	-- Python
-	"pylsp",
+	-- "pylsp",
 	"pyright",
 	"ruff_lsp",
 	-- "pylyzer",
@@ -24,8 +24,8 @@ local servers = {
 	-- terraform
 	"tflint",
 
-  -- Go
-  "golangci_lint_ls",
+	-- Go
+	"golangci_lint_ls",
 
 	-- Other
 	"graphql",
@@ -47,3 +47,16 @@ lspconfig["terraformls"].setup({
 })
 -- lspconfig['sqlls'].setup{cmd = {"sql-language-server", "up", "--method", "stdio"}}
 -- lspconfig['jsonls'].setup{on_attach = on_attach, cmd = {"vscode-json-languageserver", "--stdio"}}
+lspconfig["pylsp"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					enabled = false,
+				},
+			},
+		},
+	},
+})
