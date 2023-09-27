@@ -10,6 +10,7 @@ M.treesitter = {
 		"json",
 		"hcl",
 		"toml",
+		"kotlin",
 	},
 	indent = {
 		enable = true,
@@ -45,6 +46,10 @@ M.mason = {
 		"golangci-lint-langserver",
 		"goimports-reviser",
 		"golines",
+
+		-- kotlin
+		"kotlin-language-server",
+		"gradle-language-server",
 
 		-- yaml
 		"yamlfmt",

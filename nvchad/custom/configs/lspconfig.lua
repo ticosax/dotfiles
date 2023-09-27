@@ -27,6 +27,10 @@ local servers = {
 	-- Go
 	"golangci_lint_ls",
 
+  -- Kotlin
+  "kotlin_language_server",
+  "gradle_ls",
+
 	-- Other
 	"graphql",
 	"taplo",

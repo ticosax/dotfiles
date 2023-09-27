@@ -20,6 +20,7 @@ local sources = {
 			-- "terraform",
 			-- "hcl",
 			"rust",
+      "kotlin",
 		},
 	}),
 
