@@ -23,8 +23,8 @@ alias ktl="kubectl"
 alias k="kubectl"
 alias cat="bat"
 # eval "$(pyenv init -)"
-_evalcache pyenv init --path
-_evalcache pyenv virtualenv-init -
+# _evalcache pyenv init --path
+# _evalcache pyenv virtualenv-init -
 _evalcache direnv hook zsh
 # eval "$(mcfly init zsh)"
 # eval "$(fnm env --use-on-cd)"
