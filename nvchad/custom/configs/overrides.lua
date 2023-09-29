@@ -12,8 +12,63 @@ M.treesitter = {
 		"toml",
 		"kotlin",
 	},
-	indent = {
+	highlight = { enable = true },
+	indent = { enable = true },
+	pairs = { enable = true },
+	incremental_selection = {
 		enable = true,
+		keymaps = {
+			init_selection = "gnn",
+			node_incremental = "grn",
+			scope_incremental = "grc",
+			node_decremental = "grm",
+		},
+	},
+	textobjects = {
+		select = {
+			enable = true,
+			lookahead = true,
+			keymaps = {
+				["aa"] = "@parameter.outer",
+				["ia"] = "@parameter.inner",
+				-- You can use the capture groups defined in textobjects.scm
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				-- You can optionally set descriptions to the mappings (used in the desc parameter of
+				-- nvim_buf_set_keymap) which plugins like which-key display
+				["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+				-- You can also use captures from other query groups like `locals.scm`
+				["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
+			},
+			-- include_surrounding_whitespace = true,
+		},
+		swap = {
+			enable = true,
+			swap_next = {
+				["<leader>sa"] = "@parameter.inner",
+			},
+			swap_previous = {
+				["<leader>sA"] = "@parameter.inner",
+			},
+		},
+		lsp_interop = {
+			enable = true,
+			border = "none",
+			floating_preview_opts = {},
+			peek_definition_code = {
+				["<leader>df"] = "@function.outer",
+				["<leader>dF"] = "@class.outer",
+			},
+		},
+		refactor = {
+			highlight_definitions = {
+				enable = true,
+				-- Set to false if you have an `updatetime` of ~100.
+				clear_on_cursor_move = true,
+			},
+			highlight_current_scope = { enable = true },
+		},
 	},
 }
 
