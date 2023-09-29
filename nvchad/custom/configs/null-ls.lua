@@ -20,7 +20,6 @@ local sources = {
 			-- "terraform",
 			-- "hcl",
 			"rust",
-      "kotlin",
 		},
 	}),
 
@@ -32,7 +31,7 @@ local sources = {
 	b.diagnostics.shellcheck.with({ diagnostics_format = "#{m} [#{c}]" }),
 
 	-- rust
-	b.formatting.rustfmt.with({ extra_args = {"--edition", "2021"} }),
+	b.formatting.rustfmt.with({ extra_args = { "--edition", "2021" } }),
 	b.code_actions.ltrs,
 
 	-- pyton
@@ -52,12 +51,16 @@ local sources = {
 	-- toml
 	b.formatting.taplo,
 
-  -- Go
-  b.formatting.goimports_reviser,
-  b.formatting.golines,
+	-- Go
+	b.formatting.goimports_reviser,
+	b.formatting.golines,
+
+	-- Kotlin
+	b.diagnostics.ktlint,
+	b.formatting.ktlint,
 }
 
 null_ls.setup({
-	debug = true,
+	-- debug = true,
 	sources = sources,
 })

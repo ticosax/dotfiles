@@ -59,6 +59,9 @@ M.mason = {
 		"tflint",
 		"terraform-ls",
 
+		--kotlin
+		"ktlint",
+
 		-- Others
 		"sql-formatter",
 		"dockerfile-language-server",
@@ -80,6 +83,7 @@ M.nvimtree = {
 		},
 	},
 }
+
 M.telescope = {
 	extensions_list = { "themes", "terms", "dap" },
 }
