@@ -5,7 +5,7 @@ local lspconfig = require("lspconfig")
 
 local servers = {
 	-- Python
-	-- "pylsp",
+	"pylsp",
 	"pyright",
 	"ruff_lsp",
 	-- "pylyzer",
