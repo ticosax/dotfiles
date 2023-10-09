@@ -102,7 +102,6 @@ formatters.setup({
 			"javascript",
 			"javascriptreact",
 			"typescriptreact",
-			"rust",
 		},
 	},
 	{
