@@ -3,6 +3,7 @@
 -- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
+vim.opt.mouse = ""
 
 lvim.builtin.treesitter.ensure_installed = {
 	"vim",
@@ -36,12 +37,32 @@ lvim.builtin.treesitter.textobjects.swap.enable = true
 lvim.builtin.treesitter.textobjects.swap.swap_next = { ["<Leader>a"] = "@parameter.inner" }
 lvim.builtin.treesitter.textobjects.swap.swap_previous = { ["<Leader>A"] = "@parameter.inner" }
 
-lvim.colorscheme = "kanagawa"
+lvim.colorscheme = "nightfly"
+vim.g.nightflyCursorColor = true
+vim.g.nightflyItalics = true
+vim.g.nightflyNormalFloat = true
+vim.g.nightflyTerminalColors = true
+
 lvim.plugins = {
 	-- colorschemes
 	{ "folke/tokyonight.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{ "rebelot/kanagawa.nvim" },
+	{
+		"maxmx03/fluoromachine.nvim",
+		config = function()
+			local fm = require("fluoromachine")
+
+			fm.setup({
+				glow = false,
+				theme = "fluoromachine",
+			})
+		end,
+	},
+	{ "Everblush/nvim" },
+	{ "mhartington/oceanic-next" },
+	{ "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
+	--
 	{
 		"wfxr/minimap.vim",
 		build = "cargo install --locked code-minimap",
@@ -77,8 +98,18 @@ lvim.plugins = {
 	},
 	{
 		"ellisonleao/glow.nvim",
+		config = true,
 		ft = { "markdown" },
 	},
+	{
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup()
+		end,
+		branch = "legacy",
+		version = "legacy",
+	},
+	{ "HiPhish/rainbow-delimiters.nvim" },
 }
 
 local formatters = require("lvim.lsp.null-ls.formatters")
@@ -133,3 +164,5 @@ code_actions.setup({
 		name = "ltrs",
 	},
 })
+reload("user.rust_ide")
+reload("user.python_ide")
