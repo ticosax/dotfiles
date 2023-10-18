@@ -157,6 +157,7 @@ linters.setup({
 	{ name = "ruff" },
 	{ name = "terraform_validate", filetypes = { "hcl" } },
 	{ name = "ktlint" },
+	{ name = "eslint", filetypes = { "typescript", "typescriptreact" } },
 })
 
 local code_actions = require("lvim.lsp.null-ls.code_actions")
