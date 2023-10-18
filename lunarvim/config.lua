@@ -5,6 +5,7 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 vim.opt.mouse = ""
 
+lvim.builtin.which_key.mappings["br"] = { "Obreakpoint()<esc>", "Insert python breakpoint" }
 lvim.builtin.treesitter.ensure_installed = {
 	"vim",
 	"lua",
