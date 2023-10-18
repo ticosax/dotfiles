@@ -165,5 +165,11 @@ code_actions.setup({
 		name = "ltrs",
 	},
 })
+lvim.builtin.which_key.mappings["l"]["f"] = {
+	function()
+		require("lvim.lsp.utils").format({ timeout_ms = 10000 })
+	end,
+	"Format",
+}
 reload("user.rust_ide")
 reload("user.python_ide")
