@@ -1,10 +1,13 @@
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:${HOME}/.krew/bin:${HOME}/.cargo/bin:${HOME}/go/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:${HOME}/.krew/bin:${HOME}/.cargo/bin:${HOME}/go/bin:$HOME/.jenv/bin:$PATH"
 export EDITOR=nvim
 export SYSTEMD_EDITOR=nvim
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring
 export DISABLE_AUTO_UPDATE=true
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 source /usr/share/zsh/share/antigen.zsh
 antigen use oh-my-zsh
 # antigen bundle zsh-users/zsh-completions
@@ -26,6 +29,7 @@ alias cat="bat"
 # _evalcache pyenv init --path
 # _evalcache pyenv virtualenv-init -
 _evalcache direnv hook zsh
+_evalcache jenv init -
 # eval "$(mcfly init zsh)"
 # eval "$(fnm env --use-on-cd)"
 # fpath+=~/.config/zsh/completions/_fnm
