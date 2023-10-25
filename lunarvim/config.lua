@@ -120,6 +120,7 @@ formatters.setup({
 	{ name = "stylua" },
 	{ name = "shfmt" },
 	{ name = "rustfmt", extra_args = { "--edition", "2021" } },
+	{ name = "stylelint" },
 	{
 		name = "prettier",
 		---@usage arguments to pass to the formatter
