@@ -11,7 +11,8 @@ for i = 1, 8 do
 	})
 end
 table.insert(mykeys, { key = "V", mods = "CTRL|SHIFT", action = wezterm.action({ PasteFrom = "Clipboard" }) })
-return {
+
+local config = {
 	font = wezterm.font("Victor Mono Nerd Font", { weight = "Medium" }),
 	warn_about_missing_glyphs = false,
 	exit_behavior = "Close",
@@ -20,32 +21,6 @@ return {
 	window_decorations = "TITLE | RESIZE",
 	scrollback_lines = 30000,
 	enable_scroll_bar = true,
-	hyperlink_rules = {
-		-- Linkify things that look like URLs with numeric addresses as hosts.
-		-- E.g. http://127.0.0.1:8000 for a local development server,
-		-- or http://192.168.1.1 for the web interface of many routers.
-		{
-			regex = [[\w+://(?:[\d]{1,3}\.){3}[\d]{1,3}\S*]],
-			format = "$0",
-		},
-		-- or https://github.com/
-		{
-			regex = "\\b\\w+://\\S+[)/a-zA-Z0-9-]+/?",
-			format = "$0",
-		},
-		-- infarm JIRA board
-		-- OSDOPM-001
-		{
-			regex = [[\bOSDOPM-(\d+)\b]],
-			format = "https://infarm.atlassian.net/browse/$0",
-		},
-		-- infarm JIRA board
-		-- SWPD-001
-		{
-			regex = [[\SWPD-(\d+)\b]],
-			format = "https://infarm.atlassian.net/browse/$0",
-		},
-	},
 	hide_mouse_cursor_when_typing = false,
 	mouse_bindings = {
 		-- Change the default click behavior so that it only selects
@@ -64,3 +39,4 @@ return {
 		},
 	},
 }
+return config
