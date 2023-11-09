@@ -112,10 +112,9 @@ lvim.plugins = {
 	},
 	{ "HiPhish/rainbow-delimiters.nvim" },
 }
-
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-	{ name = "black", extra_args = { "--fast" } },
+	-- { name = "black", extra_args = { "--fast" } },
 	{ name = "ruff" },
 	{ name = "stylua" },
 	{ name = "shfmt" },
