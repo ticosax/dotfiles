@@ -20,7 +20,7 @@ eval "$(pyenv init --path)"
 # https://github.com/hsaunders1904/pyautoenv
 plugins=(git docker python aws virtualenv pyenv kubectl systemd minikube pip npm terraform postgres pyautoenv evalcache)
 export ZSH=~/.oh-my-zsh
-source ~/.oh-my-zsh/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 alias s="cd .."
 alias ktl="kubectl"
