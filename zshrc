@@ -16,6 +16,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle mroth/evalcache
 antigen apply
 
+eval "$(pyenv init --path)"
 # https://github.com/hsaunders1904/pyautoenv
 plugins=(git docker python aws virtualenv pyenv kubectl systemd minikube pip npm terraform postgres pyautoenv evalcache)
 export ZSH=~/.oh-my-zsh
@@ -25,7 +26,6 @@ alias s="cd .."
 alias ktl="kubectl"
 alias k="kubectl"
 alias cat="bat"
-# eval "$(pyenv init -)"
 # _evalcache pyenv init --path
 # _evalcache pyenv virtualenv-init -
 _evalcache direnv hook zsh
