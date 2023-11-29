@@ -13,7 +13,7 @@ end
 table.insert(mykeys, { key = "V", mods = "CTRL|SHIFT", action = wezterm.action({ PasteFrom = "Clipboard" }) })
 
 local config = {
-	font = wezterm.font("Victor Mono Nerd Font", { weight = "Medium" }),
+	font = wezterm.font("Victor Mono NF", { weight = "Medium" }),
 	warn_about_missing_glyphs = false,
 	exit_behavior = "Close",
 	color_scheme = "Oceanic-Next",
