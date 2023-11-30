@@ -111,6 +111,7 @@ lvim.plugins = {
 		version = "legacy",
 	},
 	{ "HiPhish/rainbow-delimiters.nvim" },
+	{ "tpope/vim-surround" },
 }
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
