@@ -8,6 +8,7 @@ export DISABLE_AUTO_UPDATE=true
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin/
 source /usr/share/zsh/share/antigen.zsh
 antigen use oh-my-zsh
 # antigen bundle zsh-users/zsh-completions
