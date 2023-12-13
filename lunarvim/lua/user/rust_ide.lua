@@ -55,7 +55,31 @@ pcall(function()
 			on_attach = function(client, bufnr)
 				require("lvim.lsp").common_on_attach(client, bufnr)
 				local rt = require("rust-tools")
-				vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
+				vim.keymap.set("n", "A", rt.hover_actions.hover_actions, { buffer = bufnr })
+				vim.keymap.set("n", "<F5>", function()
+					require("dap").continue()
+				end)
+				vim.keymap.set("n", "<F10>", function()
+					require("dap").step_over()
+				end)
+				vim.keymap.set("n", "<F11>", function()
+					require("dap").step_into()
+				end)
+				vim.keymap.set("n", "<F12>", function()
+					require("dap").step_out()
+				end)
+				vim.keymap.set("n", "<Leader>b", function()
+					require("dap").toggle_breakpoint()
+				end)
+				vim.keymap.set("n", "<Leader>B", function()
+					require("dap").set_breakpoint()
+				end)
+				vim.keymap.set("n", "<Leader>dr", function()
+					require("dap").repl.open()
+				end)
+				vim.keymap.set("n", "<Leader>dl", function()
+					require("dap").run_last()
+				end)
 			end,
 
 			capabilities = require("lvim.lsp").common_capabilities(),
@@ -111,8 +135,8 @@ lvim.builtin.which_key.mappings["C"] = {
 	i = { "<cmd>lua require'crates'.show_crate_popup()<cr>", "[crates] show info" },
 	f = { "<cmd>lua require'crates'.show_features_popup()<cr>", "[crates] show features" },
 	D = { "<cmd>lua require'crates'.show_dependencies_popup()<cr>", "[crates] show dependencies" },
-  u = {"<cmd>lua require('crates').upgrade_crate()<cr>", "[crates] upgrade inline"},
-  U = {"<cmd>lua require('crates').upgrade_all_crates()<cr>", "[crates] upgrade all crates"},
+	u = { "<cmd>lua require('crates').upgrade_crate()<cr>", "[crates] upgrade inline" },
+	U = { "<cmd>lua require('crates').upgrade_all_crates()<cr>", "[crates] upgrade all crates" },
 }
 
 vim.list_extend(lvim.plugins, {
