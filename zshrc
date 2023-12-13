@@ -1,5 +1,5 @@
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$HOME/bin:$PYENV_ROOT/bin:${HOME}/.krew/bin:${HOME}/.cargo/bin:${HOME}/go/bin:$HOME/.jenv/bin:$PATH"
+export PATH="$HOME/.local/bin/:$HOME/bin:$PYENV_ROOT/bin:${HOME}/.krew/bin:${HOME}/.cargo/bin:${HOME}/go/bin:$HOME/.jenv/bin:$PATH"
 export EDITOR=lvim
 export SYSTEMD_EDITOR=nvim
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
