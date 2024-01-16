@@ -110,8 +110,6 @@ lvim.plugins = {
 		config = function()
 			require("fidget").setup()
 		end,
-		branch = "legacy",
-		version = "legacy",
 	},
 	{ "HiPhish/rainbow-delimiters.nvim" },
 	{ "tpope/vim-surround" },
