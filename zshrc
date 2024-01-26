@@ -18,6 +18,7 @@ antigen bundle mroth/evalcache
 antigen apply
 
 eval "$(pyenv init --path)"
+eval "$(starship init zsh)"
 # https://github.com/hsaunders1904/pyautoenv
 plugins=(git docker python aws virtualenv pyenv kubectl systemd minikube pip npm terraform postgres pyautoenv evalcache)
 export ZSH=~/.oh-my-zsh
