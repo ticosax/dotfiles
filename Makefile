@@ -26,11 +26,6 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 # ~/.vimrc: delete-vimrc
 #
 # 	ln -s `pwd`/vimrc ~/.config/nvim/init.vim
-~/.config/nvim/lua/custom:
-	# rm -rf /home/nicolas/.config/nvim
-	# rm -rf ~/.local/share/nvim
-	# git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-	ln -s `pwd`/nvchad/custom $@
 
 ~/.ackrc:
 	ln -s `pwd`/ackrc $@
@@ -54,8 +49,11 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 	mkdir -p ~/.config/wezterm/colors
 	ln -s ~/src/mellow.nvim/extras/wezterm/colors/mellow.toml	 $@
 
+~/.config/starship.toml:
+	ln -s `pwd`/starship.toml $@
+
 .PHONY: pre-install
-pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/nvim/lua/custom ~/.config/wezterm/colors/mellow.toml
+pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/nvim/lua/custom ~/.config/wezterm/colors/mellow.toml ~/.config/starship.toml
 	sudo pamac install \
 		zsh \
 		oh-my-zsh \
@@ -84,7 +82,8 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc
 		mcfly \
 		prettier \
 		taplo \
-		shellcheck
+		shellcheck \
+		starship
 
 
 	git config --global core.excludesfile ~/.gitignore_global
