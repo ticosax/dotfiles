@@ -154,9 +154,9 @@ vim.list_extend(lvim.plugins, {
 				popup = {
 					border = "rounded",
 				},
-				src = {
-					cmp = { enabled = true },
-				},
+				-- src = {
+				-- 	cmp = { enabled = true },
+				-- },
 			})
 		end,
 	},
