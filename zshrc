@@ -29,3 +29,5 @@ alias s="cd .."
 alias ktl="kubectl"
 alias k="kubectl"
 alias cat="bat"
+
+unsetopt correct_all
