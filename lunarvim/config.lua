@@ -291,6 +291,7 @@ formatters.setup({
 	{ name = "goimports_reviser" },
 	{ name = "golines" },
 	{ name = "ktlint" },
+	{ name = "scalafmt" },
 })
 
 local linters = require("lvim.lsp.null-ls.linters")
