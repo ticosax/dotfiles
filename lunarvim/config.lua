@@ -162,16 +162,16 @@ lvim.plugins = {
 			-- you *have* to have a setting to display this in your statusline or else
 			-- you'll not see any messages from metals. There is more info in the help
 			-- docs about this
-			-- metals_config.init_options.statusBarProvider = "on"
+			metals_config.init_options.statusBarProvider = "on"
 
-			-- Example if you are using cmp how to make sure the correct capabilities for snippets are set
-			metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
+			-- metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			metals_config.on_attach = function(client, bufnr)
 				require("metals").setup_dap()
 
 				-- LSP mappings
-				map("n", "gD", vim.lsp.buf.definition)
+				map("n", "gd", vim.lsp.buf.definition)
 				map("n", "K", vim.lsp.buf.hover)
 				map("n", "gi", vim.lsp.buf.implementation)
 				map("n", "gr", vim.lsp.buf.references)
@@ -179,8 +179,8 @@ lvim.plugins = {
 				map("n", "gws", vim.lsp.buf.workspace_symbol)
 				map("n", "<leader>cl", vim.lsp.codelens.run)
 				map("n", "<leader>sh", vim.lsp.buf.signature_help)
-				map("n", "<leader>rn", vim.lsp.buf.rename)
-				map("n", "<leader>f", vim.lsp.buf.format)
+				map("n", "<leader>lr", vim.lsp.buf.rename)
+				map("n", "<leader>lf", vim.lsp.buf.format)
 				map("n", "<leader>ca", vim.lsp.buf.code_action)
 
 				map("n", "<leader>ws", function()
