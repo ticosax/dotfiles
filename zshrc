@@ -10,7 +10,12 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin/
 
-source /usr/share/zsh/scripts/zplug/init.zsh
+if [ -d "/usr/share/zsh/scripts/zplug" ]; then
+	source /usr/share/zsh/scripts/zplug/init.zsh
+fi
+if [ -d "$HOME/.zplug" ]; then
+	source $HOME/.zplug/init.zsh
+fi
 zplug 'darvid/zsh-poetry'
 zplug 'zsh-users/zsh-syntax-highlighting'
 
