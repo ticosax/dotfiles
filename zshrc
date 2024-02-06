@@ -13,7 +13,7 @@ export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin/
 if [ -d "/usr/share/zsh/scripts/zplug" ]; then
 	source /usr/share/zsh/scripts/zplug/init.zsh
 fi
-if [ -d "$HOME/.zplug" ]; then
+if [ -f "$HOME/.zplug/init.zsh" ]; then
 	source $HOME/.zplug/init.zsh
 fi
 zplug 'darvid/zsh-poetry'
