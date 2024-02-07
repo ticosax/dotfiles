@@ -292,6 +292,7 @@ formatters.setup({
 	{ name = "golines" },
 	{ name = "ktlint" },
 	{ name = "scalafmt" },
+	{ name = "sqlfluff", extra_args = { "--dialect", "postgres" } },
 })
 
 local linters = require("lvim.lsp.null-ls.linters")

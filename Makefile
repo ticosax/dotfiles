@@ -70,7 +70,6 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc
 		docker \
 		docker-compose \
 		krew \
-		antigen \
 		pyenv \
 		thunderbird \
 		direnv \
@@ -83,7 +82,9 @@ pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc
 		prettier \
 		taplo \
 		shellcheck \
-		starship
+		starship \
+		zplug \
+		sqlfluff
 
 
 	git config --global core.excludesfile ~/.gitignore_global
