@@ -38,6 +38,7 @@ lvim.builtin.treesitter.textobjects.swap.enable = true
 lvim.builtin.treesitter.textobjects.swap.swap_next = { ["<Leader>a"] = "@parameter.inner" }
 lvim.builtin.treesitter.textobjects.swap.swap_previous = { ["<Leader>A"] = "@parameter.inner" }
 
+lvim.builtin.telescope.defaults.file_ignore_patterns = { ".metals/*" }
 -- Do not prompt to choose where to open. Always open rightmost.
 lvim.builtin.nvimtree.setup.actions.open_file.window_picker.enable = false
 
