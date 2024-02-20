@@ -34,5 +34,6 @@ alias s="cd .."
 alias ktl="kubectl"
 alias k="kubectl"
 alias cat="bat"
+alias tf="terraform"
 
 unsetopt correct_all

@@ -286,6 +286,7 @@ formatters.setup({
 		name = "terraform_fmt",
 		filetypes = {
 			"hcl",
+      "tf",
 		},
 	},
 	{ name = "taplo" },
