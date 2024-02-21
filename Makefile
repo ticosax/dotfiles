@@ -1,9 +1,10 @@
+UNAME_OS := $(shell lsb_release -si)
 REPO_PATH=~/src
 
-~/.zshrc:
-	ln -fs $(REPO_PATH)/dotfiles/zshrc $@
+~/.config/wezterm/:
+	mkdir -p $@
 
-~/.config/wezterm/wezterm.lua:
+~/.config/wezterm/wezterm.lua: ~/.config/wezterm/
 	mkdir -p ~/.config/wezterm
 	ln -s $(REPO_PATH)/dotfiles/wezterm.lua $@
 
@@ -27,8 +28,6 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 #
 # 	ln -s `pwd`/vimrc ~/.config/nvim/init.vim
 
-~/.ackrc:
-	ln -s `pwd`/ackrc $@
 
 ~/.screenrc:
 	ln -s `pwd`/screenrc $@
@@ -38,9 +37,6 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 
 ~/.gitignore_global:
 	ln -s `pwd`/gitignore_global $@
-
-~/.config/wezterm/wezterm.lua:
-	ln -s `pwd`/wezterm.lua $@
 
 ~/src/mellow.nvim:
 	git clone git@github.com:kvrohit/mellow.nvim.git ~/src/mellow.nvim
@@ -52,39 +48,69 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 ~/.config/starship.toml:
 	ln -s `pwd`/starship.toml $@
 
-.PHONY: pre-install
-pre-install: ~/.local/share/nvim/site/autoload/plug.vim ~/.bash_aliases ~/.ackrc ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/nvim/lua/custom ~/.config/wezterm/colors/mellow.toml ~/.config/starship.toml
-	sudo pamac install \
-		zsh \
-		oh-my-zsh \
-		ruby \
-		terraform \
-		neovim \
-		powerline-fonts \
-		go \
-		github-cli \
-		gitg \
-		gcc \
-		zig \
-		ripgrep \
-		docker \
-		docker-compose \
-		krew \
-		pyenv \
-		thunderbird \
-		direnv \
-		pyenv-virtualenv \
-		bat \
-		gitui \
-		ttf-fira-code \
-		wezterm \
-		mcfly \
-		prettier \
-		taplo \
-		shellcheck \
-		starship \
-		zplug \
-		sqlfluff
 
+.PHONY: pre-install
+pre-install: ~/.bash_aliases ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/wezterm/colors/mellow.toml ~/.config/starship.toml
+	ifeq ($(UNAME_OS),ManjaroLinux)
+		sudo pamac install \
+			zsh \
+			oh-my-zsh \
+			ruby \
+			terraform \
+			neovim \
+			powerline-fonts \
+			go \
+			github-cli \
+			gitg \
+			gcc \
+			zig \
+			ripgrep \
+			docker \
+			docker-compose \
+			krew \
+			pyenv \
+			thunderbird \
+			direnv \
+			pyenv-virtualenv \
+			bat \
+			gitui \
+			ttf-fira-code \
+			wezterm \
+			mcfly \
+			prettier \
+			taplo \
+			shellcheck \
+			starship \
+			zplug \
+			sqlfluff \
+			code-minimap 
+	else ($(UNAME_OS),EndeavourOS)
+		pacman -Syu 
+			zsh \
+			ruby \
+			terraform \
+			neovim \
+			go \
+			github-cli \
+			gitg \
+			gcc \
+			zig \
+			ripgrep \
+			docker \
+			docker-compose \
+			pyenv \
+			thunderbird \
+			direnv \
+			pyenv-virtualenv \
+			bat \
+			gitui \
+			ttf-fira-code \
+			wezterm \
+			prettier \
+			shellcheck \
+			starship \
+			sqlfluff \
+			code-minimap 
+	endif
 
 	git config --global core.excludesfile ~/.gitignore_global
