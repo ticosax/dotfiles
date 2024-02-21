@@ -42,6 +42,7 @@ lvim.builtin.telescope.defaults.file_ignore_patterns = { ".metals/*" }
 -- Do not prompt to choose where to open. Always open rightmost.
 lvim.builtin.nvimtree.setup.actions.open_file.window_picker.enable = false
 
+lvim.builtin.which_key.mappings.s["w"] = { "<cmd>Telescope grep_string<cr>", "Live Grep Under Cursor" }
 lvim.colorscheme = "nightfly"
 vim.g.nightflyCursorColor = true
 vim.g.nightflyItalics = true
@@ -286,7 +287,7 @@ formatters.setup({
 		name = "terraform_fmt",
 		filetypes = {
 			"hcl",
-      "tf",
+			"tf",
 		},
 	},
 	{ name = "taplo" },
