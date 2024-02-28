@@ -158,6 +158,7 @@ lvim.plugins = {
 			metals_config.settings = {
 				showImplicitArguments = true,
 				excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
+        enableSemanticHighlighting = false,
 			}
 
 			-- *READ THIS*
@@ -333,3 +334,12 @@ lvim.builtin.which_key.mappings["p"] = { ["e"] = {
 	end,
 	"Pick Emoji",
 } }
+
+require("telescope").load_extension("metals")
+lvim.builtin.which_key.mappings["t"] =
+	{ ["m"] = {
+		function()
+			require("telescope").extensions.metals.commands()
+		end,
+  "Metals Commands"
+	} }
