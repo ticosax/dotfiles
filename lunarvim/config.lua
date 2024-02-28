@@ -52,6 +52,7 @@ vim.g.nightflyTerminalColors = true
 local map = vim.keymap.set
 
 lvim.plugins = {
+	{ "xiyaowong/telescope-emoji.nvim" },
 	-- colorschemes
 	{ "folke/tokyonight.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
@@ -324,3 +325,11 @@ lvim.builtin.which_key.mappings["l"]["f"] = {
 }
 reload("user.rust_ide")
 reload("user.python_ide")
+require("telescope").load_extension("emoji")
+
+lvim.builtin.which_key.mappings["p"] = { ["e"] = {
+	function()
+		vim.cmd(":Telescope emoji")
+	end,
+	"Pick Emoji",
+} }
