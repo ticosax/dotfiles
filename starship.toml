@@ -72,6 +72,9 @@ symbol = ""
 [scala]
 symbol = ""
 
+[kubernetes]
+disabled = false
+
 [time]
 disabled = false
 time_format = "%R"
