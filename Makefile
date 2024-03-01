@@ -110,8 +110,9 @@ pre-install: ~/.bash_aliases ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.con
 			shellcheck \
 			starship \
 			sqlfluff \
+			gnome-browser-connector \
 			rustup
-		yay code-minimap oh-my-zsh taplo
+		yay code-minimap oh-my-zsh taplo krew coursier metals
 	endif
 
 	git config --global core.excludesfile ~/.gitignore_global
