@@ -19,7 +19,7 @@ fi
 zplug 'darvid/zsh-poetry'
 zplug 'zsh-users/zsh-syntax-highlighting'
 
-eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 eval "$(starship init zsh)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook zsh)"
