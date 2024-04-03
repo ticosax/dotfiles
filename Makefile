@@ -111,7 +111,8 @@ pre-install: ~/.bash_aliases ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.con
 			starship \
 			sqlfluff \
 			gnome-browser-connector \
-			rustup
+			rustup \
+			difftastic
 		yay code-minimap oh-my-zsh taplo krew coursier metals
 	endif
 
