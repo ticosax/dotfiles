@@ -184,7 +184,6 @@ lvim.plugins = {
 				map("n", "<leader>cl", vim.lsp.codelens.run)
 				map("n", "<leader>sh", vim.lsp.buf.signature_help)
 				map("n", "<leader>lr", vim.lsp.buf.rename)
-				map("n", "<leader>lf", vim.lsp.buf.format)
 				map("n", "<leader>ca", vim.lsp.buf.code_action)
 
 				map("n", "<leader>ws", function()
