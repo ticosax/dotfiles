@@ -43,6 +43,7 @@ lvim.builtin.telescope.defaults.file_ignore_patterns = { ".metals/*" }
 lvim.builtin.nvimtree.setup.actions.open_file.window_picker.enable = false
 
 lvim.builtin.which_key.mappings.s["w"] = { "<cmd>Telescope grep_string<cr>", "Live Grep Under Cursor" }
+lvim.builtin.which_key.mappings.b["f"] = { "<cmd>Telescope buffers<cr>", "List buffers" }
 lvim.colorscheme = "nightfly"
 vim.g.nightflyCursorColor = true
 vim.g.nightflyItalics = true
