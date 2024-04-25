@@ -155,11 +155,13 @@ lvim.plugins = {
 		opts = function()
 			local metals_config = require("metals").bare_config()
 
-			-- Example of settings
 			metals_config.settings = {
 				showImplicitArguments = true,
 				excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
-        enableSemanticHighlighting = false,
+				enableSemanticHighlighting = false,
+				showInferredType = true,
+				superMethodLensesEnabled = true,
+				showImplicitConversionsAndClasses = true,
 			}
 
 			-- *READ THIS*
@@ -341,5 +343,5 @@ lvim.builtin.which_key.mappings["t"] =
 		function()
 			require("telescope").extensions.metals.commands()
 		end,
-  "Metals Commands"
+		"Metals Commands",
 	} }
