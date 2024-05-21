@@ -198,12 +198,12 @@ lvim.plugins = {
 
 				-- all workspace errors
 				map("n", "<leader>ae", function()
-					vim.diagnostic.setqflist({ severity = "E" })
+					vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.E })
 				end)
 
 				-- all workspace warnings
 				map("n", "<leader>aw", function()
-					vim.diagnostic.setqflist({ severity = "W" })
+					vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.W })
 				end)
 
 				-- buffer diagnostics only
