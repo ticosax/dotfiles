@@ -271,6 +271,7 @@ formatters.setup({
 	{ name = "shfmt" },
 	{ name = "rustfmt", extra_args = { "--edition", "2021" } },
 	{ name = "stylelint" },
+	{ name = "just" },
 	{
 		name = "prettier",
 		---@usage arguments to pass to the formatter
