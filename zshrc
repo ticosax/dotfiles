@@ -43,7 +43,7 @@ compinit
 # End of lines added by compinstall
 
 # https://github.com/hsaunders1904/pyautoenv
-plugins=(git docker python aws virtualenv pyenv kubectl systemd minikube pip npm terraform postgres pyautoenv)
+plugins=(git docker python aws virtualenv pyenv kubectl systemd minikube pip npm terraform postgres pyautoenv virtualenvwrapper)
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
