@@ -265,8 +265,7 @@ lvim.plugins = {
 
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-	-- { name = "black", extra_args = { "--fast" } },
-	-- { name = "ruff" },
+	{ name = "ruff" },
 	{ name = "stylua" },
 	{ name = "shfmt" },
 	{ name = "rustfmt", extra_args = { "--edition", "2021" } },
@@ -309,7 +308,7 @@ linters.setup({
 		name = "shellcheck",
 		args = { "--severity", "warning" },
 	},
-	{ name = "ruff" },
+	-- { name = "ruff" },
 	{ name = "terraform_validate", filetypes = { "hcl" } },
 	{ name = "ktlint" },
 	{ name = "eslint", filetypes = { "typescript", "typescriptreact" } },
