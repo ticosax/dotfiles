@@ -26,27 +26,26 @@ disabled = false
 
 [username]
 show_always = true
-format = '[ $user ]($style)'
 
 [directory]
-format = "[ $path ]($style)"
-truncation_length = 3
+truncation_length = 10
 truncation_symbol = "…/"
+truncate_to_repo = true
 
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
+# [directory.substitutions]
+# "Documents" = "󰈙"
+# "Downloads" = " "
+# "Music" = "󰝚 "
+# "Pictures" = " "
+# "src" = "󰲋 "
 
 [git_branch]
 symbol = ""
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_status]
-style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
 
 [nodejs]
 symbol = ""
@@ -78,8 +77,7 @@ disabled = false
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:color_bg1"
-format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+format = '🕙[\[ $time \]]($style) '
 
 [line_break]
 disabled = false
