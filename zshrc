@@ -10,6 +10,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin/
 
+
 if [ -d "/usr/share/zsh/scripts/zplug" ]; then
 	source /usr/share/zsh/scripts/zplug/init.zsh
 fi
@@ -55,3 +56,6 @@ alias cat="bat"
 alias tf="terraform"
 
 unsetopt correct_all
+if [ -f $HOME/src/dotfiles/fluvio.zsh ]; then
+  source $HOME/src/dotfiles/fluvio.zsh
+fi
