@@ -308,7 +308,7 @@ linters.setup({
 		name = "shellcheck",
 		args = { "--severity", "warning" },
 	},
-	-- { name = "ruff" },
+	{ name = "ruff" },
 	{ name = "terraform_validate", filetypes = { "hcl" } },
 	{ name = "ktlint" },
 	{ name = "eslint", filetypes = { "typescript", "typescriptreact" } },
@@ -320,12 +320,12 @@ code_actions.setup({
 		name = "ltrs",
 	},
 })
-lvim.builtin.which_key.mappings["l"]["f"] = {
-	function()
-		require("lvim.lsp.utils").format({ timeout_ms = 10000 })
-	end,
-	"Format",
-}
+-- lvim.builtin.which_key.mappings["l"]["f"] = {
+-- 	function()
+-- 		require("lvim.lsp.utils").format({ timeout_ms = 10000 })
+-- 	end,
+-- 	"Format",
+-- }
 reload("user.rust_ide")
 reload("user.python_ide")
 require("telescope").load_extension("emoji")
@@ -345,3 +345,16 @@ lvim.builtin.which_key.mappings["t"] =
 		end,
 		"Metals Commands",
 	} }
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
