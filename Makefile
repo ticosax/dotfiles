@@ -118,3 +118,7 @@ pre-install: ~/.bash_aliases ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.con
 	endif
 
 	git config --global core.excludesfile ~/.gitignore_global
+
+# Conveniant services to activate
+# systemctl --user enable gcr-ssh-agent.service
+# systemctl --user enable ssh-agent.service
