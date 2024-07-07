@@ -25,6 +25,9 @@ eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook zsh)"
 eval "$(jenv init -)"
 
+# just --completions zsh > just.zsh
+# source just.zsh
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
