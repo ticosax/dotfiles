@@ -287,13 +287,7 @@ formatters.setup({
 			"typescriptreact",
 		},
 	},
-	{
-		name = "terraform_fmt",
-		filetypes = {
-			"hcl",
-			"tf",
-		},
-	},
+	{ name = "terraform_fmt" },
 	{ name = "taplo" },
 	{ name = "goimports_reviser" },
 	{ name = "golines" },
