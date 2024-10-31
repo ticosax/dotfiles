@@ -29,4 +29,11 @@ return {
   { import = "astrocommunity.scrolling.cinnamon-nvim" },
 
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+
+  { import = "astrocommunity.completion.cmp-emoji" },
+
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  -- { import = "astrocommunity.editing-support.wildfire-nvim" },
+  { import = "astrocommunity.editing-support.yanky-nvim" },
+  { import = "astrocommunity.editing-support.conform-nvim" },
 }
