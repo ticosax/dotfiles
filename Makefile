@@ -113,7 +113,8 @@ pre-install: ~/.bash_aliases ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.con
 			gnome-browser-connector \
 			rustup \
 			difftastic \
-			bat
+			bat \
+			wl-clipboard 
 		yay code-minimap oh-my-zsh taplo krew coursier metals
 	endif
 
