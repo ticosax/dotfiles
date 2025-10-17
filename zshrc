@@ -17,13 +17,9 @@ fi
 if [ -f "$HOME/.zplug/init.zsh" ]; then
 	source $HOME/.zplug/init.zsh
 fi
-zplug 'darvid/zsh-poetry'
 zplug 'zsh-users/zsh-syntax-highlighting'
 
-eval "$(pyenv init -)"
 eval "$(starship init zsh)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(direnv hook zsh)"
 eval "$(jenv init -)"
 
 # just --completions zsh > just.zsh
@@ -45,7 +41,7 @@ compinit
 # End of lines added by compinstall
 
 # https://github.com/hsaunders1904/pyautoenv
-plugins=(git docker python aws virtualenv pyenv kubectl systemd minikube pip npm terraform postgres pyautoenv virtualenvwrapper)
+plugins=(git docker python aws kubectl systemd pip npm terraform postgres pyautoenv direnv gh github helm rust ssh)
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
