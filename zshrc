@@ -17,11 +17,17 @@ fi
 if [ -f "$HOME/.zplug/init.zsh" ]; then
 	source $HOME/.zplug/init.zsh
 fi
-zplug 'zsh-users/zsh-syntax-highlighting'
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search", as: plugin
+
 
 eval "$(starship init zsh)"
 eval "$(jenv init -)"
 
+# completions for ruff  XXX move to justfile
+# ruff generate-shell-completion zsh > ~/.zfunc/_ruff
+fpath+=~/.zfunc
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 # just --completions zsh > just.zsh
 # source just.zsh
 
@@ -36,8 +42,7 @@ bindkey -v
 # The following lines were added by compinstall
 
 zstyle :compinstall filename '/home/ticosax/.zshrc'
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 # End of lines added by compinstall
 
 # https://github.com/hsaunders1904/pyautoenv
@@ -52,6 +57,3 @@ alias cat="bat"
 alias tf="terraform"
 
 unsetopt correct_all
-if [ -f $HOME/src/dotfiles/fluvio.zsh ]; then
-  source $HOME/src/dotfiles/fluvio.zsh
-fi
