@@ -20,6 +20,7 @@ return {
   { import = "astrocommunity.pack.scala" },
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.just" },
 
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
