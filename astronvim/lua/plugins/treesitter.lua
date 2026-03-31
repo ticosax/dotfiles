@@ -4,14 +4,21 @@
 
 ---@type LazySpec
 return {
-  "nvim-treesitter/nvim-treesitter",
+  "AstroNvim/astrocore",
+  ---@type AstroCoreOpts
   opts = {
-    ensure_installed = {
-      "lua",
-      "vim",
-      "rust",
-      "python",
-      -- add more arguments for adding more treesitter parsers
+    treesitter = {
+      highlight = true,
+      indent = true,
+      auto_install = true,
+      ensure_installed = {
+        "lua",
+        "vim",
+        "rust",
+        "python",
+        "toml",
+        -- add more arguments for adding more treesitter parsers
+      },
     },
   },
 }

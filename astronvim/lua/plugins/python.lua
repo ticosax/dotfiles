@@ -1,11 +1,12 @@
 return {
-  { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.python.base" },
+  { import = "astrocommunity.pack.python.ruff" },
   -- {
   --   "stevearc/conform.nvim",
   --   optional = false,
   -- },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     optional = false,
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "ty" })

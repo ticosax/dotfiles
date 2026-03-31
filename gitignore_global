@@ -12,3 +12,4 @@ pylama.ini
 .mypy_cache/
 pip-wheel-metadata/
 .envrc
+bacon-ls.log
