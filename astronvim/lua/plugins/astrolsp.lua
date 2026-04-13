@@ -12,15 +12,15 @@ return {
       ["*"] = {
         -- Configuration table of features provided by AstroLSP
         features = {
-          codelens = true,        -- enable/disable codelens refresh on start
-          inlay_hints = false,    -- enable/disable inlay hints on start
+          codelens = true, -- enable/disable codelens refresh on start
+          inlay_hints = false, -- enable/disable inlay hints on start
           semantic_tokens = true, -- enable/disable semantic token highlighting
         },
         -- customize lsp formatting options
         formatting = {
           -- control auto formatting on save
           format_on_save = {
-            enabled = true,     -- enable or disable format on save globally
+            enabled = true, -- enable or disable format on save globally
             allow_filetypes = { -- enable format on save for specified filetypes only
               -- "go",
             },
@@ -38,27 +38,9 @@ return {
           -- end
         },
         -- enable servers that you already have installed without mason
-        servers = {
-          -- "pyright"
-        },
-        -- customize language server configuration options passed to `lspconfig`
-        ---@diagnostic disable: missing-fields
-        config = {
-          -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-          -- https://github.com/AstroNvim/astrolsp?tab=readme-ov-file#%EF%B8%8F-configuration
-          ty = {
-            settings = {
-              ty = {
-                experimental = { autoImport = true, rename = true },
-              },
-            },
-          },
-          typos_lsp = {
-            capabilities = {
-              positionEncodings = "UTF-8",
-            },
-          },
-        },
+        -- servers = {
+        --   -- "pyright"
+        -- },
         -- Configure buffer local auto commands to add when attaching a language server
         autocmds = {
           -- first key is the `augroup` to add the auto commands to (:h augroup)
@@ -98,6 +80,19 @@ return {
               end,
             },
           },
+        },
+      },
+
+      ty = {
+        settings = {
+          ty = {
+            experimental = { autoImport = true, rename = true },
+          },
+        },
+      },
+      typos_lsp = {
+        capabilities = {
+          positionEncodings = "UTF-8",
         },
       },
     },
