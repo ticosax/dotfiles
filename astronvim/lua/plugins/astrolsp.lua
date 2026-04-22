@@ -86,6 +86,7 @@ return {
       ty = {
         settings = {
           ty = {
+            completions = { autoImport = true },
             experimental = { autoImport = true, rename = true },
           },
         },
