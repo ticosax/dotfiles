@@ -1,6 +1,9 @@
 UNAME_OS := $(shell lsb_release -si)
 REPO_PATH=~/src
 
+~/.typos.toml:
+	ln -s $(REPO_PATH)/typos.toml $@
+
 ~/.config/wezterm/:
 	mkdir -p $@
 
@@ -50,7 +53,7 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 
 
 .PHONY: pre-install
-pre-install: ~/.bash_aliases ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/wezterm/colors/mellow.toml ~/.config/starship.toml
+pre-install: ~/.bash_aliases ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/wezterm/colors/mellow.toml ~/.config/starship.toml ~/.typos.toml
 	ifeq ($(UNAME_OS),ManjaroLinux)
 		sudo pamac install \
 			zsh \
