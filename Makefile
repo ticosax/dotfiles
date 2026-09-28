@@ -62,7 +62,10 @@ pre-install: ~/.bash_aliases ~/.gitignore_global ~/.config/starship.toml ~/.typo
 		rustup \
 		difftastic \
 		bat \
-		wl-clipboard 
+		wl-clipboard \
+		jenv \
+		uv \
+		ruff 
 	yay code-minimap taplo krew # coursier metals
 
 	git config --global core.excludesfile ~/.gitignore_global
