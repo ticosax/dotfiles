@@ -4,15 +4,8 @@ REPO_PATH=~/src
 ~/.typos.toml:
 	ln -s $(REPO_PATH)/typos.toml $@
 
-~/.config/wezterm/:
-	mkdir -p $@
-
-~/.config/wezterm/wezterm.lua: ~/.config/wezterm/
-	mkdir -p ~/.config/wezterm
-	ln -s $(REPO_PATH)/dotfiles/wezterm.lua $@
-
 .PHONY: install
-install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
+install: pre-install ~/.zshrc
 	echo "Done"
 
 
@@ -32,11 +25,6 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 # 	ln -s `pwd`/vimrc ~/.config/nvim/init.vim
 
 
-~/.screenrc:
-	ln -s `pwd`/screenrc $@
-
-~/.tmux.conf:
-	ln -s `pwd`/tmux.conf $@
 
 ~/.gitignore_global:
 	ln -s `pwd`/gitignore_global $@
@@ -44,82 +32,38 @@ install: pre-install ~/.zshrc ~/.config/wezterm/wezterm.lua
 ~/src/mellow.nvim:
 	git clone git@github.com:kvrohit/mellow.nvim.git ~/src/mellow.nvim
 
-~/.config/wezterm/colors/mellow.toml: ~/src/mellow.nvim
-	mkdir -p ~/.config/wezterm/colors
-	ln -s ~/src/mellow.nvim/extras/wezterm/colors/mellow.toml	 $@
-
 ~/.config/starship.toml:
 	ln -s `pwd`/starship.toml $@
 
-
 .PHONY: pre-install
-pre-install: ~/.bash_aliases ~/.gitignore_global ~/.screenrc ~/.tmux.conf ~/.config/wezterm/colors/mellow.toml ~/.config/starship.toml ~/.typos.toml
-	ifeq ($(UNAME_OS),ManjaroLinux)
-		sudo pamac install \
-			zsh \
-			oh-my-zsh \
-			ruby \
-			terraform \
-			neovim \
-			powerline-fonts \
-			go \
-			github-cli \
-			gitg \
-			gcc \
-			zig \
-			ripgrep \
-			docker \
-			docker-compose \
-			krew \
-			pyenv \
-			thunderbird \
-			direnv \
-			pyenv-virtualenv \
-			bat \
-			gitui \
-			ttf-fira-code \
-			wezterm \
-			mcfly \
-			prettier \
-			taplo \
-			shellcheck \
-			starship \
-			zplug \
-			sqlfluff \
-			code-minimap 
-	else ($(UNAME_OS),EndeavourOS)
-		pacman -Syu 
-			zsh \
-			ruby \
-			terraform \
-			neovim \
-			go \
-			github-cli \
-			gitg \
-			gcc \
-			zig \
-			ripgrep \
-			docker \
-			docker-compose \
-			pyenv \
-			thunderbird \
-			direnv \
-			pyenv-virtualenv \
-			bat \
-			gitui \
-			ttf-fira-code \
-			wezterm \
-			prettier \
-			shellcheck \
-			starship \
-			sqlfluff \
-			gnome-browser-connector \
-			rustup \
-			difftastic \
-			bat \
-			wl-clipboard 
-		yay code-minimap oh-my-zsh taplo krew coursier metals
-	endif
+pre-install: ~/.bash_aliases ~/.gitignore_global ~/.config/starship.toml ~/.typos.toml
+	sudo pacman -Syu \
+		zsh \
+		terraform \
+		neovim \
+		go \
+		github-cli \
+		gitg \
+		gcc \
+		zig \
+		ripgrep \
+		docker \
+		docker-compose \
+		thunderbird \
+		direnv \
+		bat \
+		gitui \
+		ttf-fira-code \
+		prettier \
+		shellcheck \
+		starship \
+		sqlfluff \
+		gnome-browser-connector \
+		rustup \
+		difftastic \
+		bat \
+		wl-clipboard 
+	yay code-minimap taplo krew # coursier metals
 
 	git config --global core.excludesfile ~/.gitignore_global
 
