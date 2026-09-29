@@ -47,7 +47,7 @@ autoload -Uz compinit && compinit
 # End of lines added by compinstall
 
 # https://github.com/hsaunders1904/pyautoenv
-plugins=(git docker python aws kubectl systemd pip npm terraform postgres pyautoenv direnv gh github helm rust ssh)
+plugins=(git docker python aws kubectl systemd pip npm terraform postgres pyautoenv direnv gh helm rust ssh)
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
