@@ -65,6 +65,7 @@ pre-install: ~/.bash_aliases ~/.gitignore_global ~/.config/starship.toml ~/.typo
 		wl-clipboard \
 		jenv \
 		uv \
+		cargo-edit \
 		ruff 
 	yay code-minimap taplo krew # coursier metals
 
