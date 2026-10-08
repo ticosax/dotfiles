@@ -2,7 +2,7 @@ UNAME_OS := $(shell lsb_release -si)
 REPO_PATH=~/src
 
 ~/.typos.toml:
-	ln -s $(REPO_PATH)/typos.toml $@
+	ln -s $(REPO_PATH)/dotfiles/typos.toml $@
 
 .PHONY: install
 install: pre-install ~/.zshrc
