@@ -21,6 +21,7 @@ return {
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.just" },
+  { import = "astrocommunity.pack.typst" },
 
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
