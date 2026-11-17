@@ -37,4 +37,5 @@ return {
   -- { import = "astrocommunity.editing-support.wildfire-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.editing-support.conform-nvim" },
+  { import = "astrocommunity.test.neotest" },
 }
